@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 
 class CategoryController extends Controller
 {
@@ -15,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        //
     }
 
     /**
@@ -36,13 +34,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $obj = new Category();
-        $obj->name = Input::get('name');
-        $obj->image = Input::get('image');
-        $obj->description = Input::get('description');
-        $obj->save();
-        return 'aa';
-//        return redirect('/admin/category');
+        //
     }
 
     /**
