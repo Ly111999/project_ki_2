@@ -41,8 +41,7 @@ class CategoryController extends Controller
         $obj->image = Input::get('image');
         $obj->description = Input::get('description');
         $obj->save();
-        return 'aa';
-//        return redirect('/admin/category');
+        return redirect('/admin/category');
     }
 
     /**
@@ -64,7 +63,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $obj = Category::find($id);
+        if($obj == null){
+            return view('errors.404');
+        }
+        return view('admin.category.edit')->with('obj_view', $obj);
     }
 
     /**
@@ -76,7 +79,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $obj = Category::find($id);
+        if ($obj == null){
+            return view('errors.404');
+        }
+        $obj->name = Input::get('name');
+        $obj->image = Input::get('image');
+        $obj->description = Input::get('description');
+        $obj->save();
+        return redirect('/admin/category');
     }
 
     /**
