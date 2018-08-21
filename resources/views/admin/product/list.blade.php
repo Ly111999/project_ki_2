@@ -107,6 +107,31 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $('.delete-obj').click(function () {
+            var id = this.id;
+            var user_confirm = confirm('Are you sure you want to delete this product? ');
+            if (user_confirm) {
+                $.ajax({
+                    url: 'http://127.0.0.1:8000/admin/product/' + id,
+                    method: 'DELETE',
+                    data: {
+                        '_token': "{{ csrf_token() }}"
+                    },
+                    success: function () {
+                        alert('Deleted');
+                        alert('Success!');
+                        window.location.reload();
+                    },
+                    error: function () {
+                        alert('Error.');
+                    }
+                });
+            } else {
+                alert('!Okie');
+            }
+        });
+    </script>
     <script src="{{asset('js/myScript.js')}}"></script>
 @stop
 

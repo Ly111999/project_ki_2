@@ -129,6 +129,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $obj=Product::find($id);
+        if ($obj == null){
+            return response()->json(['error' => 'not found'], 404);
+        }
+        $obj->delete();
+        return response()->json(['message' => 'Deleted'], 200);
     }
 }
