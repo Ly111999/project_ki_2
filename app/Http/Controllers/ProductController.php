@@ -22,7 +22,21 @@ class ProductController extends Controller
 
     public function index()
     {
-
+        $categories = Category::all();
+        $categoryId = Input::get('categoryId');
+        if ($categoryId == null || $categoryId == 0) {
+            $obj = Product::orderBy('created_at', 'desc')->paginate(10);
+            return view('admin.product.list')
+                ->with('list_obj', $obj)
+                ->with('categories', $categories)
+                ->with('categoryId', $categoryId);
+        } else {
+            $obj = Product::where('categoryId', Input::get('categoryId'))->orderBy('created_at', 'desc')->paginate(10);
+            return view('admin.product.list')
+                ->with('list_obj', $obj)
+                ->with('categories', $categories)
+                ->with('categoryId', $categoryId);
+        }
     }
 
     /**
