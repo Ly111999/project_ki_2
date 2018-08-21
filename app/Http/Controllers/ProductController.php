@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -19,7 +22,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        //
+
     }
 
     /**
@@ -29,7 +32,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.product.create')->with('categories', $categories);
     }
 
     /**
@@ -40,7 +44,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = Input::get('name');
+        $product->price = Input::get('price');
+        $product->categoryId = Input::get('categoryId');
+        $product->description = Input::get('description');
+        $product->image = Input::get('image');
+
+        $product->save();
+        return redirect('/admin/product');
     }
 
     /**
@@ -62,7 +74,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -74,7 +86,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
