@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ADMIN
+
+Route::get('/admin/master', 'ProductController@homeAdmin');
+
+
+// CLIENT
