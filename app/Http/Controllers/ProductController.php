@@ -39,7 +39,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -58,7 +58,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,30 +69,48 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-
+        $product = Product::find($id);
+        if ($product == null) {
+            return view('errors.404');
+        }
+        $categories = Category::all();
+        return view('admin.product.edit')
+            ->with('obj_view', $product)
+            ->with('categories', $categories);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
+        $product = Product::find($id);
+        if ($product == null) {
+            return view('errors.404');
+        }
+        $product->name = Input::get('name');
+        $product->price = Input::get('price');
+        $product->categoryId = Input::get('categoryId');
+        $product->description = Input::get('description');
+        $product->image = Input::get('image');
 
+        $product->save();
+        return redirect('/admin/product');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
