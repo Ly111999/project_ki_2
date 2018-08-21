@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('views.admin.layout.default')
 
 @section('content')
     <div class="section__content section__content--p30">
