@@ -17,7 +17,4 @@ Route::get('/admin/master', 'ProductController@homeAdmin');
 
 Route::resource('admin/product', 'ProductController');
 
-Route::resource('admin/category', 'CategoryController');
-
-
 // CLIENT
