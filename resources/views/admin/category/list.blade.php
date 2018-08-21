@@ -35,7 +35,7 @@
                                         <td class="col-md-3">{{$item->name}}</td>
                                         <td class="col-md-2">
                                             <div>
-                                                <img src="{{$item->image}}" alt="" style="width: 150px">
+                                                <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px">
                                             </div>
                                         </td>
                                         <td class="col-md-4">{{$item->description}}</td>
@@ -53,39 +53,38 @@
                                 Have no category, click <a href="/admin/category/create">here</a> to create new.
                             </div>
                         @endif
-
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                            <script>
-                                $('.delete-obj').click(function () {
-                                    var id = this.id;
-                                    var user_confirm = confirm('Are you sure you want to delete this category? ');
-                                    if (user_confirm) {
-                                        $.ajax({
-                                            url: 'http://127.0.0.1:8000/admin/category/' + id,
-                                            method: 'DELETE',
-                                            data: {
-                                                '_token': "{{ csrf_token() }}"
-                                            },
-                                            success: function () {
-                                                alert('Deleted');
-                                                alert('Success!');
-                                                window.location.reload();
-                                            },
-                                            error: function () {
-                                                alert('Error.');
-                                            }
-                                        });
-                                    } else {
-                                        alert('!Okie');
-                                    }
-                                });
-                            </script>
-                        <script src="{{asset('js/myScript.js')}}"></script>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $('.delete-obj').click(function () {
+            var id = this.id;
+            var user_confirm = confirm('Are you sure you want to delete this category? ');
+            if (user_confirm) {
+                $.ajax({
+                    url: 'http://127.0.0.1:8000/admin/category/' + id,
+                    method: 'DELETE',
+                    data: {
+                        '_token': "{{ csrf_token() }}"
+                    },
+                    success: function () {
+                        alert('Deleted');
+                        alert('Success!');
+                        window.location.reload();
+                    },
+                    error: function () {
+                        alert('Error.');
+                    }
+                });
+            } else {
+                alert('!Okie');
+            }
+        });
+    </script>
+    <script src="{{asset('js/myScript.js')}}"></script>
 
 @stop
