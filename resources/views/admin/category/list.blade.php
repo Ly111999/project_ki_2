@@ -1,7 +1,66 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: DELL
- * Date: 8/21/2018
- * Time: 2:43 PM
- */
+@extends('admin.layout.default')
+
+@section('content')
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title-5 ">List categories</h2>
+                    <div class="alert alert-success d-none" role="alert" id="messageSuccess"></div>
+                    <div class="alert alert-danger d-none" role="alert" id="messageError"></div>
+                    <div class="table-data__tool-left float-right mb-5 mt-1 ">
+                        <a href="/admin/category/create">
+                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                <i class="zmdi zmdi-plus"></i>Create
+                            </button>
+                        </a>
+                    </div>
+                    <div class="table-responsive table-responsive-data2" style="overflow-x: hidden;">
+                        @if(count($list_obj)>0)
+                            <table class="table table-data3">
+                                <thead>
+                                <tr class="row">
+                                    <th class="col-md-1">ID</th>
+                                    <th class="col-md-3">Category Name</th>
+                                    <th class="col-md-2">Category Image</th>
+                                    <th class="col-md-4">Category Description</th>
+                                    <th class="col-md-2">Action</th>
+
+                                </tr>
+                                </thead>
+                                @foreach($list_obj as $item)
+                                    <tbody>
+                                    <tr class="row">
+                                        <th scope="row" class="col-md-1">{{$item -> id}}</th>
+                                        <td class="col-md-3">{{$item->name}}</td>
+                                        <td class="col-md-2">
+                                            <div>
+                                                <img src="{{$item->image}}" alt="" style="width: 150px">
+                                            </div>
+                                        </td>
+                                        <td class="col-md-4">{{$item->description}}</td>
+                                        <td class="col-md-2">
+                                            <a href="/admin/category/{{$item -> id}}/edit">Edit</a>   
+                                            <a href="#/admin/category/{{$item -> id}}" id="{{$item -> id}}"
+                                               class="delete-obj">Delete</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                @endforeach
+                            </table>
+                        @else
+                            <div class="alert alert-info" role="alert">
+                                Have no category, click <a href="/admin/category/create">here</a> to create new.
+                            </div>
+                        @endif
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                        <script src="{{asset('js/myScript.js')}}"></script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@stop
