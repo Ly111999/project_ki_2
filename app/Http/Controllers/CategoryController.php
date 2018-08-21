@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\StoreCategoryPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -35,8 +36,10 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryPost $post)
     {
+        $post->validated();
+
         $obj = new Category();
         $obj->name = Input::get('name');
         $obj->image = Input::get('image');
