@@ -49,32 +49,30 @@
             <div class="row">
                 <div class="col-lg-12 text-right">
                     <div class="logo_container">
-                        <a href="http://127.0.0.1:8000">bambole<span>shop</span></a>
+                        <a href="/home">bambole<span>shop</span></a>
                     </div>
                     <nav class="navbar">
                         <ul class="navbar_menu">
-                            <li><a href="http://127.0.0.1:8000">home</a></li>
+                            <li><a href="http://127.0.0.1:8000/home">home</a></li>
                             <li class="category">
                                 <a href="#">Category &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
 
                                 <ul class="category_selection">
-                                    @foreach($listCategory as $key => $category)
+                                    @foreach($categories as $category)
                                         <li>
                                             <a href="/home/categories/{{$category->id}}">{{$category->name}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="#">shop</a></li>
+                            <li><a href="#shop">shop</a></li>
                             <li><a href="#blog">blog</a></li>
-                            <li><a href="http://127.0.0.1:8000/home/contact">contact</a></li>
+                            <li><a href="/contact">contact</a></li>
                         </ul>
                         <ul class="navbar_user">
-
-                            <li><a href="#" title="Search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             <li><a href="/admin/master" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                             <li class="checkout">
-                                <a href="/home/cart" title="Cart">
+                                <a href="/cart" title="Cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span id="checkout_items" class="checkout_items">2</span>
                                 </a>
