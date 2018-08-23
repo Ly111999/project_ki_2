@@ -41,8 +41,8 @@
                             <label>Image</label>
                             <div class="clearfix"></div>
                             <input type="text" name="image" class="form-control w-75" value="{{$obj_view -> image}}">
-                            <div class="card mt-2">
-                                <img src="{{$obj_view -> image}}" alt="" style="width: 200px">
+                            <div>
+                                <img src="{{$obj_view -> image}}" alt="" style="width: 200px; height: 200px">
                             </div>
                         </div>
                         <div>

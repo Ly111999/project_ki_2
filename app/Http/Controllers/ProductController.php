@@ -132,8 +132,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $obj=Product::find($id);
-        if ($obj == null){
+        $obj = Product::find($id);
+        if ($obj == null) {
             return response()->json(['error' => 'not found'], 404);
         }
         $obj->delete();
@@ -159,13 +159,35 @@ class ProductController extends Controller
             array_push($arr, $productWithCategoryId);
         }
 
-       return view('home.home')->with([
-               "listCategory" => Category::all(),
-                "listProduct" => $arr,
-                "obj_view" => $products
-            ]
-        );
+        if ($productWithCategoryId['categoryId'] == null || $productWithCategoryId['categoryId'] == 0) {
+            $obj = Product::orderBy('created_at', 'desc')->paginate(10);
+            return view('home.home')
+                ->with('list_obj', $obj)
+                ->with(
+                    [
+                        "listCategory" => Category::all(),
+                        "listProduct" => $arr,
+                        "obj_view" => $products
+                    ]
+                );
+        } else {
+            $obj = Product::where('categoryId', Input::get('categoryId'))->orderBy('created_at', 'desc')->paginate(10);
+            return view('home.home')
+                ->with('list_obj', $obj)
+                ->with(
+                    [
+                        "listCategory" => Category::all(),
+                        "listProduct" => $arr,
+                        "obj_view" => $products
+                    ]
+                );
+        }
+//        return view('home.home')->with([
+//                "listCategory" => Category::all(),
+//                "listProduct" => $arr,
+//                "obj_view" => $products
+//            ]
+//        );
     }
-
 
 }
