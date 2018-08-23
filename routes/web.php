@@ -24,3 +24,4 @@ Route::resource('admin/category', 'CategoryController');
 
 Route::get('/', 'ProductController@home');
 
+
