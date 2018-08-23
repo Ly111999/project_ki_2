@@ -139,4 +139,33 @@ class ProductController extends Controller
         $obj->delete();
         return response()->json(['message' => 'Deleted'], 200);
     }
+
+
+
+//HOME CUSTOMER
+
+    public function home()
+    {
+        $arr = [];
+        $products = Product::all();
+
+        foreach ($products as $key => $product) {
+            $productWithCategoryId =
+                [
+                    "categoryId" => $product->categoryId,
+                    "product" => $product
+                ];
+
+            array_push($arr, $productWithCategoryId);
+        }
+
+       return view('home.home')->with([
+               "listCategory" => Category::all(),
+                "listProduct" => $arr,
+                "obj_view" => $products
+            ]
+        );
+    }
+
+
 }
