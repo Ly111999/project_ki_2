@@ -177,9 +177,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row float-right mr-lg-5">
-                {{$list_obj->appends($_GET)->links()}}
-            </div>
+
 
 
         </div>

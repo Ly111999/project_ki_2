@@ -141,6 +141,7 @@ class ProductController extends Controller
     }
 
 
+
 //HOME CUSTOMER
 
     public function home()
@@ -157,6 +158,7 @@ class ProductController extends Controller
 
             array_push($arr, $productWithCategoryId);
         }
+
         if ($productWithCategoryId['categoryId'] == null || $productWithCategoryId['categoryId'] == 0) {
             $obj = Product::orderBy('created_at', 'desc')->paginate(10);
             return view('home.home')
