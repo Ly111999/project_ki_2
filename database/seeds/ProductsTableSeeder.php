@@ -19,7 +19,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Váy công chúa',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1MD65RXXXXXXlaXXXq6xXFXXXe/New-Girl-Dresses-2017-Summer-Kids-Fashion-Dress-Shawls-Lace-Clothes-Floral-Design-Formal-Dress-For.jpg_640x640.jpg',
-                'description' => 'Chất liệu: ren; Kiểu dáng: bồng bềnh; Màu sắc: hông nhẹ; Kích thước: size S, M, L, XL, XXL; Thích hợp: dự tiệc, dạo phố,....; Dễ dàng kết hợp với nhiều loại phụ kiện',
+                'description' => 'Chất liệu: ren.<br> Kiểu dáng: bồng bềnh.<br> Màu sắc: hông nhẹ.<br> Kích thước: size S, M, L, XL, XXL.<br> Thích hợp: dự tiệc, dạo phố,....<br> Dễ dàng kết hợp với nhiều loại phụ kiện.',
                 'price' => 230000,
                 'categoryId' => 1
             ],
@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 2,
                 'name' => 'Đầm dạ hội',
                 'image' => 'https://2.bp.blogspot.com/--3R1mu5HAwk/WIHszgom8eI/AAAAAAAAEJs/QCW53FCl2iEND4tMygjg3Hp6Ug3jz8NUQCLcB/s1600/rainkids-1025aqua_7jpg-8868923.jpg',
-                'description' => 'Chất vải: Mềm; Chiều dài váy: Mắt cá chân; Dáng váy: Xòe tròn; Họa tiết: Đính đá; Kiểu cổ áo: Cổ tròn; Phong cách: Lịch sự.',
+                'description' => 'Chất vải: Mềm.<br> Chiều dài váy: Mắt cá chân.<br> Dáng váy: Xòe tròn.<br> Họa tiết: Đính đá.<br> Kiểu cổ áo: Cổ tròn.<br> Phong cách: Lịch sự.',
                 'price' => 210000,
                 'categoryId' => 1
             ],
@@ -35,7 +35,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 3,
                 'name' => 'Đầm nơ xinh',
                 'image' => 'https://4.bp.blogspot.com/-mgpRu_x7gsI/Vz8ZHEpMFOI/AAAAAAAACj4/5vVSlZJQa4gwNJEUI3QQjJ2GLClJa_RLgCLcB/s1600/HOT-Retail-2016-font-b-baby-b-font-girls-summer-font-b-dress-b-font-fashion.jpg',
-                'description' => 'Thiết kế dáng xoè đặc biệt phù hợp với mọi vóc dáng; Họa tiết kẻ dọc cổ áo và chân váy; Chất liệu mềm nhẹ; 2 màu:Xanh lục, Trắng; Size: S, M, L, XL, 2XL;',
+                'description' => 'Thiết kế dáng xoè đặc biệt phù hợp với mọi vóc dáng.<br> Họa tiết kẻ dọc cổ áo và chân váy.<br> Chất liệu mềm nhẹ.<br> 2 màu:Xanh lục, Trắng.<br> Size: S, M, L, XL, 2XL.',
                 'price' => 169000,
                 'categoryId' => 1
             ],
@@ -43,7 +43,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 4,
                 'name' => 'Váy yếm DT11',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1M8ulMVXXXXXwXpXXq6xXFXXXf/3-4-5-6-7-8-9-10-11-12-13-Years-Girls-Sleeveless-Dress-Autumn.jpg_640x640.jpg',
-                'description' => 'Chất liệu: Cotton; Kiểu: Solid; Đủ size: XL, 2XL, 3XL, 4XL',
+                'description' => 'Chất liệu: Cotton.<br> Kiểu: Solid.<br> Đủ size: XL, 2XL, 3XL, 4XL.<br>Chất liệu cao cấp vải lớp mềm mại, tạo cảm giác bay bổng.',
                 'price' => 199000,
                 'categoryId' => 1
             ],
@@ -51,7 +51,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 5,
                 'name' => 'Đầm suông',
                 'image' => 'http://www.cowgu.com/wp-content/uploads/2016/07/Kids-fashion-trends-2016-girls-sundresses-1.jpg',
-                'description' => 'Chất liệu cao cấp vải lớp mềm mại, tạo cảm giác bay bổng;  Không bám bụi, dễ giặt, nhanh khô. Chất vải voan cũng ít bị phai màu, ít bị nhăn nên trông luôn mới và mới rất lâu; Thích hợp đi chơi, dự tiệc.',
+                'description' => 'Chất liệu cao cấp vải lớp mềm mại, tạo cảm giác bay bổng.<br>  Không bám bụi, dễ giặt, nhanh khô.<br> Chất vải voan cũng ít bị phai màu, ít bị nhăn nên trông luôn mới và mới rất lâu.<br> Thích hợp đi chơi, dự tiệc.',
                 'price' => 190000,
                 'categoryId' => 1
             ],
@@ -59,7 +59,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 6,
                 'name' => 'Váy hoa J31',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1ATdxLVXXXXavXXXXq6xXFXXX5/2016-New-Big-Girls-Children-Dresses-Lovely-Princess-Floral-Dress-Cute-Kids-Beach-Dress-Vintage-Chinese.jpg',
-                'description' => 'Thiết kế với ưu điểm tôn dáng, giúp bạn khéo léo khoe đôi chân dài thon gọn; Chất vải: Mỏng nhẹ; Kiểu dáng: Cổ tròn ôm, khoe vai.',
+                'description' => 'Thiết kế với ưu điểm tôn dáng, giúp bạn khéo léo khoe đôi chân dài thon gọn.<br> Chất vải: Mỏng nhẹ.<br> Kiểu dáng: Cổ tròn ôm, khoe vai.',
                 'price' => 140000,
                 'categoryId' => 1
             ],
@@ -67,7 +67,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 7,
                 'name' => 'Yếm bò',
                 'image' => 'https://dress-trends.com/wp-content/uploads/2016/11/Girls-fashion-girls-clothes-2017-girls-dresses-2017-childrens-clothing-2017-girls-denim-overalls-4.jpg',
-                'description' => 'Chất liệu: vải bò cao cấp tạo cảm giác thoải mái khi mặc; Kiểu dáng: Đáng yêu mà vẫn giữ đc vẻ cá tính của trẻ.',
+                'description' => 'Chất liệu: vải bò cao cấp tạo cảm giác thoải mái khi mặc.<br> Kiểu dáng: Đáng yêu mà vẫn giữ đc vẻ cá tính của trẻ.',
                 'price' => 140000,
                 'categoryId' => 1
             ],
@@ -75,15 +75,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 8,
                 'name' => 'Set bộ đẹp',
                 'image' => 'https://www.dhresource.com/0x0s/f2-albu-g4-M01-01-19-rBVaEVc1ehyALVQrAAEHafWVHEg873.jpg/blue-jeans-menina-babados-folha-de-l-tus.jpg',
-                'description' => 'Chất vải: Bò; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Họa tiết: Trơn; 2 màu: Xanh đậm và Xanh nhạt',
+                'description' => 'Chất vải: Vải bò.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Họa tiết: Trơn.<br> 2 màu: Xanh đậm và Xanh nhạt',
                 'price' => 135000,
                 'categoryId' => 1
             ],
             [
                 'id' => 9,
                 'name' => 'Váy baby ',
-                'image' => 'http://fashionalization.com/i/2016/02/collar-long-sleeves-knee-length-casual-kids-dresses.jpg',
-                'description' => 'Chất vải: Thun; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Tay dài.',
+                'image' => 'https://ae01.alicdn.com/kf/HTB1GigjLXXXXXcZXXXXq6xXFXXXP/New-2018-Baby-Girls-Dress-Cotton-Knit-Crochet-Baby-Girl-Romper-Kids-Seven-Sleeve-Jumpsuit-Infant.jpg_640x640.jpg',
+                'description' => 'Chất vải: Thun.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Độ dài tay: Tay dài.',
                 'price' => 100000,
                 'categoryId' => 1
             ],
@@ -91,7 +91,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 10,
                 'name' => 'Quần jean D167',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1rf0vHVXXXXcLXVXXq6xXFXXXX/Trend-Europe-style-Special-design-girls-clothing-sets-fashion-letters-white-T-shirt-hole-trousers-2PCS.jpg',
-                'description' => 'Chất liệu : jeans có độ co giãn; Phù hợp vs lứa tuổi từ 3 đến 6 tuổi.',
+                'description' => 'Chất liệu : jeans có độ co giãn.<br> Phù hợp vs lứa tuổi từ 3 đến 6 tuổi.<br>Phong cách: Dễ thương.',
                 'price' => 210000,
                 'categoryId' => 1
             ],
@@ -99,7 +99,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 11,
                 'name' => 'Váy bò thêu AKN4175',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1OJHwRFXXXXalapXXq6xXFXXX0/Fashion-Trends-Girls-Set-Summer-2017-Casual-Stylish-Kids-Girl-Clothing-Suits-Children-s-Roses-Cowboy.jpg_640x640.jpg',
-                'description' => 'Kích Thước: S, M; Chất vải: Bò; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Họa tiết: Trơn; 2 màu: Xanh đậm và Xanh nhạt',
+                'description' => 'Kích Thước: S, M.<br> Chất vải: Vải bò.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Họa tiết: Trơn.<br> 2 màu: Xanh đậm và Xanh nhạt',
                 'price' => 199000,
                 'categoryId' => 1
             ],
@@ -107,7 +107,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 12,
                 'name' => 'Sơ mi ',
                 'image' => 'https://www.dhresource.com/0x0s/f2-albu-g3-M00-5C-E1-rBVaHVbtH7CACeblAAHuakRiefY251.jpg/new-fashion-girls-sets-crian-as-lace-oriente.jpg',
-                'description' => 'Kích Thước: S, M; Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
+                'description' => 'Kích Thước: S, M.<br> Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
                 'price' => 125000,
                 'categoryId' => 1
             ],
@@ -115,15 +115,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 13,
                 'name' => 'Summer Short ',
                 'image' => 'https://ae01.alicdn.com/kf/HTB1YmweQpXXXXaIapXXq6xXFXXXf/4-15-Years-Girls-Summer-Shorts-Set-Shirt-Pants-Denim-Jeans-Cowboy-Clothes-Girls-Clothing-Sets.jpg',
-                'description' => 'Kích Thước: S, M; Chất vải: mền, mỏng, nhẹ tạo sự thoải mái; Kiểu dáng: Dễ thương',
+                'description' => 'Kích Thước: S, M.<br> Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.<br> Kiểu dáng: Dễ thương',
                 'price' => 190000,
                 'categoryId' => 1
             ],
             [
                 'id' => 14,
                 'name' => 'Váy len cao cấp',
-                'image' => 'https://s-media-cache-ak0.pinimg.com/originals/59/d2/61/59d261fcaef302683a1d31818ef354a6.jpg',
-                'description' => 'Chất liệu : len cao cấp; Váy: kiểu dáng bồng bềnh, xòe; Tay áo : Dài; Độ dài váy: Ngang gối',
+                'image' => 'https://ae01.alicdn.com/kf/HTB1e8grHVXXXXaPXFXXq6xXFXXXg/2014-m-i-tr-em-qu-n-o-tr-em-m-a-thu-v-m-a.jpg_640x640.jpg',
+                'description' => 'Chất liệu : len cao cấp.<br> Váy: kiểu dáng bồng bềnh, xòe.<br> Tay áo : Dài.<br> Độ dài váy: Ngang gối',
                 'price' => 120000,
                 'categoryId' => 1
             ],
@@ -131,15 +131,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 15,
                 'name' => 'Váy kẻ caro',
                 'image' => 'https://s-media-cache-ak0.pinimg.com/736x/56/df/8d/56df8d063226d534286ac4f8fff51d70--girls-party-dresses-baby-girl-dresses.jpg',
-                'description' => 'Váy xòe, 2 màu: Đỏ, Trắng; Chất liệu: Vải trơn; Chất vải: nhẹ; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn.',
+                'description' => 'Váy xòe, 2 màu: Đỏ, Trắng.<br> Chất liệu: Vải trơn.<br> Chất vải: nhẹ.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.',
                 'price' => 110000,
                 'categoryId' => 1
             ],
             [
                 'id' => 16,
                 'name' => 'Váy kẻ thêu ngực',
-                'image' => 'http://www.kenhshare.com/image/cache/catalog/san-pham/dam-thun/0CB80756-68E2-4F15-B8CA-B2AE4B258259-400x400.jpeg',
-                'description' => 'Chất vải: nhẹ; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Độ dài váy: ngang đùi.',
+                'image' => 'http://shopmebau.vn/wp-content/uploads/13-14.jpg',
+                'description' => 'Chất vải: nhẹ.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Độ dài váy: ngang đùi.',
                 'price' => 156700,
                 'categoryId' => 2
             ],
@@ -147,7 +147,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 17,
                 'name' => 'Yếm bò trơn YBT01',
                 'image' => 'http://www.kenhshare.com/image/cache/catalog/san-pham/dam-thun/yem-bo-tron-400x400.jpg',
-                'description' => 'Chất liệu : jeans có độ co giãn; Freesize : <55kg; Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm',
+                'description' => 'Chất liệu : jeans có độ co giãn.<br> Freesize : <55kg.<br> Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm.',
                 'price' => 190000,
                 'categoryId' => 2
             ],
@@ -155,7 +155,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 18,
                 'name' => 'Áo khoác nữ AKN4175',
                 'image' => 'http://www.kenhshare.com/image/cache/catalog/san-pham/ao-khoac-nu/ao-khoac-nu-AKN4175-12-400x400.jpg',
-                'description' => 'Kích Thước: S, M; Áo khoác nữ , áo khoác nữ, áo kiểu nữ, áo nữ; Bảo hành sản phẩm',
+                'description' => 'Kích Thước: S, M.<br> Áo khoác nữ , áo khoác nữ, áo kiểu nữ, áo nữ.<br> Bảo hành sản phẩm.',
                 'price' => 199000,
                 'categoryId' => 2
             ],
@@ -163,7 +163,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 19,
                 'name' => 'Yếm jean váy D751',
                 'image' => 'http://aloshoping.com/wp-content/uploads/2017/10/dlh.jpg',
-                'description' => 'Chất liệu : jeans có độ co giãn; Freesize : <55kg; Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm',
+                'description' => 'Chất liệu : jeans có độ co giãn.<br> Freesize : <55kg.<br> Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm.',
                 'price' => 210000,
                 'categoryId' => 2
             ],
@@ -171,47 +171,47 @@ class ProductsTableSeeder extends Seeder
                 'id' => 20,
                 'name' => 'Set bộ đẹp',
                 'image' => 'https://media3.scdn.vn/img2/2017/11_14/set-bo-thoi-trang-nu-kieu-sa-1m4G3-6SsNdT_simg_d0daf0_800x1200_max.jpg',
-                'description' => 'Chất vải: Cát; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Họa tiết: Trơn; Chiều dài tay áo: Tay ngắn; Chiều dài áo: Qua rốn',
+                'description' => 'Chất vải: Cát.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Họa tiết: Trơn.<br> Chiều dài tay áo: Tay ngắn.<br> Chiều dài áo: Qua rốn.',
                 'price' => 135000,
                 'categoryId' => 2
             ],
             [
                 'id' => 21,
                 'name' => 'Váy HAYDEN',
-                'image' => 'https://cdn.shopify.com/s/files/1/2151/0019/products/product-image-390022576_2000x.jpg?v=1518376660',
-                'description' => 'Chất vải: Cát; Phong cách: Dễ thương; Kiểu cổ áo: Cổ tròn; Họa tiết: Thêu tay thủ công; 2 màu: Trắng, đỏ.',
+                'image' => 'https://ae01.alicdn.com/kf/HTB1NFCCRVXXXXcKapXXq6xXFXXXr/HAYDEN-G-i-i-M-Tr-m-u-o-V-y-M-u-X-m-H.jpg_640x640.jpg',
+                'description' => 'Chất vải: Cát.<br> Phong cách: Dễ thương.<br> Kiểu cổ áo: Cổ tròn.<br> Họa tiết: Thêu tay thủ công.<br> 2 màu: Trắng, đỏ.',
                 'price' => 124000,
                 'categoryId' => 2
             ],
             [
                 'id' => 22,
                 'name' => 'Đầm kẻ caro Hàn Quốc',
-                'image' => 'https://i.pinimg.com/originals/66/da/c7/66dac7495bb308e8b516f3efaf62fec5.jpg',
-                'description' => 'Chát vải: Cotton; Kiểu dáng: Dây áo nhỏ, cổ tim; Độ dài váy: Ngang gối; Thích hợp khi phối đồ với các phụ kiện.',
+                'image' => 'https://media3.scdn.vn/img2/2018/4_24/8SPyOc_simg_ab1f47_350x350_maxb.jpg',
+                'description' => 'Chát vải: Cotton.<br> Kiểu dáng: Dây áo nhỏ, cổ tim; Độ dài váy: Ngang gối.<br> Thích hợp khi phối đồ với các phụ kiện.',
                 'price' => 110000,
                 'categoryId' => 2
             ],
             [
                 'id' => 23,
                 'name' => 'Váy suông',
-                'image' => 'https://media-spiceee.net/uploads/content/image/1930597/large_d6e07cff-ac77-4bdb-936a-08f9b64c4ef9.jpg',
-                'description' => 'Chát vải: Cotton; Kiểu dáng: suông, trơn; Độ dài váy: Ngang gối; Thích hợp khi phối đồ với các phụ kiện.',
+                'image' => 'https://scdn.thitruongsi.com/image/cached/size/w800-h0/img/product/2018/01/10/15761680-f5d1-11e7-940f-bdc8ee3a6981.jpg',
+                'description' => 'Chát vải: Cotton.<br> Kiểu dáng: suông, trơn.<br> Độ dài váy: Ngang gối.<br> Thích hợp khi phối đồ với các phụ kiện.',
                 'price' => 150000,
                 'categoryId' => 2
             ],
             [
                 'id' => 24,
                 'name' => 'Váy thể thao',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnbc6PTE3PxNz7ZDkyQGdJirhpSvOcpSpWhdmT6CDS-bOKLkRrcA',
-                'description' => 'Chất liệu: mong nhẹ; Kiểu dáng: Dễ thương, Tạo sự khỏe khoắn cho người mặc; Size: S,SL,M,L. ',
+                'image' => 'https://tea-4.lozi.vn/v1/images/resized/dam-soc-1461079721-276835-1464972590?w=480&type=o',
+                'description' => 'Chất liệu: mong nhẹ.<br> Kiểu dáng: Dễ thương, tạo sự khỏe khoắn cho người mặc.<br> Size: S,SL,M,L. ',
                 'price' => 156000,
                 'categoryId' => 2
             ],
             [
                 'id' => 25,
                 'name' => 'Yếm bò',
-                'image' => 'https://cdn.hommeg.com/teen-girl-outfit-zoom-on-autumn-winter-trends-2017-2018/look-trendy-girl-teen-denim-held-trend.jpg',
-                'description' => 'Chất liệu : jeans có độ co giãn; Freesize : <55kg; Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm',
+                'image' => 'http://img1.baza.vn/upload/products-var-p6j1LhjZ/jeNa7VX6.jpg?v=635750783613152730',
+                'description' => 'Chất liệu : jeans có độ co giãn.<br> Freesize : <55kg.<br> Thông tin sản phẩm :  eo 80cm, mông 90cm, dài 89cm',
                 'price' => 210000,
                 'categoryId' => 2
             ],
@@ -219,7 +219,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 26,
                 'name' => 'Áo len ',
                 'image' => 'https://media3.scdn.vn/img2/2017/10_11/ao-len-nu-tre-trung-1m4G3-WyoW9Y_simg_fd6fef_697-697-0-0_cropf_simg_ab1f47_350x350_maxb.png',
-                'description' => 'Chất liệu : Vải len; 2 màu: Nâu, Xám; Kiểu dáng: Trẻ trung phù hợp với nhiều bạn trẻ.',
+                'description' => 'Chất liệu : Vải len.<br> 2 màu: Nâu, Xám.<br> Kiểu dáng: Trẻ trung phù hợp với nhiều bạn trẻ.',
                 'price' => 170000,
                 'categoryId' => 2
             ],
@@ -227,7 +227,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 27,
                 'name' => 'Yếm quần vải',
                 'image' => 'https://sc02.alicdn.com/kf/HTB17_5jQVXXXXXEXFXX760XFXXXZ/Thailand-Clothes-Modern-Fashion-Kids-Wear-Summer.png_350x350.png',
-                'description' => 'Nơi xuất xứ: Zhejiang, China (Mainland); Vải Loại: Lanh; kích thước: 100-110-120-130-140; tay áo: không tay.',
+                'description' => 'Nơi xuất xứ: Zhejiang, China (Mainland).<br> Vải Loại: Lanh.<br> kích thước: 100-110-120-130-140.<br> tay áo: không tay.',
                 'price' => 199000,
                 'categoryId' => 2
             ],
@@ -235,15 +235,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 28,
                 'name' => 'Áo tay xòe',
                 'image' => 'https://ae01.alicdn.com/kf/HTB10w0TnZnI8KJjSsziq6z8QpXaM/2018-Spring-Summer-Fashion-Child-Clothing-Toddler-Teen-Girl-Blouse-White-Kids-Ruffles-Girls-Blouses-Shirts.jpg_640x640.jpg',
-                'description' => 'Kích Thước: S, M; Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
+                'description' => 'Kích Thước: S, M.<br> Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
                 'price' => 123000,
                 'categoryId' => 2
             ],
             [
                 'id' => 29,
                 'name' => 'Váy suông AHY',
-                'image' => 'https://sakurafashion.vn/upload/sanpham/4282-top-10-shop-thoi-trang-danh-cho-teen-o-thanh-pho-ho-chi-minh-1.jpg',
-                'description' => 'Chất liệu: vải cái len; Kiểu dáng: đầm suông; Màu sắc: xanh đen; Kích thước: size S, M, L, XL, XXL; Thích hợp: đi làm, dự tiệc, dạo phố,..',
+                'image' => 'http://media3.scdn.vn/img2/2017/8_24/hBZzJP_simg_d0daf0_800x1200_max.jpg',
+                'description' => 'Chất liệu: vải cái len.<br> Kiểu dáng: đầm suông.<br> Màu sắc: xanh đen.<br> Kích thước: size S, M, L, XL, XXL.<br> Thích hợp: đi làm, dự tiệc, dạo phố,..',
                 'price' => 135000,
                 'categoryId' => 2
             ],
@@ -251,7 +251,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 30,
                 'name' => ' Áo khoác Hoodie OFFWHITE 3 ',
                 'image' => 'http://www.gaugaushop.com/plugins/responsive_filemanager/source/san%20pham/AoKhoacNu/GAK482/ao-hoodie-taigau-dep.jpg',
-                'description' => 'Chất liệu: Thun; Kiểu dáng: Dáng rộng.',
+                'description' => 'Chất liệu: Thun.<br> Kiểu dáng: Dáng rộng.<br>Thích hợp: đi làm, dự tiệc, dạo phố,....<br> Dễ dàng kết hợp với nhiều loại phụ kiện',
                 'price' => 149000,
                 'categoryId' => 2
             ],
@@ -259,7 +259,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 31,
                 'name' => 'Đầm suông công sở',
                 'image' => 'https://vn-test-11.slatic.net/p/7/dam-suong-cong-so-nu-hot-2830-02448693-77de500fde9f95a40519410e512d13e4-product.jpg',
-                'description' => 'Chất liệu: vải cái len; Kiểu dáng: đầm suông; Màu sắc: xanh đen; Kích thước: size S, M, L, XL, XXL; Thích hợp: đi làm, dự tiệc, dạo phố,....; Dễ dàng kết hợp với nhiều loại phụ kiện',
+                'description' => 'Chất liệu: vải cái len.<br> Kiểu dáng: đầm suông.<br> Màu sắc: xanh đen.<br> Kích thước: size S, M, L, XL, XXL.<br> Thích hợp: đi làm, dự tiệc, dạo phố,....<br> Dễ dàng kết hợp với nhiều loại phụ kiện.',
                 'price' => 230000,
                 'categoryId' => 3
             ],
@@ -267,15 +267,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 32,
                 'name' => 'Sơ mi nữ',
                 'image' => 'http://www.kenhshare.com/image/cache/catalog/san-pham/thoi-trang-nu/8TR4BC890Y-avt-400x400.jpg',
-                'description' => 'Kích Thước: S, M; Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
+                'description' => 'Kích Thước: S, M.<br> Chất vải: mền, mỏng, nhẹ tạo sự thoải mái.',
                 'price' => 125000,
                 'categoryId' => 3
             ],
             [
                 'id' => 33,
                 'name' => 'Áo nữ thời trang',
-                'image' => 'https://tea-2.lozi.vn/v1/images/resized/ao-somi-nu-thoi-trang-1501728552-1-3557951-1502502109?w=480&type=s',
-                'description' => 'Áo voan cổ V tay dài cô gái (hàng cực đẹp); Chất liệu:Voan cao cấp, dày dặn, rất đẹp; Kiểu dáng :giống hình 100%',
+                'image' => 'https://shopkhoinghiep.com/wp-content/uploads/2016/06/AO-NU-THOI-TRANG-QUAN-AO-NU-GIA-SI-BO-SI-QUAN-AO-NU-AO-THUN-NU-DEP97-5.jpg',
+                'description' => 'Áo voan cổ V tay dài cô gái (hàng cực đẹp).<br> Chất liệu:Voan cao cấp, dày dặn, rất đẹp.<br> Kiểu dáng :giống hình 100%.',
                 'price' => 140000,
                 'categoryId' => 3
             ],
@@ -283,7 +283,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 34,
                 'name' => 'Quần jean nữ',
                 'image' => 'http://thoitrangchuyensi.com/uploads/shops/2015_11/quan-jean-nu-gia-si-f784-2.jpg',
-                'description' => 'Thiết kế với ưu điểm tôn dáng, giúp bạn gái khéo léo khoe đôi chân dài thon gọn và đường cong hoàn hảo; Quần được may từ chất liệu jean co giãn linh hoạt, tạo cảm giác dễ chịu khi di chuyển, vận động.',
+                'description' => 'Thiết kế với ưu điểm tôn dáng, giúp bạn gái khéo léo khoe đôi chân dài thon gọn và đường cong hoàn hảo.<br> Quần được may từ chất liệu jean co giãn linh hoạt, tạo cảm giác dễ chịu khi di chuyển, vận động.',
                 'price' => 340000,
                 'categoryId' => 3
             ],
@@ -291,7 +291,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 35,
                 'name' => 'Đầm voan ALISA 14',
                 'image' => 'https://media3.scdn.vn/img2/2017/12_16/qUPk9L_simg_b5529c_250x250_maxb.jpg',
-                'description' => 'Chất liệu voan cao cấp 2 lớp mềm mại, tạo cảm giác bay bổng cho quý bà;  Không bám bụi, dễ giặt, nhanh khô. Chất vải voan cũng ít bị phai màu, ít bị nhăn nên trông luôn mới và mới rất lâu.)',
+                'description' => 'Chất liệu voan cao cấp 2 lớp mềm mại, tạo cảm giác bay bổng cho quý bà.<br>  Không bám bụi, dễ giặt, nhanh khô. Chất vải voan cũng ít bị phai màu, ít bị nhăn nên trông luôn mới và mới rất lâu.)',
                 'price' => 690000,
                 'categoryId' => 3
             ],
@@ -299,7 +299,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 36,
                 'name' => 'Đầm suông công sở',
                 'image' => 'https://vn-test-11.slatic.net/p/7/dam-suong-cong-so-nu-hot-2830-02448693-77de500fde9f95a40519410e512d13e4-product.jpg',
-                'description' => 'Chất liệu: vải cái len; Kiểu dáng: đầm suông; Màu sắc: xanh đen; Kích thước: size S, M, L, XL, XXL; Thích hợp: đi làm, dự tiệc, dạo phố,....; Dễ dàng kết hợp với nhiều loại phụ kiện',
+                'description' => 'Chất liệu: vải cái len.<br> Kiểu dáng: đầm suông.<br> Màu sắc: xanh đen.<br> Kích thước: size S, M, L, XL, XXL.<br> Thích hợp: đi làm, dự tiệc, dạo phố,....<br> Dễ dàng kết hợp với nhiều loại phụ kiện',
                 'price' => 230000,
                 'categoryId' => 3
             ],
@@ -307,15 +307,15 @@ class ProductsTableSeeder extends Seeder
                 'id' => 37,
                 'name' => 'Đầm xòa gấm thêu hoa',
                 'image' => 'https://media3.scdn.vn/img2/2017/12_16/qUPk9L_simg_b5529c_250x250_maxb.jpg',
-                'description' => 'Chất vải: Gấm; Chiều dài tay áo: Không tay; Chiều dài váy: Ngang gối; Dáng váy: Xòe tròn; Họa tiết: Hoa lá; Kiểu cổ áo: Cổ tròn; Phong cách: Lịch sự.',
+                'description' => 'Chất vải: Gấm.<br> Chiều dài tay áo: Không tay.<br> Chiều dài váy: Ngang gối.<br> Dáng váy: Xòe tròn.<br> Họa tiết: Hoa lá.<br> Kiểu cổ áo: Cổ tròn.<br> Phong cách: Lịch sự.',
                 'price' => 210000,
                 'categoryId' => 3
             ],
             [
                 'id' => 38,
-                'name' => 'Studs dài tay',
-                'image' => 'https://media3.scdn.vn/img2/2017/12_16/qUPk9L_simg_b5529c_250x250_maxb.jpg',
-                'description' => 'Điều kiện: 100% thương hiệu mới, chưa sử dụng, chưa dùng, hạng mục chất lượng cao; Mô hình: Plain; Hoàn hảo cho tất cả các dịp; Loại cổ áo: Cao cổ tròn phong cách; Tay áo: Dài tay áo; Trang trí: Studs / tương phản dòng trên áo và tay áo; Nút đóng lại; Vải voan dày; Màu: Đỏ / Trắng / Hải Quân / hồng nude',
+                'name' => 'Váy tay dài',
+                'image' => 'http://damvaydep.net/image/dam-xoe-co-so-mi-tay-dai-cuc-cute-29024j.jpg',
+                'description' => 'Điều kiện: 100% thương hiệu mới, chưa sử dụng, chưa dùng, hạng mục chất lượng cao.<br> Mô hình: Plain.<br> Hoàn hảo cho tất cả các dịp.<br> Loại cổ áo: Cao cổ tròn phong cách.<br> Tay áo: Dài tay áo.<br> Trang trí: Studs / tương phản dòng trên áo và tay áo.<br> Nút đóng lại;].<br> Vải voan dày.<br> Màu: Đỏ / Trắng / Hải Quân / hồng nude',
                 'price' => 120000,
                 'categoryId' => 3
             ],
@@ -323,7 +323,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 39,
                 'name' => ' Office Uniform',
                 'image' => 'https://www.dhresource.com/600x600/f2/albu/g5/M00/AA/09/rBVaI1iscH6AfDd1AAHNNcA4QcQ096.jpg',
-                'description' => 'Phụ nữ xinh đẹp thời trang kinh doanh blazer pant thiết kế thiết lập, một nút, dài tay áo, túi, thiết kế lớp eo, kích thước từ S đến 3XL để lựa chọn, thời trang thanh lịch cho phụ nữ mặc văn phòng.',
+                'description' => 'Phụ nữ xinh đẹp thời trang kinh doanh blazer pant thiết kế<br> thiết lập, một nút, dài tay áo, túi, thiết kế lớp eo, kích thước từ <br>S đến 3XL để lựa chọn, thời trang thanh lịch cho phụ nữ mặc văn phòng.',
                 'price' => 160000,
                 'categoryId' => 3
             ],
@@ -331,7 +331,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 40,
                 'name' => 'Hem Dress',
                 'image' => 'https://www.dhresource.com/0x0s/f2-albu-g5-M00-C2-60-rBVaI1j0lcqAMTkBAAGELzqmXF8896.jpg/sexy-charming-red-bateau-neck-vestidos-de.jpg',
-                'description' => 'Tạo một bước ngoặt hiện đại với chiếc váy lilac bước hem không đối xứng này. Sản xuất tại Anh, bởi Boutique. 100% Viscose. Máy giặt.',
+                'description' => 'Tạo một bước ngoặt hiện đại với chiếc váy lilac bước hem không đối xứng này.<br> Sản xuất tại Anh, bởi Boutique. 100% Viscose. Máy giặt.',
                 'price' => 350000,
                 'categoryId' => 3
             ],
@@ -339,14 +339,14 @@ class ProductsTableSeeder extends Seeder
                 'id' => 41,
                 'name' => 'Spot Plisse Slip Dress',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJHozwtHPNcC6d8WjASVX5EoHdVayJHfJ9rvGlEANxam9JSHN8',
-                'description' => 'Đi cho một cái nhìn cực kỳ nữ tính, slinky với váy ren chèn phong cách của chúng tôi. Thiết kế plisse của chúng tôi với tất cả các điểm in hoạt động tốt theo kiểu với dép cho một cái nhìn hiện đại. 100% Polyester. Máy giặt.',
+                'description' => 'Đi cho một cái nhìn cực kỳ nữ tính,<br> slinky với váy ren chèn phong cách của chúng tôi. <br>Thiết kế plisse của chúng tôi với tất cả các điểm in hoạt động tốt <br>theo kiểu với dép cho một cái nhìn hiện đại. 100% Polyester. Máy giặt.',
                 'price' => 320000,
                 'categoryId' => 3
             ],
             [
                 'id' => 42,
                 'name' => 'Đầm suông kẻ',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJHozwtHPNcC6d8WjASVX5EoHdVayJHfJ9rvGlEANxam9JSHN8',
+                'image' => 'http://resources2.nhommua.com/Product/98000/cm_b98269.jpg',
                 'description' => 'Với một cảm giác thoải mái thư giãn, chiếc áo sơ mi mini in hình chiếc áo pyjama này có một cái nhìn cực kỳ sang trọng. 100% Viscose.',
                 'price' => 134000,
                 'categoryId' => 3
@@ -363,7 +363,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 44,
                 'name' => 'Áo Sơ Mi Văn Phòng Femme',
                 'image' => 'https://i1.wp.com/www.shopperbeam.com/wp-content/uploads/2018/01/2018-New-Arrival-Women-Blouse-Autumn-Work-Wear-Office-Shirts-Femme-V-neck-Long-Sleeve-Ladies-2.jpg?fit=800%2C800&ssl=1',
-                'description' => 'Chiều dài tay áo (cm): Đầy đủ; Phong cách: Casual; Loại mô hình: Sọc; Cổ áo: V-Neck; Nhãn hiệu; Tên: INWPLLR; Loại vải: Broadcloth; Chất liệu: Cotton, Polyester; Trang trí: Không; Chiều dài quần áo: Regular',
+                'description' => 'Chiều dài tay áo (cm): Đầy đủ.<br> Phong cách: Casual.<br> Loại mô hình: Sọc.<br> Cổ áo: V-Neck; Nhãn hiệu; Tên: INWPLLR.<br> Loại vải: Broadcloth.<br> Chất liệu: Cotton, Polyester.<br> Trang trí: Không.<br> Chiều dài quần áo: Regular',
                 'price' => 210000,
                 'categoryId' => 3
             ],
