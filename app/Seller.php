@@ -22,8 +22,5 @@ class Seller extends Model
         }
         return sprintf('%s (vnd)', number_format($this->price, 0));
     }
-    public function getDiscountPriceAttribute()
-    {
-        return $this->price - ($this->price * $this->discount / 100);
-    }
+   
 }
