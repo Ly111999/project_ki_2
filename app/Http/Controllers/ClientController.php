@@ -75,4 +75,48 @@ class ClientController extends Controller
             ->with('selected_categoryId', $selected_categoryId)
             ->with('list_product', $list_product);
     }
+
+    public function showProductDetail($id)
+    {
+        $categories = Category::all();
+        $selected_categoryId = 1;
+        $selected_category = Category::find($selected_categoryId);
+
+        $product = Product::find($id);
+
+        if ($product == null) {
+            return view('errors.404');
+        }
+        return view('home.pro-detail')
+            ->with('obj_view', $product)
+            ->with('selected_categoryId', $selected_categoryId)
+            ->with('selected_category', $selected_category)
+            ->with('categories', $categories)
+            ->with([
+                    "list_Product" => Seller::all()
+                ]
+            );
+    }
+
+    public function showProductSeller($id)
+    {
+        $categories = Category::all();
+        $selected_categoryId = 1;
+        $selected_category = Category::find($selected_categoryId);
+
+        $product = Seller::find($id);
+
+        if ($product == null) {
+            return view('errors.404');
+        }
+        return view('home.pro-detail')
+            ->with('obj_view', $product)
+            ->with('selected_categoryId', $selected_categoryId)
+            ->with('selected_category', $selected_category)
+            ->with('categories', $categories)
+            ->with([
+                    "list_Product" => Seller::all()
+                ]
+            );
+    }
 }

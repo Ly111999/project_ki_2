@@ -26,3 +26,6 @@ Route::get('/home', 'ClientController@home');
 Route::get('/contact', 'ClientController@contact');
 
 Route::get('/product','ClientController@listProduct');
+Route::get('/product/{id}', 'ClientController@showProductDetail');
+Route::get('/product/sell/{id}', 'ClientController@showProductSeller');
+
