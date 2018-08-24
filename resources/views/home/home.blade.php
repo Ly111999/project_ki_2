@@ -59,7 +59,7 @@
                     <div class="main_slider_content">
                         <h6>Spring / Áo khoác nữ AKN4175 (2018)</h6>
                         <h1>Get up to 20% Off New Arrivals</h1>
-                        <div class="red_button shop_now_button"><a href="/home/product/18">shop now</a></div>
+                        <div class="red_button shop_now_button"><a href="/product/18">shop now</a></div>
                     </div>
                 </div>
             </div>
@@ -143,12 +143,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top: -20px">
                     <div class="col">
                         <div class="product-grid"
                              data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
                             @foreach($listProduct as $key => $productWithCategory)
-                                @if($loop->index == 15)
+                                @if($loop->index == 10)
 
                                     @break;
                                 @endif
@@ -242,11 +242,19 @@
                 <div class="row">
                     <div class="col text-center">
                         <div class="section_title new_arrivals_title">
-                            <h2>Best Sellers</h2>
+                            <h2>Featured products</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row align-items-center">
+                    <div class="col text-center">
+                        <div class="new_arrivals_sorting">
+                            <p>We love to tell our successful far far away, behind the word mountains, far from the<br>
+                                countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: -20px">
                     <div class="col">
                         <div class="product_slider_container">
                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">

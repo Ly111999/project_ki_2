@@ -278,7 +278,7 @@ class ProductsTableSeeder extends Seeder
             ],
             [
                 'id' => 30,
-                'name' => ' Áo khoác Hoodie OFFWHITE 3 ',
+                'name' => ' Áo khoác Hoodie ',
                 'image' => 'http://www.gaugaushop.com/plugins/responsive_filemanager/source/san%20pham/AoKhoacNu/GAK482/ao-hoodie-taigau-dep.jpg',
                 'description' => 'Chất liệu: Thun.<br> Kiểu dáng: Dáng rộng.<br>Thích hợp: đi làm, dự tiệc, dạo phố,....<br> Dễ dàng kết hợp với nhiều loại phụ kiện',
                 'price' => 149000,
