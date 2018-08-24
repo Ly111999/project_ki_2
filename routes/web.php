@@ -19,5 +19,5 @@ Route::resource('admin/product', 'ProductController');
 
 Route::resource('admin/category', 'CategoryController');
 
-
+Route::get('/admin/product/{id}','ProductController@destroy');
 // CLIENT
