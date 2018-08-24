@@ -58,7 +58,7 @@
                                         <td class="col-md-2">{{$item->name}}</td>
                                         <td class="col-md-2">
                                             <div>
-                                                <img src="{{$item->image}}" alt="" style="width: 150px">
+                                                <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px;">
                                             </div>
                                         </td>
                                         <td class="col-md-1">{{$item->price}}</td>
@@ -105,7 +105,6 @@
                             </div>
                         @endif
                     </div>
-
                 </div>
             </div>
         </div>

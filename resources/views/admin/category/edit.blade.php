@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('views.admin.layout.default')
 
 @section('content')
     <div class="section__content section__content--p30">
@@ -33,7 +33,7 @@
                             <div class="clearfix"></div>
                             <input type="text" name="image" value="{{$obj_view -> image}}" class="form-control w-75">
                             <div>
-                                <img src="{{$obj_view -> image}}" alt="" style="width: 150px">
+                                <img src="{{$obj_view -> image}}" alt="" style="width: 200px; height: 200px;">
                             </div>
                         </div>
                         <div>

@@ -21,3 +21,7 @@ Route::resource('admin/category', 'CategoryController');
 
 Route::get('/admin/product/{id}','ProductController@destroy');
 // CLIENT
+
+Route::get('/home', 'ClientController@home');
+Route::get('/contact', 'ClientController@contact');
+
