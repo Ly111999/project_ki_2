@@ -8,15 +8,12 @@
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/animate.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('app/app.css')}}">
 
 {{--<--home-->--}}
-<link rel="stylesheet" type="text/css" href="{{asset('app/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/responsive.css')}}">
 
 {{--<--category-->--}}
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('app/styles/categories_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/categories_responsive.css')}}">
 
 {{--<--single-->--}}
@@ -27,4 +24,9 @@
 {{--<--contact us-->--}}
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/contact_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/contact_responsive.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('app/styles/main_styles.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('app/styles/categories_styles.css')}}">
+
 

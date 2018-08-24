@@ -46,7 +46,7 @@ class ClientController extends Controller
     public function listProduct()
     {
         $categories = Category::all();
-        $limit = 10;
+        $limit = 12;
         $selected_categoryId = 0;
         $start_price = 0;
         $end_price = 3000000;

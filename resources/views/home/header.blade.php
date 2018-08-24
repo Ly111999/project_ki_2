@@ -60,7 +60,7 @@
                                 <ul class="category_selection">
                                     @foreach($categories as $category)
                                         <li>
-                                            <a href="/home/categories/{{$category->id}}">{{$category->name}}</a>
+                                            <a href="/product?categoryId={{$category -> id}}">{{$category->name}}</a>
                                         </li>
                                     @endforeach
                                 </ul>

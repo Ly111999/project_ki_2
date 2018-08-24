@@ -11,7 +11,7 @@
                     <ul>
                         <li><a href="/home">Home</a></li>
                         <li class="active"><a href="/product?categoryId={{$selected_category -> id}}"><i
-                                        class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
+                                    class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
                     </ul>
                 </div>
@@ -25,7 +25,7 @@
                         </div>
                         <ul class="sidebar_categories">
                             <li value="0" class="{{$selected_categoryId==0?'active':''}}"><a
-                                        href="/product?categoryId=0"><i class="fa fa-angle-double-right"></i> All
+                                    href="/product?categoryId=0"><i class="fa fa-angle-double-right"></i> All
                                     products</a></li>
                             @foreach($categories as $category)
                                 <li class="{{$category->id==$selected_categoryId?'active':''}}">
@@ -38,6 +38,7 @@
                             @endforeach
                         </ul>
                     </div>
+
                     <!-- Price Range Filtering -->
                     <div class="sidebar_section">
                         <form action="/product" method="GET">
@@ -56,6 +57,7 @@
                             <button class="filter_button" id="btn-filter-price"><span>filter</span></button>
                         </form>
                     </div>
+
 
                 </div>
 
@@ -117,11 +119,11 @@
                                                     </div>
                                                     <div class="favorite favorite_left"></div>
                                                     <div
-                                                            class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                                        class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
                                                         <span>-{{$item->discount}}%</span></div>
                                                     <div class="product_info mt-3">
                                                         <h6 class="product_name"><a
-                                                                    href="/home/product/{{$item -> id}}">{{$item->name}}</a>
+                                                                href="/home/product/{{$item -> id}}">{{$item->name}}</a>
                                                         </h6>
                                                         <div class="product_price">{{$item-> discountPriceString}}
                                                             <span>{{$item->originalPriceString}}</span>
@@ -129,8 +131,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div onclick="add(this)" id="{{$item -> id}}"
-                                                     class="red_button add_to_cart_button"><a href="#">add to
+                                                <div class="red_button add_to_cart_button"><a href="#">add to
                                                         cart</a></div>
                                             </div>
                                             {{--</div>--}}
@@ -146,7 +147,7 @@
                 <div class=" float-right mt-5 ">
                     {{$list_product->appends($_GET)->links()}}
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 
