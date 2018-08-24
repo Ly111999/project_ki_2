@@ -20,7 +20,6 @@
         </div>
 
         <!-- Map Container -->
-
         <div class="row">
             <div class="col">
                 <div id="google_map">
