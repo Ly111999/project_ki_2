@@ -33,4 +33,12 @@ class ClientController extends Controller
                 ]
             );
     }
+
+    public function contact()
+    {
+        $categories = Category::all();
+        return view('home.contact')
+            ->with('categories', $categories);
+
+    }
 }

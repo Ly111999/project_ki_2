@@ -23,5 +23,5 @@ Route::resource('admin/category', 'CategoryController');
 // CLIENT
 
 Route::get('/home', 'ClientController@home');
-
+Route::get('/contact', 'ClientController@contact');
 
