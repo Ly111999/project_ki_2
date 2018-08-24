@@ -141,53 +141,7 @@ class ProductController extends Controller
     }
 
 
-
-//HOME CUSTOMER
-
-    public function home()
-    {
-        $arr = [];
-        $products = Product::all();
-
-        foreach ($products as $key => $product) {
-            $productWithCategoryId =
-                [
-                    "categoryId" => $product->categoryId,
-                    "product" => $product
-                ];
-
-            array_push($arr, $productWithCategoryId);
-        }
-
-        if ($productWithCategoryId['categoryId'] == null || $productWithCategoryId['categoryId'] == 0) {
-            $obj = Product::orderBy('created_at', 'desc')->paginate(10);
-            return view('home.home')
-                ->with('list_obj', $obj)
-                ->with(
-                    [
-                        "listCategory" => Category::all(),
-                        "listProduct" => $arr,
-                        "obj_view" => $products
-                    ]
-                );
-        } else {
-            $obj = Product::where('categoryId', Input::get('categoryId'))->orderBy('created_at', 'desc')->paginate(10);
-            return view('home.home')
-                ->with('list_obj', $obj)
-                ->with(
-                    [
-                        "listCategory" => Category::all(),
-                        "listProduct" => $arr,
-                        "obj_view" => $products
-                    ]
-                );
-        }
-//        return view('home.home')->with([
-//                "listCategory" => Category::all(),
-//                "listProduct" => $arr,
-//                "obj_view" => $products
-//            ]
-//        );
-    }
-
 }
+
+
+

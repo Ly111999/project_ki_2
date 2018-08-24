@@ -65,12 +65,16 @@
                                         <td class="col-md-3">{{$item->description}}</td>
                                         <td class="col-md-2">
                                             <a href="/admin/product/{{$item -> id}}/edit">Edit</a>   
-                                            <a href="#/admin/product/{{$item -> id}}" id="{{$item -> id}}"
-                                               class="delete-obj">Delete</a>
+                                            <a href="{{$item->id}}" class="btn btn-simple btn-danger btn-icon remove btn-delete"><i class="material-icons">Delete</i></a>
+                                            {{--<div class="container">--}}
+                                                {{--<!-- Trigger the modal with a button -->--}}
+                                                {{--<a data-token="{{ csrf_token() }}" data-toggle="modal" data-target="#myModal" class="btn btn-simple btn-danger btn-icon remove delete_obj" href="#/admin/product/{{$item -> id}}" >Delete</a>--}}
+                                            {{--</div>--}}
                                         </td>
                                     </tr>
                                     </tbody>
                                 @endforeach
+
                             </table>
                             <div class="row">
                                 <div class="col-md-8 form-inline">
@@ -106,33 +110,79 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
-        $('.delete-obj').click(function () {
-            var id = this.id;
-            var user_confirm = confirm('Are you sure you want to delete this product? ');
-            if (user_confirm) {
+        $('.btn-delete').click(function () {
+            var thisButton = $(this);
+            swal({
+                text: "Bạn có chắc muốn xoá danh mục này không?",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                confirmButtonText: 'Đồng ý',
+                cancelButtonText: 'Huỷ bỏ',
+                buttonsStyling: false
+            }).then(function() {
+                var id = this.id;
                 $.ajax({
-                    url: 'http://127.0.0.1:8000/admin/product/' + id,
-                    method: 'DELETE',
-                    data: {
-                        '_token': "{{ csrf_token() }}"
+                    'url': '/admin/product/' + id,
+                    'method': 'DELETE',
+                    'data':{
+                        '_token':$('meta[name="csrf-token"]').attr('content')
                     },
-                    success: function () {
-                        alert('Deleted');
-                        alert('Success!');
-                        window.location.reload();
+                    success: function (response) {
+                        swal({
+                            text: 'Danh mục đã bị xoá.',
+                            type: 'success',
+                            confirmButtonClass: "btn btn-success",
+                            buttonsStyling: false
+                        })
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 2*1000);
                     },
                     error: function () {
-                        alert('Error.');
+                        swal({
+                            text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
+                            type: 'warning',
+                            confirmButtonClass: "btn btn-danger",
+                            buttonsStyling: false
+                        })
                     }
                 });
-            } else {
-                alert('!Okie');
-            }
-        });
+            });
+            return false;
+        })
     </script>
-    <script src="{{asset('js/myScript.js')}}"></script>
-@stop
 
+
+
+
+    <!-- Modal -->
+    {{--<div class="modal" id="myModal" style="margin-top: 100px">--}}
+        {{--<div class="modal-dialog">--}}
+            {{--<!-- Modal content-->--}}
+            {{--<div class="modal-content">--}}
+                {{--<div class="modal-header">--}}
+
+                    {{--<h4 class="modal-title " style="margin-right: 300px" > Delete</h4>--}}
+                    {{--<button type="button" class="close" data-dismiss="modal">&times;</button>--}}
+                {{--</div>--}}
+                {{--<div class="modal-body">--}}
+                    {{--<p class="text-center">--}}
+                        {{--Are you sure you want to delete this?--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                {{--<div class="modal-footer">--}}
+                    {{--<button href="#/admin/product/{{$item -> id}}" type="button" class="btn btn-default">Delete</button>--}}
+                    {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+
+        {{--</div>--}}
+    {{--</div>--}}
+
+@stop
 
 
