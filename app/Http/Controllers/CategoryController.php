@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $list_obj = Category::all();
-        return view('admin.category.list')->with('list_obj', $list_obj);
+        return view('adminMiddleware.category.list')->with('list_obj', $list_obj);
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('adminMiddleware.category.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $obj->image = Input::get('image');
         $obj->description = Input::get('description');
         $obj->save();
-        return redirect('/admin/category');
+        return redirect('/adminMiddleware/category');
     }
 
     /**
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         if($obj == null){
             return view('errors.404');
         }
-        return view('admin.category.edit')->with('obj_view', $obj);
+        return view('adminMiddleware.category.edit')->with('obj_view', $obj);
     }
 
     /**
@@ -91,7 +91,7 @@ class CategoryController extends Controller
         $obj->image = Input::get('image');
         $obj->description = Input::get('description');
         $obj->save();
-        return redirect('/admin/category');
+        return redirect('/adminMiddleware/category');
     }
 
     /**
