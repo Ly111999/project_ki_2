@@ -16,13 +16,10 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         if (auth()->check()) {
-            if (auth()->user()->adminLevle > 0) {
+            if (auth()->user()->adminLevel > 0) {
                 return $next($request);
             }
-//            else {
-//
-//            }
         }
-        return redirect()->guest('login');
+        return redirect()->guest('home');
     }
 }

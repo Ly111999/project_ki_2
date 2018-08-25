@@ -15,6 +15,7 @@
 
 Auth::routes();
 
+Route::get('/home', 'ClientController@home');
 Route::get('/', 'ClientController@home')->name('home');
 // ADMIN
 
