@@ -9,8 +9,8 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                        <li><a href="http://127.0.0.1:8000/product?categoryId={{$obj_view -> categoryId}}"><i
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="/product?categoryId={{$obj_view -> categoryId}}"><i
                                     class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
                         <li class="active"><a href="#"><i class="fa fa-angle-right"

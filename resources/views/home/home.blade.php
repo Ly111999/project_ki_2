@@ -26,7 +26,7 @@
                         <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                     </ul>
                 </li>
-                <li class="menu_item"><a href="/home">home</a></li>
+                <li class="menu_item"><a href="{{route('home')}}">home</a></li>
                 <li class="menu_item"><a href="#">Category</a><i class="fa fa-angle-down"></i>
                     <ul>
                         <li class="category">
@@ -52,7 +52,7 @@
 
     <!-- Slider -->
 
-    <div class="main_slider" style="background-image:url(image/slider_1.jpg)">
+    <div class="main_slider" style="background-image:url({{asset('image/slider_1.jpg')}})">
         <div class="container fill_height">
             <div class="row align-items-center fill_height">
                 <div class="col">
@@ -92,28 +92,28 @@
                 </div>
                 <div class="row" style="margin-top: 60px;">
                     <div class="col-md-3">
-                        <div class="banner_item align-items-center" style="background-image:url(image/banner_6.jpg)">
+                        <div class="banner_item align-items-center" style="background-image:url({{asset('image/banner_6.jpg')}})">
                             <div class="banner_category">
                                 <a href="/product?categoryId=1">kid's</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="banner_item align-items-center" style="background-image:url(image/banner_5.jpg)">
+                        <div class="banner_item align-items-center" style="background-image:url({{asset('image/banner_5.jpg')}})">
                             <div class="banner_category">
                                 <a href="/product?categoryId=2">teen's</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="banner_item align-items-center" style="background-image:url(image/baner_1.jpg)">
+                        <div class="banner_item align-items-center" style="background-image:url({{asset('image/baner_1.jpg')}})">
                             <div class="banner_category">
                                 <a href="/product?categoryId=3">office's</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="banner_item align-items-center" style="background-image:url(image/banner_2.jpg)">
+                        <div class="banner_item align-items-center" style="background-image:url({{asset('image/banner_2.jpg')}})">
                             <div class="banner_category">
                                 <a href="/product?categoryId=4">accessories's</a>
                             </div>
@@ -206,7 +206,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="deal_ofthe_week_img">
-                            <img src="image/deal_ofthe_week.png" alt="">
+                            <img src="{{asset('image/deal_ofthe_week.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 text-right deal_ofthe_week_col">
@@ -371,7 +371,7 @@
                 <div class="row blogs_container mt-5">
                     <div class="col-lg-4 blog_item_col">
                         <div class="blog_item">
-                            <div class="blog_background" style="background-image:url(image/blog_1.jpg)"></div>
+                            <div class="blog_background" style="background-image:url({{asset('image/blog_1.jpg')}})"></div>
                             <div
                                 class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                                 <h4 class="blog_title">Here are the trends I see coming this fall</h4>
@@ -384,7 +384,7 @@
                     </div>
                     <div class="col-lg-4 blog_item_col">
                         <div class="blog_item">
-                            <div class="blog_background" style="background-image:url(image/blog_2.jpg)"></div>
+                            <div class="blog_background" style="background-image:url({{asset('image/blog_2.jpg')}})"></div>
                             <div
                                 class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                                 <h4 class="blog_title">Here are the trends I see coming this fall</h4>
@@ -397,7 +397,7 @@
                     </div>
                     <div class="col-lg-4 blog_item_col">
                         <div class="blog_item">
-                            <div class="blog_background" style="background-image:url(image/blog_3.jpg)"></div>
+                            <div class="blog_background" style="background-image:url({{asset('image/blog_3.jpg')}})"></div>
                             <div
                                 class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                                 <h4 class="blog_title">Here are the trends I see coming this fall</h4>
@@ -411,6 +411,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
 @stop

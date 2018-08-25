@@ -25,16 +25,45 @@
 
                                 </ul>
                             </li>
-                            <li class="account">
-                                <a href="#">
-                                    My Account
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="account_selection">
-                                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                    <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                </ul>
-                            </li>
+                            @if(!Auth::check())
+                                <li class="account">
+                                    <a href="#">
+                                        My Account
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+
+
+                                    <ul class="account_selection">
+                                        <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"
+                                                                              aria-hidden="true"></i>Sign In</a></li>
+                                        <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"
+                                                                                 aria-hidden="true"></i>Register</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="account">
+                                    <a id="navbarDropdown" href="#">
+                                        {{ Auth::user()->name }} <i class="fa fa-angle-down"></i>
+                                    </a>
+
+                                    <ul class="account_selection " style="width: 100px">
+                                        <li><a href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                Log out</a></li>
+
+
+                                    </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;" >
+                                        @csrf
+                                    </form>
+
+
+                                </li>
+                            @endguest
+
                         </ul>
                     </div>
                 </div>
@@ -49,11 +78,11 @@
             <div class="row">
                 <div class="col-lg-12 text-right">
                     <div class="logo_container">
-                        <a href="/home">bambole<span>shop</span></a>
+                        <a href="{{route('home')}}">bambole<span>shop</span></a>
                     </div>
                     <nav class="navbar">
                         <ul class="navbar_menu">
-                            <li><a href="http://127.0.0.1:8000/home">home</a></li>
+                            <li><a href="{{route('home')}}">home</a></li>
                             <li class="category">
                                 <a href="#">Category &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
 
@@ -70,7 +99,7 @@
                             <li><a href="/contact">contact</a></li>
                         </ul>
                         <ul class="navbar_user">
-                            <li><a href="/admin/master" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ route('login') }}" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                             <li class="checkout">
                                 <a href="/cart" title="Cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

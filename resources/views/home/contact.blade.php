@@ -10,8 +10,8 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="http://127.0.0.1:8000">Home</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li class="active"><a href="/contact"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a>
                         </li>
                     </ul>
                 </div>
