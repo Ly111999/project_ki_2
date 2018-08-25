@@ -11,6 +11,11 @@
 |
 */
 
+//Route::get('/client/home', 'ClientController@home');
+
+Auth::routes();
+
+Route::get('/', 'ClientController@home')->name('home');
 // ADMIN
 
 Route::get('/admin/master', 'ProductController@homeAdmin');
@@ -22,7 +27,7 @@ Route::resource('admin/category', 'CategoryController');
 Route::get('/admin/product/{id}','ProductController@destroy');
 // CLIENT
 
-Route::get('/home', 'ClientController@home');
+//Route::get('/home', 'ClientController@home');
 Route::get('/contact', 'ClientController@contact');
 
 Route::get('/product','ClientController@listProduct');

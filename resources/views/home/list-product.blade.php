@@ -9,7 +9,7 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="/home">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                         <li class="active"><a href="/product?categoryId={{$selected_category -> id}}"><i
                                     class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
