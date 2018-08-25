@@ -58,11 +58,11 @@ class ClientController extends Controller
         }
         if (Input::has('startPrice') && Input::get('startPrice') != 0) {
             $start_price = Input::get('startPrice');
-            $product_filter = $product_filter->whereRaw('(price-(discount/100))>=' . $start_price);
+            $product_filter = $product_filter->whereRaw('(price-(price*discount/100))>=' . $start_price);
         }
         if (Input::has('endPrice') && Input::get('endPrice') != 0) {
             $end_price = Input::get('endPrice');
-            $product_filter = $product_filter->whereRaw('(price-(discount/100))<=' . $end_price);
+            $product_filter = $product_filter->whereRaw('(price-(price*discount/100))<=' . $end_price);
         }
         $list_product = $product_filter->orderBy('created_at', 'DESC')->paginate($limit);
         return view('home.list-product')

@@ -1081,13 +1081,13 @@ category
 	width: 100%;
 	margin-top: 57px;
 }
-.product-item
+.product-item.obj
 {
 	width: 20%;
 	height: 380px;
 	cursor: pointer;
 }
-.product-item::after
+.product-item.obj::after
 {
 	display: block;
 	position: absolute;
@@ -1105,7 +1105,7 @@ category
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.product-item:hover::after
+.product-item.obj:hover::after
 {
 	box-shadow: 0 25px 29px rgba(63, 78, 100, 0.15);
 	border: solid 2px rgba(235,235,235,1);
