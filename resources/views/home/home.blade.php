@@ -74,7 +74,7 @@
                 <div class="row justify-content-center" style="margin-top: -20px">
                     <form style="width: 50%;">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" name="key" value="{{$data['key']}}" placeholder="Search">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -143,48 +143,50 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top: -20px">
+                <div class="row">
                     <div class="col">
                         <div class="product-grid"
                              data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-                            @foreach($listProduct as $key => $productWithCategory)
-                                @if($loop->index == 10)
+                            @foreach($obj as $item)
+                                @if($loop->index == 15)
 
                                     @break;
                                 @endif
-                            <!-- Product {{$productWithCategory['categoryId']}} -->
+                                {{--<!-- Product {{$productWithCategory['categoryId']}} -->--}}
 
-                                <div class="product-item {{$productWithCategory['categoryId']}} mt-3">
+                                <div class="product-item">
                                     <div class="product discount product_filter">
                                         <div class="product_image ">
-                                            <a href="/product/{{$productWithCategory['product'] -> id}}">
-                                                <img class="img-thumbnail"
-                                                     style="height: 75% ; width: 100%; border: none ;"
-                                                     src="{{$productWithCategory['product'] -> image}}" alt="">
+                                            <a href="/product/{{$item -> id}}">
+                                                <img class="img-thumbnail" style="height: 75% ; width: 100%; border: none ;"
+                                                     src="{{$item -> image}}" alt="">
                                             </a>
                                         </div>
                                         <div class="favorite favorite_left"></div>
                                         <div
                                             class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-                                            <span>-{{$productWithCategory['product'] -> discount}}%</span></div>
-                                        <div class="product_info">
+                                            <span>-{{$item -> discount}}%</span></div>
+                                        <div class="product_info mt-3">
                                             <h6 class="product_name"><a
-                                                    href="/product/{{$productWithCategory['product'] -> id}}">{{$productWithCategory['product'] -> name}}</a>
+                                                    href="/product/{{$item -> id}}">{{$item -> name}}</a>
                                             </h6>
-                                            <div class="product_price">
-                                                {{$productWithCategory['product'] -> discountPriceString}}
-                                                <span>{{$productWithCategory['product']->originalPriceString}}</span>
+                                            <div
+                                                class="product_price">{{$item -> discountPriceString}}
+                                                <span>{{$item->originalPriceString}}</span>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+
+                                    <div class="red_button add_to_cart_button"><a
+                                            href="/add-cart?id={{$item -> id}}&quantity=1">add to
+                                            cart </a>
+                                    </div>
                                 </div>
 
-                            <!--End Product {{$productWithCategory['categoryId']}}-->
+                                {{--<!--End Product {{$productWithCategory['categoryId']}}-->--}}
 
                             @endforeach
-
                         </div>
                     </div>
                 </div>
