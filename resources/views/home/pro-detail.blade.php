@@ -9,9 +9,9 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                        <li><a href="http://127.0.0.1:8000/product?categoryId={{$obj_view -> categoryId}}"><i
-                                        class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="/product?categoryId={{$obj_view -> categoryId}}"><i
+                                    class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
                         <li class="active"><a href="#"><i class="fa fa-angle-right"
                                                           aria-hidden="true"></i>{{$obj_view->name}}</a></li>
@@ -43,7 +43,9 @@
                     <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
                         <span class="ti-truck"></span><span>free delivery</span>
                     </div>
-                    <div class="product_price mt-2">{{$obj_view->discountPriceString}}</div>
+                    <div class="product_price mt-2">{{$obj_view->discountPriceString}}
+                        <span>{{$obj_view->originalPriceString}}</span>
+                    </div>
                     <ul class="star_rating">
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -60,9 +62,9 @@
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
                         <div class="red_button_2 add_to_cart_button_2"><a
-                                    href="#">add to cart</a></div>
+                                href="#">add to cart</a></div>
                         <div
-                                class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                            class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                     </div>
                 </div>
             </div>
@@ -81,7 +83,8 @@
             <div class="row align-items-center">
                 <div class="col text-center">
                     <div class="new_arrivals_sorting">
-                        <p>We love to tell our successful far far away, behind the word mountains, far from the<br> countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>We love to tell our successful far far away, behind the word mountains, far from the<br>
+                            countries Vokalia and Consonantia, there live the blind texts.</p>
                     </div>
                 </div>
             </div>
@@ -98,20 +101,21 @@
                                             <div class="product discount">
                                                 <div class="product_image">
                                                     <a href="/product/sell/{{$product -> id}}">
-                                                        <img class="img-thumbnail" style="height: 75% ; width: auto;  border: none;"
+                                                        <img class="img-thumbnail"
+                                                             style="height: 75% ; width: auto;  border: none;"
                                                              src="{{$product -> image}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="favorite favorite_left"></div>
                                                 <div
-                                                        class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                                    class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
                                                     <span>-{{$product->discount}}%</span></div>
                                                 <div class="product_info mt-3">
                                                     <h6 class="product_name"><a
-                                                                href="/product/sell/{{$product -> id}}">{{$product -> name}}</a>
+                                                            href="/product/sell/{{$product -> id}}">{{$product -> name}}</a>
                                                     </h6>
                                                     <div
-                                                            class="product_price">{{$product->discountPriceString}}
+                                                        class="product_price">{{$product->discountPriceString}}
                                                         <span>{{$product->originalPriceString}}</span>
 
                                                     </div>

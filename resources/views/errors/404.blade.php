@@ -15,7 +15,7 @@
     <img src="https://i1.wp.com/manhhieu.net/wp-content/uploads/2015/02/Loi-404.png" alt="" >
 </div>
 <div>
-    <a href="/home">
+    <a href="/client/home">
         <button type="button" class="btn btn-primary" style="margin-left: 600px;">Go to home</button>
     </a>
 </div>

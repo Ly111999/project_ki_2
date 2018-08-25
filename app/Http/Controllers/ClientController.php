@@ -12,25 +12,23 @@ class ClientController extends Controller
 {
     public function home()
     {
-        $arr = [];
-        $products = Product::all();
-        foreach ($products as $key => $product) {
-            $productWithCategoryId =
-                [
-                    "categoryId" => $product->categoryId,
-                    "product" => $product
-                ];
-
-            array_push($arr, $productWithCategoryId);
-        }
         $categories = Category::all();
+        $keyword = Input::get('key');
+        $data = Input::get();
+        $obj = Product::orderBy('created_at', 'desc');
+        if (isset($keyword) && Input::get('key')) {
+            $obj = $obj->where('name', 'like', '%' . $keyword . '%');
+        } else {
+            $data['key'] = '';
+        }
+        $obj = $obj->paginate(10);
 
         return view('home.home')
             ->with('categories', $categories)
+            ->with('obj', $obj)
+            ->with('data', $data)
             ->with([
-                    "list_Product" => Seller::all(),
-                    "listProduct" => $arr,
-                    "obj_view" => $products
+                    "list_Product" => Seller::all()
                 ]
             );
     }
@@ -46,7 +44,7 @@ class ClientController extends Controller
     public function listProduct()
     {
         $categories = Category::all();
-        $limit = 10;
+        $limit = 12;
         $selected_categoryId = 0;
         $start_price = 0;
         $end_price = 3000000;
