@@ -1,3 +1,4 @@
+
 $('#check-all').click(function () {
     $('.check-item').prop('checked', $(this).is(':checked'));
 });
@@ -32,10 +33,10 @@ function processDelete() {
             method: 'DELETE',
             url: 'http://127.0.0.1:8000/admin/product/destroy-many',
             data: {
-                '_token': $('meta[name="csrf-token"]'),
+                '_token': $('meta[name="csrf-token"]').attr('content'),
                 'ids': arrayId
             },
-            success: function (resp) {
+            success: function () {
                 $('#messageSuccess').text('Action success!');
                 $('#messageSuccess').removeClass('d-none');
                 for (var i = 0; i < arrayId.length; i++) {

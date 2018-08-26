@@ -64,6 +64,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = Input::get('name');
         $product->price = Input::get('price');
+        $product->discount = Input::get('discount');
         $product->categoryId = Input::get('categoryId');
         $product->description = Input::get('description');
         $product->image = Input::get('image');
@@ -93,7 +94,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if ($product == null) {
-            return view('errors.404');
+            return view('errors.404-admin');
         }
         $categories = Category::all();
         return view('admin.product.edit')
@@ -112,10 +113,11 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if ($product == null) {
-            return view('errors.404');
+            return view('errors.404-admin');
         }
         $product->name = Input::get('name');
         $product->price = Input::get('price');
+        $product->discount = Input::get('discount');
         $product->categoryId = Input::get('categoryId');
         $product->description = Input::get('description');
         $product->image = Input::get('image');
@@ -140,7 +142,11 @@ class ProductController extends Controller
         return response()->json(['message' => 'Deleted'], 200);
     }
 
-
+    public function destroyMany()
+    {
+        Product::destroy(Input::get('ids'));
+        return Input::get('ids');
+    }
 }
 
 

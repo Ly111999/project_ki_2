@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label>Category description</label>
-                            <textarea name="description" id="" cols="30" rows="10"
+                            <textarea name="description" id="" cols="30" rows="7"
                                       class="form-control w-75 mr-2"></textarea>
                             @if($errors->has('description'))
                                 <label class="text-danger">*{{$errors->first('description')}}</label>

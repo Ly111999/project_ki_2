@@ -27,11 +27,13 @@ Route::middleware('admin')->group(function() {
     Route::resource('admin/category', 'CategoryController');
 
     Route::get('/admin/product/{id}','ProductController@destroy');
+
+    Route::delete('/admin/product/destroy-many', 'ProductsController@destroyMany');
+
 });
 
 // CLIENT
 
-//Route::get('/home', 'ClientController@home');
 Route::get('/contact', 'ClientController@contact');
 
 Route::get('/product','ClientController@listProduct');

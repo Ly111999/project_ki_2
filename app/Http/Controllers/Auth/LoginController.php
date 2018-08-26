@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 
 class LoginController extends Controller
@@ -45,8 +47,10 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
+
         $categories = Category::all();
-        return view('auth.login')->with('categories', $categories);
+        return view('auth.login')
+            ->with('categories', $categories);
     }
 
 

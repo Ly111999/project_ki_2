@@ -1,4 +1,4 @@
-@extends('views.admin.layout.default')
+@extends('admin.layout.default')
 
 @section('content')
     <div class="section__content section__content--p30">
@@ -25,7 +25,7 @@
 
                         <div class="form-group">
                             <label>Category description</label>
-                            <textarea name="description" id="" cols="30" rows="10"
+                            <textarea name="description" id="" cols="30" rows="7"
                                       class="form-control w-75 mr-2">{{$obj_view -> description}}</textarea>
                         </div>
                         <div class="form-group">

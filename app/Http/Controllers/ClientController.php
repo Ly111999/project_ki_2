@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Seller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -98,6 +99,7 @@ class ClientController extends Controller
 
     public function showProductSeller($id)
     {
+
         $categories = Category::all();
         $selected_categoryId = 1;
         $selected_category = Category::find($selected_categoryId);
