@@ -186,9 +186,8 @@
                                     </div>
                                 </div>
 
-                                <div class="red_button add_to_cart_button"><a
-                                        href="/add-cart?id={{$item -> id}}&quantity=1">add to
-                                        cart </a>
+                                <div class="red_button add_to_cart_button" id="add-cart-{{$item->id}}"
+                                     style="color: #ffffff">ADD TO CART
                                 </div>
                             </div>
 
@@ -425,6 +424,8 @@
         </div>
     </div>
     </div>
+
+    <script src="{{asset('js/cart-script.js')}}"></script>
 
 
 @stop

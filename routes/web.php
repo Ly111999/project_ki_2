@@ -11,12 +11,8 @@
 |
 */
 
-//Route::get('/client/home', 'ClientController@home');
 
-Auth::routes();
 
-Route::get('/home', 'ClientController@home');
-Route::get('/', 'ClientController@home')->name('home');
 // ADMIN
 
 Route::middleware('admin')->group(function() {
@@ -33,10 +29,22 @@ Route::middleware('admin')->group(function() {
 });
 
 // CLIENT
+Auth::routes();
+
+Route::get('/home', 'ClientController@home');
+Route::get('/', 'ClientController@home')->name('home');
 
 Route::get('/contact', 'ClientController@contact');
 
 Route::get('/product','ClientController@listProduct');
 Route::get('/product/{id}', 'ClientController@showProductDetail');
 Route::get('/product/sell/{id}', 'ClientController@showProductSeller');
+
+Route::get('/them-gio-hang', 'ShoppingCartController@addToCart');
+Route::post('/api-them-gio-hang', 'ShoppingCartController@addToCartApi');
+Route::get('/xem-gio-hang', 'ShoppingCartController@showCart');
+Route::get('/xoa-gio-hang', 'ShoppingCartController@destroyCart');
+Route::put('/sua-gio-hang', 'ShoppingCartController@updateCart');
+Route::post('/gui-don-hang', 'ShoppingCartController@checkoutCart');
+
 
