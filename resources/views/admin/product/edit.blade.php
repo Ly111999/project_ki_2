@@ -24,6 +24,10 @@
                             <input type="number" name="price" class="form-control w-25 mr-2" value="{{$obj_view -> price}}">
                         </div>
                         <div class="form-group">
+                            <label>Discount</label>
+                            <input type="number" name="discount" class="form-control w-25 mr-2" value="{{$obj_view -> discount}}">
+                        </div>
+                        <div class="form-group">
                             <label>Category</label>
                             <select name="categoryId" class="form-control w-25 mr-2">
                                 @foreach($categories as $item)
@@ -34,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea name="description" id="" cols="30" rows="10"
+                            <textarea name="description" id="" cols="30" rows="7"
                                       class="form-control w-75 mr-2">{{$obj_view -> description}}</textarea>
                         </div>
                         <div class="form-group">

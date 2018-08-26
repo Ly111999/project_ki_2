@@ -6,6 +6,7 @@ use App\Category;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -73,7 +74,9 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+
         $categories = Category::all();
-        return view('auth.register')->with('categories', $categories);
+        return view('auth.register')
+            ->with('categories', $categories);
     }
 }

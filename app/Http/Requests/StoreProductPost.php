@@ -26,6 +26,7 @@ class StoreProductPost extends FormRequest
         return [
             'name' => 'required|unique:products|max:50',
             'price' => 'required|numeric',
+            'discount' => 'required|numeric',
             'description' => 'required|max:500',
             'image' => 'required|max:191'
         ];
@@ -39,6 +40,8 @@ class StoreProductPost extends FormRequest
             'name.max' => 'Pass character length for.',
             'price.required' => 'Please enter a price.',
             'price.numeric' => 'Please enter the number.',
+            'discount.required' => 'Please enter a discount.',
+            'discount.numeric' => 'Please enter the number.',
             'description.required' => 'Please enter a description.',
             'description.max' => 'Pass character length for.',
             'image.required' => 'Please enter a url.',

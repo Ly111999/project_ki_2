@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $list_obj = Category::all();
-        return view('adminMiddleware.category.list')->with('list_obj', $list_obj);
+        $list_obj = Category::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin.category.list')->with('list_obj', $list_obj);
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('adminMiddleware.category.create');
+        return view('admin.category.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $obj->image = Input::get('image');
         $obj->description = Input::get('description');
         $obj->save();
-        return redirect('/adminMiddleware/category');
+        return redirect('/admin/category');
     }
 
     /**
@@ -69,9 +69,9 @@ class CategoryController extends Controller
     {
         $obj = Category::find($id);
         if($obj == null){
-            return view('errors.404');
+            return view('errors.404-admin');
         }
-        return view('adminMiddleware.category.edit')->with('obj_view', $obj);
+        return view('admin.category.edit')->with('obj_view', $obj);
     }
 
     /**
@@ -85,13 +85,13 @@ class CategoryController extends Controller
     {
         $obj = Category::find($id);
         if ($obj == null){
-            return view('errors.404');
+            return view('errors.404-admin');
         }
         $obj->name = Input::get('name');
         $obj->image = Input::get('image');
         $obj->description = Input::get('description');
         $obj->save();
-        return redirect('/adminMiddleware/category');
+        return redirect('/admin/category');
     }
 
     /**
