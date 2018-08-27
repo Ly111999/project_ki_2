@@ -28,7 +28,8 @@ class ProductsTableSeeder extends Seeder
                 'id' => 2,
                 'name' => 'Đầm dạ hội',
                 'image' => 'https://2.bp.blogspot.com/--3R1mu5HAwk/WIHszgom8eI/AAAAAAAAEJs/QCW53FCl2iEND4tMygjg3Hp6Ug3jz8NUQCLcB/s1600/rainkids-1025aqua_7jpg-8868923.jpg',
-                'description' => 'Chất vải: Mềm.<br> Chiều dài váy: Mắt cá chân.<br> Dáng váy: Xòe tròn.<br> Họa tiết: Đính đá.<br> Kiểu cổ áo: Cổ tròn.<br> Phong cách: Lịch sự.',
+                'descript
+                ion' => 'Chất vải: Mềm.<br> Chiều dài váy: Mắt cá chân.<br> Dáng váy: Xòe tròn.<br> Họa tiết: Đính đá.<br> Kiểu cổ áo: Cổ tròn.<br> Phong cách: Lịch sự.',
                 'price' => 210000,
                  'discount' => 25,
                 'categoryId' => 1

@@ -6,7 +6,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
-
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- Title Page-->
     <title>Admin</title>
 
@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Jquery JS -->
     <script src="{{asset('admin/vendor/jquery-3.2.1.min.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 </head>
 <body class="animsition">
 <div class="page-wrapper">
