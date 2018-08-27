@@ -21,175 +21,175 @@ class OrderDetailTableSeeder extends Seeder
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>1,
+                'order_id'=>2,
                 'product_id'=>3,
                 'quantity'=>1,
                 'unit_price'=>152100
             ],
             [
-                'order_id'=>1,
+                'order_id'=>3,
                 'product_id'=>5,
                 'quantity'=>1,
                 'unit_price'=>171000
             ],
             [
-                'order_id'=>2,
+                'order_id'=>4,
                 'product_id'=>6,
                 'quantity'=>1,
                 'unit_price'=>119000
             ],
             [
-                'order_id'=>2,
+                'order_id'=>5,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>2,
+                'order_id'=>6,
                 'product_id'=>3,
                 'quantity'=>1,
                 'unit_price'=>152100
             ],
             [
-                'order_id'=>3,
+                'order_id'=>7,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>3,
+                'order_id'=>8,
                 'product_id'=>7,
                 'quantity'=>1,
                 'unit_price'=>126000
             ],
             [
-                'order_id'=>3,
+                'order_id'=>9,
                 'product_id'=>8,
                 'quantity'=>1,
                 'unit_price'=>108000
             ],
             [
-                'order_id'=>4,
+                'order_id'=>10,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>4,
+                'order_id'=>11,
                 'product_id'=>9,
                 'quantity'=>1,
                 'unit_price'=>90000
             ],
             [
-                'order_id'=>4,
+                'order_id'=>12,
                 'product_id'=>6,
                 'quantity'=>1,
                 'unit_price'=>119000
             ],
             [
-                'order_id'=>5,
+                'order_id'=>13,
                 'product_id'=>1,
                 'quantity'=>1,
                 'unit_price'=>184000
             ],
             [
-                'order_id'=>5,
+                'order_id'=>14,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>5,
+                'order_id'=>15,
                 'product_id'=>18,
                 'quantity'=>1,
                 'unit_price'=>171000
             ],
             [
-                'order_id'=>6,
+                'order_id'=>16,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>6,
+                'order_id'=>17,
                 'product_id'=>18,
                 'quantity'=>1,
                 'unit_price'=>171000
             ],
             [
-                'order_id'=>6,
+                'order_id'=>18,
                 'product_id'=>8,
                 'quantity'=>1,
                 'unit_price'=>108000
             ],
             [
-                'order_id'=>7,
+                'order_id'=>19,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>7,
+                'order_id'=>20,
                 'product_id'=>3,
                 'quantity'=>1,
                 'unit_price'=>152100
             ],
             [
-                'order_id'=>7,
+                'order_id'=>21,
                 'product_id'=>7,
                 'quantity'=>1,
                 'unit_price'=>126000
             ],
             [
-                'order_id'=>8,
+                'order_id'=>22,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>8,
+                'order_id'=>23,
                 'product_id'=>3,
                 'quantity'=>1,
                 'unit_price'=>152100
             ],
             [
-                'order_id'=>8,
+                'order_id'=>24,
                 'product_id'=>8,
                 'quantity'=>1,
                 'unit_price'=>108000
             ],
             [
-                'order_id'=>9,
+                'order_id'=>25,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>9,
+                'order_id'=>26,
                 'product_id'=>3,
                 'quantity'=>1,
                 'unit_price'=>152100
             ],
             [
-                'order_id'=>9,
+                'order_id'=>27,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
             ],
             [
-                'order_id'=>10,
+                'order_id'=>28,
                 'product_id'=>8,
                 'quantity'=>1,
                 'unit_price'=>108000
             ],
             [
-                'order_id'=>10,
+                'order_id'=>29,
                 'product_id'=>18,
                 'quantity'=>1,
                 'unit_price'=>171000
             ],
             [
-                'order_id'=>10,
+                'order_id'=>30,
                 'product_id'=>2,
                 'quantity'=>1,
                 'unit_price'=>157500
