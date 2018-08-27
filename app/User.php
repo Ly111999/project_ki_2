@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getStatusLabelAttribute()
+    {
+        switch ($this->adminLevel) {
+            case 0:
+                return 'Khách hàng';
+                break;
+            case 1:
+                return 'Admin';
+                break;
+            default:
+                return 'Không xác định';
+                break;
+        }
+    }
 }

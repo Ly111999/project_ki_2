@@ -24,6 +24,8 @@ Route::middleware('admin')->group(function() {
 
     Route::resource('admin/order', 'OrderController');
 
+    Route::resource('admin/user', 'UserController');
+
     Route::get('/admin/product/{id}','ProductController@destroy');
 
     Route::delete('/admin/product/destroy-many', 'ProductsController@destroyMany');

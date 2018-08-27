@@ -61,18 +61,11 @@
                                                 <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px;">
                                             </div>
                                         </td>
-
-                                        <td class="col-md-1">{{$item->price}}</td>
-                                        <td class="col-md-3">{!! $item->description !!}</td>
-                                        <td class="col-md-2">
-                                            <a href="/admin/product/{{$item -> id}}/edit">Edit</a>   
-                                            <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj">Delete</a>
-
                                         <td class="col-md-1" style="margin-left: -7px">{{$item->discountPriceString}}</td>
-                                        <td class="col-md-3">{{$item->description}}</td>
+                                        <td class="col-md-3">{!!$item->description !!}</td>
                                         <td class="col-md-2">
                                             <a href="/admin/product/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
-                                            <a href="{{$item->id}}" class="btn btn-simple btn-icon remove btn-delete" style="color: #000000"><i class="material-icons"><i class="fas fa-trash-alt"></i></i></a>
+                                            <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj" style="color: #000000"><i class="material-icons"><i class="fas fa-trash-alt"></i></i></a>
 
 
                                         </td>

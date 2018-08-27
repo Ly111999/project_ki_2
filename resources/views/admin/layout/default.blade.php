@@ -51,7 +51,7 @@
             <div class="container-fluid ">
                 <div class="header-mobile-inner h-75">
                     <a class="logo" href="index.html">
-                        <img src="{{asset('image/shop_5.jpg')}}" alt="Bambole"/>
+                        <img src="{{asset('image/logo.png')}}" alt="Bambole"/>
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                                     <span class="hamburger-box">
@@ -96,11 +96,11 @@
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
             <a href="#">
-                <img src="{{asset('image/shop_5.jpg')}}" alt="Bambole"/>
+                <img src="{{asset('image/logo.png')}}" alt="Bambole"/>
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar">
+            <nav class="navbar-sidebar mt-5">
                 <ul class="list-unstyled navbar__list">
                     <li class="has-sub">
                         <a class="js-arrow" href="/admin/master">
@@ -146,7 +146,7 @@
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="{{asset('image/b.jpg')}}" alt="John Doe"/>
+                                        {{--<img src="{{asset('image/logo.png')}}" alt="John Doe"/>--}}
                                     </div>
                                     <div class="content">
                                         <a class="js-acc-btn" href="#">Huong Ly</a>
@@ -155,7 +155,7 @@
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{{asset('image/shop_5.jpg')}}" alt="Bambole"/>
+                                                    <img src="{{asset('image/logo.png')}}" alt="Bambole"/>
                                                 </a>
                                             </div>
                                             <div class="content">

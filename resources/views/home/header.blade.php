@@ -46,7 +46,7 @@
                                     <a id="navbarDropdown" href="#">
                                         {{ Auth::user()->name }} <i class="fa fa-angle-down"></i>
                                     </a>
-                                </li>
+
 
                                 <ul class="account_selection " style="width: 100px">
                                     <li>

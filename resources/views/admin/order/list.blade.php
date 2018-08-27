@@ -23,22 +23,22 @@
                         <table class="table table-data3 table-hover">
                             <thead>
                             <tr role="row">
-                                <th class="col-1">ID</th>
-                                <th class="col-1">Orderer</th>
-                                <th class="col-2">Receiver</th>
-                                <th class="col-2">Time</th>
-                                <th class="col-2">Infor</th>
-                                <th class="col-1">Status</th>
-                                <th class="col-3">Action</th>
+                                <th class="col-md-1">ID</th>
+                                <th class="col-md-1">Orderer</th>
+                                <th class="col-md-2">Receiver</th>
+                                <th class="col-md-2">Time</th>
+                                <th class="col-md-2">Infor</th>
+                                <th class="col-md-1">Status</th>
+                                <th class="col-md-3">Action</th>
                             </tr>
                             </thead>
                             @foreach($list_obj as $item)
                                 <tr role="row" class="odd">
-                                    <td class="col-1">{{$item->id}}</td>
-                                    <td class="col-1">huongly</td>
-                                    <td class="col-2">{!! $item->shipInformation !!}</td>
-                                    <td class="col-2">{{$item->created_at}}</td>
-                                    <td class="col-2">
+                                    <td class="col-md-1">{{$item->id}}</td>
+                                    <td class="col-md-1">huongly</td>
+                                    <td class="col-md-2">{!! $item->shipInformation !!}</td>
+                                    <td class="col-md-2">{{$item->created_at}}</td>
+                                    <td class="col-md-2">
                                         <ul>
                                             @foreach($item->details as $order_detail)
                                                 <li>{{$order_detail->product->name}}
@@ -46,8 +46,8 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td class="col-1">{{$item->statusLabel}}</td>
-                                    <td class="col-3">
+                                    <td class="col-md-1">{{$item->statusLabel}}</td>
+                                    <td class="col-md-3">
                                         @if($item->status==0)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=1"
                                                onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"
@@ -77,19 +77,10 @@
                     @endif
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-5">
-                </div>
-                <div class="col-sm-7">
-                    {{ $list_obj->links() }}
-                </div>
+            <div class="row float-right mr-lg-5">
+                {{$list_obj->appends($_GET)->links()}}
             </div>
         </div>
     </div>
-    </div>
-    </div>
-
-
-
 
 @stop

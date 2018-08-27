@@ -40,13 +40,11 @@
                                         </td>
                                         <td class="col-md-4">{{$item->description}}</td>
                                         <td class="col-md-2">
-
-                                            <a href="/admin/category/{{$item -> id}}/edit">Edit</a>   
-                                            <a href="{{$item -> id}}" class="delete-obj">Delete</a>
-
-                                            <a href="/admin/category/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
-                                            <a href="#/admin/category/{{$item -> id}}" id="{{$item -> id}}"
-                                               class="delete-obj" style="color: #000000"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="/admin/category/{{$item -> id}}/edit" style="color: #000000"><i
+                                                    class="fas fa-edit"></i></a>   
+                                            <a href="{{$item -> id}}" id="{{$item -> id}}"
+                                               class="delete-obj" style="color: #000000"><i
+                                                    class="fas fa-trash-alt"></i></a>
 
                                         </td>
                                     </tr>
@@ -75,7 +73,7 @@
             var thisButton = $(this);
             swal({
                 title: "Delete",
-                text: "Do you really want to delete this category?",
+                text: "Do you really want to delete this product?",
                 type: 'warning',
                 buttons: true,
                 showCancelButton: true,
@@ -84,18 +82,18 @@
                 confirmButtonText: 'Đồng ý',
                 CancelButtonText: 'Huỷ bỏ',
                 buttonsStyling: false
-            }).then(function(confirm) {
-                if(confirm){
+            }).then(function (confirm) {
+                if (confirm) {
                     var id = thisButton.attr('href');
                     $.ajax({
                         'url': '/admin/category/' + id,
                         'method': 'DELETE',
-                        'data':{
-                            '_token':$('meta[name="csrf-token"]').attr('content')
+                        'data': {
+                            '_token': $('meta[name="csrf-token"]').attr('content')
                         },
                         success: function (response) {
                             swal({
-                                title:"Delete",
+                                title: "Delete",
                                 text: 'Danh mục đã bị xoá.',
                                 type: 'success',
                                 confirmButtonClass: "btn btn-success",
@@ -103,10 +101,11 @@
                             })
                             setTimeout(function () {
                                 window.location.reload();
-                            }, 2*1000);
+                            }, 2 * 1000);
                         },
                         error: function () {
                             swal({
+                                title: "Delete",
                                 text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
                                 type: 'warning',
                                 confirmButtonClass: "btn btn-danger",

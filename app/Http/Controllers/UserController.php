@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class UserController extends Controller
 {
@@ -17,6 +18,19 @@ class UserController extends Controller
     {
         $obj= User::orderBy('created_at','desc')->paginate(5);
         return  view('admin.user.user')->with('list_obj',$obj);
+    }
+
+    public function changeStatus()
+    {
+        $id = Input::get('id');
+        $status = Input::get('status');
+        $user = User::find($id);
+        if ($user == null) {
+            return view('errors.404-admin');
+        }
+        $user->status = $status;
+        $user->save();
+        return redirect('/admin/user');
     }
 
     /**

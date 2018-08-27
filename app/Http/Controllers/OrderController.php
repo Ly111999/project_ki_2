@@ -11,7 +11,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $list_obj = Order::paginate(10);
+        $list_obj = Order::paginate(7);
         return view('admin.order.list')->with('list_obj', $list_obj);
     }
     public function getChartDataApi()
