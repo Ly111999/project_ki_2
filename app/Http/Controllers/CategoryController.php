@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $list_obj = Category::all();
+        $list_obj = Category::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.category.list')->with('list_obj', $list_obj);
     }
 
@@ -69,7 +69,7 @@ class CategoryController extends Controller
     {
         $obj = Category::find($id);
         if($obj == null){
-            return view('errors.404');
+            return view('errors.404-admin');
         }
         return view('admin.category.edit')->with('obj_view', $obj);
     }
@@ -85,7 +85,7 @@ class CategoryController extends Controller
     {
         $obj = Category::find($id);
         if ($obj == null){
-            return view('errors.404');
+            return view('errors.404-admin');
         }
         $obj->name = Input::get('name');
         $obj->image = Input::get('image');

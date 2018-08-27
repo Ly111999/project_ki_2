@@ -56,7 +56,7 @@
 
                                     </ul>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;" >
+                                          style="display: none;">
                                         @csrf
                                     </form>
 
@@ -99,9 +99,11 @@
                             <li><a href="/contact">contact</a></li>
                         </ul>
                         <ul class="navbar_user">
-                            <li><a href="{{ route('login') }}" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                            <li><a href="/admin/master" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            </li>
+
                             <li class="checkout">
-                                <a href="/cart" title="Cart">
+                                <a href="/xem-gio-hang" title="Cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     <span id="checkout_items" class="checkout_items">2</span>
                                 </a>

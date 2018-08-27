@@ -7,11 +7,12 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
     <meta name="csrf-token" content="{{csrf_token()}}">
+
     <!-- Title Page-->
     <title>Admin</title>
 
     <!-- Fontfaces CSS-->
-    <link href="{{asset('admin/css/font-face.css')}}css/font-face.css" rel="stylesheet" media="all">
+    <link href="{{asset('admin/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet"
@@ -19,12 +20,14 @@
 
     <!-- Bootstrap CSS-->
     <link href="{{asset('admin/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <!-- Vendor CSS-->
     <link href="{{asset('admin/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet"
           media="all">
-    <link href="{{asset('admin/vendor/wow/animate.css" rel="stylesheet')}}" media="all">
+    <link href="{{asset('adminMiddleware')}}" media="all">
     <link href="{{asset('admin/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
@@ -63,11 +66,11 @@
                 <ul class="navbar-mobile__list list-unstyled">
                     <li class="has-sub">
                         <a class="js-arrow" href="/admin/master">
-                            <i class="fas fa-tachometer-alt"></i>Home</a>
+                            <i class="fas fa-home"></i>Home</a>
                     </li>
                     <li>
                         <a href="/admin/product">
-                            <i class="fas fa-table"></i>Product manager</a>
+                            <i class="fas fa-list-ul"></i>Product manager</a>
                     </li>
                     <li>
                         <a href="/admin/category">
@@ -75,11 +78,11 @@
                     </li>
                     <li>
                         <a href="/admin/order">
-                            <i class="fas fa-table"></i>Order manager</a>
+                            <i class="fab fa-jedi-order"></i>Order manager</a>
                     </li>
                     <li>
-                        <a href="chart.html">
-                            <i class="fas fa-chart-bar"></i>Charts</a>
+                        <a href="/admin/user">
+                            <i class="fas fa-users"></i></i>User manager</a>
                     </li>
 
                 </ul>
@@ -101,11 +104,11 @@
                 <ul class="list-unstyled navbar__list">
                     <li class="has-sub">
                         <a class="js-arrow" href="/admin/master">
-                            <i class="fas fa-tachometer-alt"></i>Home</a>
+                            <i class="fas fa-home"></i>Home</a>
                     </li>
                     <li>
                         <a href="/admin/product">
-                            <i class="fas fa-table"></i>Product manager</a>
+                            <i class="fas fa-list-ul"></i>Product manager</a>
                     </li>
                     <li>
                         <a href="/admin/category">
@@ -113,11 +116,11 @@
                     </li>
                     <li>
                         <a href="/admin/order">
-                            <i class="fas fa-table"></i>Order manager</a>
+                            <i class="fab fa-jedi-order"></i></i>Order manager</a>
                     </li>
                     <li>
-                        <a href="chart.html">
-                            <i class="fas fa-chart-bar"></i>Charts</a>
+                        <a href="/admin/user">
+                            <i class="fas fa-address-card"></i>User manager</a>
                     </li>
                 </ul>
             </nav>
@@ -143,7 +146,7 @@
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="{{asset('image/shop_5.jpg')}}}" alt="John Doe"/>
+                                        <img src="{{asset('image/b.jpg')}}" alt="John Doe"/>
                                     </div>
                                     <div class="content">
                                         <a class="js-acc-btn" href="#">Huong Ly</a>
@@ -152,7 +155,7 @@
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{{asset('image/shop_5.jpg')}}" alt="John Doe"/>
+                                                    <img src="{{asset('image/shop_5.jpg')}}" alt="Bambole"/>
                                                 </a>
                                             </div>
                                             <div class="content">
@@ -162,22 +165,8 @@
                                                 <span class="email">bamboleShop100818@gmail.com</span>
                                             </div>
                                         </div>
-                                        <div class="account-dropdown__body">
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-account"></i>Account</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                            </div>
-                                        </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="http://127.0.0.1:8000">
+                                            <a href="{{route('home')}}">
                                                 <i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>

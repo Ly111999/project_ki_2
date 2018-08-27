@@ -21,8 +21,8 @@
                                 <thead>
                                 <tr class="row">
                                     <th class="col-md-1">ID</th>
-                                    <th class="col-md-3">Category Name</th>
-                                    <th class="col-md-2">Category Image</th>
+                                    <th class="col-md-2">Category Name</th>
+                                    <th class="col-md-3">Category Image</th>
                                     <th class="col-md-4">Category Description</th>
                                     <th class="col-md-2">Action</th>
 
@@ -32,21 +32,32 @@
                                     <tbody>
                                     <tr class="row">
                                         <th scope="row" class="col-md-1">{{$item -> id}}</th>
-                                        <td class="col-md-3">{{$item->name}}</td>
-                                        <td class="col-md-2">
+                                        <td class="col-md-2">{{$item->name}}</td>
+                                        <td class="col-md-3">
                                             <div>
                                                 <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px">
                                             </div>
                                         </td>
                                         <td class="col-md-4">{{$item->description}}</td>
                                         <td class="col-md-2">
+
                                             <a href="/admin/category/{{$item -> id}}/edit">Edit</a>   
                                             <a href="{{$item -> id}}" class="delete-obj">Delete</a>
+
+                                            <a href="/admin/category/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
+                                            <a href="#/admin/category/{{$item -> id}}" id="{{$item -> id}}"
+                                               class="delete-obj" style="color: #000000"><i class="fas fa-trash-alt"></i></a>
+
                                         </td>
                                     </tr>
                                     </tbody>
                                 @endforeach
                             </table>
+                            <div>
+                                <div class="row float-right">
+                                    {{$list_obj->appends($_GET)->links()}}
+                                </div>
+                            </div>
                         @else
                             <div class="alert alert-info" role="alert">
                                 Have no category, click <a href="/admin/category/create">here</a> to create new.

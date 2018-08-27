@@ -131,8 +131,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="red_button add_to_cart_button"><a href="#">add to
-                                                        cart</a></div>
+                                                <div class="red_button add_to_cart_button"  id="add-cart-{{$item->id}} " style="color: #ffffff">ADD TO CART</div>
                                             </div>
                                             {{--</div>--}}
 

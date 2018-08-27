@@ -41,11 +41,11 @@
                                 <tr class="row">
                                     <th class="col-md-1"></th>
                                     <th class="col-md-1">ID</th>
-                                    <th class="col-md-2">Name</th>
-                                    <th class="col-md-2">Image</th>
+                                    <th class="col-md-1">Name</th>
+                                    <th class="col-md-3">Image</th>
                                     <th class="col-md-1">Price</th>
-                                    <th class="col-md-3">Description</th>
-                                    <th class="col-md-2">Action</th>
+                                    <th class="col-md-2">Description</th>
+                                    <th class="col-md-1">Action</th>
                                 </tr>
                                 </thead>
                                 @foreach($list_obj as $item)
@@ -55,17 +55,26 @@
                                             <input type="checkbox" class="check-item">
                                         </td>
                                         <td class="col-md-1">{{$item->id}}</td>
-                                        <td class="col-md-2">{{$item->name}}</td>
-                                        <td class="col-md-2">
+                                        <td class="col-md-1">{{$item->name}}</td>
+                                        <td class="col-md-3">
                                             <div>
                                                 <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px;">
                                             </div>
                                         </td>
+
                                         <td class="col-md-1">{{$item->price}}</td>
                                         <td class="col-md-3">{!! $item->description !!}</td>
                                         <td class="col-md-2">
                                             <a href="/admin/product/{{$item -> id}}/edit">Edit</a>   
                                             <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj">Delete</a>
+
+                                        <td class="col-md-1" style="margin-left: -7px">{{$item->discountPriceString}}</td>
+                                        <td class="col-md-3">{{$item->description}}</td>
+                                        <td class="col-md-2">
+                                            <a href="/admin/product/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
+                                            <a href="{{$item->id}}" class="btn btn-simple btn-icon remove btn-delete" style="color: #000000"><i class="material-icons"><i class="fas fa-trash-alt"></i></i></a>
+
+
                                         </td>
                                     </tr>
                                     </tbody>
@@ -157,7 +166,9 @@
             return false;
         })
     </script>
+
     <script src="{{asset('js/myScript.js')}}"></script>
+
 @stop
 
 

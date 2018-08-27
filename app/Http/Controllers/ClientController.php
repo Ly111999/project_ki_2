@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Seller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -58,11 +59,11 @@ class ClientController extends Controller
         }
         if (Input::has('startPrice') && Input::get('startPrice') != 0) {
             $start_price = Input::get('startPrice');
-            $product_filter = $product_filter->whereRaw('(price-(discount/100))>=' . $start_price);
+            $product_filter = $product_filter->whereRaw('(price-(price*discount/100))>=' . $start_price);
         }
         if (Input::has('endPrice') && Input::get('endPrice') != 0) {
             $end_price = Input::get('endPrice');
-            $product_filter = $product_filter->whereRaw('(price-(discount/100))<=' . $end_price);
+            $product_filter = $product_filter->whereRaw('(price-(price*discount/100))<=' . $end_price);
         }
         $list_product = $product_filter->orderBy('created_at', 'DESC')->paginate($limit);
         return view('home.list-product')
@@ -98,6 +99,7 @@ class ClientController extends Controller
 
     public function showProductSeller($id)
     {
+
         $categories = Category::all();
         $selected_categoryId = 1;
         $selected_category = Category::find($selected_categoryId);
