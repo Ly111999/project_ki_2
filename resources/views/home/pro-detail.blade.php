@@ -61,8 +61,7 @@
                             <span id="quantity_value">1</span>
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
-                        <div class="red_button_2 add_to_cart_button_2"><a
-                                href="#">add to cart</a></div>
+                        <div class="red_button_2 add_to_cart_button_2"  id="add-cart-{{$obj_view->id}}" style="color: #ffffff;">ADD TO CART</div>
                         <div
                             class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                     </div>
