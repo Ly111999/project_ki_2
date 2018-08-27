@@ -61,15 +61,43 @@
                             <span id="quantity_value">1</span>
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
-                        <div class="red_button_2 add_to_cart_button_2"  id="add-cart-{{$obj_view->id}}" style="color: #ffffff;">ADD TO CART</div>
+                        <div class="red_button_2 add_to_cart_button_2" id="add-cart-{{$obj_view->id}}"
+                             style="color: #ffffff;">ADD TO CART
+                        </div>
                         <div
                             class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+    <script>
+        $('.red_button_2').click(function () {
+            var product_id = $(this).attr('id').replace('add-cart-', '');
+            var quantity = $('#quantity_value').text();
+            $.ajax({
+                url: '/api-them-gio-hang',
+                method: 'post',
+                data: {
+                    id: product_id,
+                    quantity: quantity,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (resp) {
+                    var new_count = resp.shopping_cart.count;
+                    if (new_count == undefined) {
+                        $('#header-icons-noti').text(1);
+                    } else {
+                        $('#header-icons-noti').text(new_count);
+                    }
+                    swal('Thao tác thành công!', 'Sản phẩm đã được thêm vào giỏ hàng!', 'success');
+                },
+                error: function (error) {
+                    swal('Thao tác thất bại', JSON.parse(error.responseText).msg);
+                }
+            });
+        });
+    </script>
     <div class="best_sellers" style="margin-top: -120px">
         <div class="container">
             <div class="row">

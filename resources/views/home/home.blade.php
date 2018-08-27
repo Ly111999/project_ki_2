@@ -424,10 +424,6 @@
         </div>
     </div>
     </div>
-
-    <script src="{{asset('js/cart-script.js')}}"></script>
-
-
 @stop
 
 
