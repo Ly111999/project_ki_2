@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class CartItem extends Model
+class CartItem
 {
     public function getTotalPriceWithFormat(){
-        return sprintf('%s', number_format($this->product->discountPrice * $this->quantity, 0));
+        return sprintf('%s', number_format(($this->product->price  - ($this->product->price * $this->product->discount / 100)) * $this->quantity, 0));
     }
 }

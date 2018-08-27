@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="m-t-5">
-            <h2 class=" text-center" >
+            <h2 class=" text-center">
                 Giỏ hàng
             </h2>
         </div>
@@ -44,24 +44,22 @@
                                     <tr class="table-row">
                                         <td class="column-1">
                                             <div class="cart-img-product b-rad-4 o-f-hidden">
-                                                <img src="{{$item->product->images}}" alt="{{$item->product->name}}">
+                                                <img src="{{$item->product->image}}" alt="{{$item->product->name}}">
                                             </div>
                                         </td>
                                         <td class="column-2">{{$item->product->name}}</td>
-                                        <td class="column-3">{{$item->product->discountPriceWithFormat}}</td>
+                                        <td class="column-3">{{$item->product->discountPriceString}}</td>
                                         <td class="column-4">
-                                            <div class="flex-w bo5 of-hidden w-size17">
-                                                <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-                                                    <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-                                                </button>
-
+                                            <div class="quantity_selector">
+                                                <input type="hidden" class="discountPrice" name="discountPrice"
+                                                       value="{{$item->product->discountPrice}}">
+                                                <span class="minus btn-num-product-down"><i class="fa fa-minus"
+                                                                                            aria-hidden="true"></i></span>
                                                 <input class="size8 m-text18 t-center num-product"
                                                        type="number" name="products[{{$item->product->id}}]"
                                                        value="{{$item->quantity}}">
-
-                                                <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-                                                    <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-                                                </button>
+                                                <span class="plus btn-num-product-up"><i class="fa fa-plus"
+                                                                                         aria-hidden="true"></i></span>
                                             </div>
                                         </td>
                                         <td class="column-5">{{$item->getTotalPriceWithFormat()}}</td>

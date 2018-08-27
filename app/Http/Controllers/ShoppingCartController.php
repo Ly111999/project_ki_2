@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 
 use App\CartItem;
 use App\Category;
+use App\Order;
 use App\Order_detail;
 use App\Product;
+use App\Seller;
 use App\ShoppingCart;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -106,6 +108,7 @@ class ShoppingCartController extends Controller
     public function destroyCart()
     {
         Session::remove('cart');
+        return redirect('/xem-gio-hang');
     }
     public function checkoutCart()
     {

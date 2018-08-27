@@ -28,4 +28,12 @@ class Product extends Model
         }
         return sprintf('%s (vnd)', number_format(($this->price - ($this->price * $this->discount / 100)), 0));
     }
+
+    public function getDiscountPriceAttribute()
+    {
+        if ($this->discount == 0) {
+            return $this->price;
+        }
+        return ($this->price - ($this->price * $this->discount / 100));
+    }
 }

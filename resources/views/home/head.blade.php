@@ -33,6 +33,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/cart.css')}}">
 
+<script src="{{asset('app/js/jquery-3.2.1.min.js')}}"></script>
+
+
 
 
 

@@ -46,21 +46,22 @@
                                     <a id="navbarDropdown" href="#">
                                         {{ Auth::user()->name }} <i class="fa fa-angle-down"></i>
                                     </a>
+                                </li>
 
-                                    <ul class="account_selection " style="width: 100px">
-                                        <li><a href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
+                                <ul class="account_selection " style="width: 100px">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                Log out</a></li>
+                                            Log out</a>
+                                    </li>
 
 
-                                    </ul>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        @csrf
-                                    </form>
-
-
+                                </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
                                 </li>
                             @endguest
 
@@ -105,7 +106,7 @@
                             <li class="checkout">
                                 <a href="/xem-gio-hang" title="Cart">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span id="checkout_items" class="checkout_items">2</span>
+                                    <span id="checkout_items" class="checkout_items">{{\App\ShoppingCart::getTotalItem()}}</span>
                                 </a>
                             </li>
                         </ul>

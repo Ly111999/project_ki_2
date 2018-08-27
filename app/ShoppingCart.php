@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
 
-class ShoppingCart extends Model
+class ShoppingCart
 {
     public static function getCart()
     {
@@ -43,7 +43,7 @@ class ShoppingCart extends Model
     {
         $total_money = 0;
         foreach ($this->items as $item) {
-            $total_money += $item->product->discountPrice * $item->quantity;
+            $total_money += ($item->product->price  - ($item->product->price * $item->product->discount / 100)) * $item->quantity;
         }
         return $total_money;
     }
