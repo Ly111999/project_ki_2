@@ -40,9 +40,14 @@
                                         </td>
                                         <td class="col-md-4">{{$item->description}}</td>
                                         <td class="col-md-2">
+
+                                            <a href="/admin/category/{{$item -> id}}/edit">Edit</a>   
+                                            <a href="{{$item -> id}}" class="delete-obj">Delete</a>
+
                                             <a href="/admin/category/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
                                             <a href="#/admin/category/{{$item -> id}}" id="{{$item -> id}}"
                                                class="delete-obj" style="color: #000000"><i class="fas fa-trash-alt"></i></a>
+
                                         </td>
                                     </tr>
                                     </tbody>
@@ -67,28 +72,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $('.delete-obj').click(function () {
-            var id = this.id;
-            var user_confirm = confirm('Are you sure you want to delete this category? ');
-            if (user_confirm) {
-                $.ajax({
-                    url: 'http://127.0.0.1:8000/admin/category/' + id,
-                    method: 'DELETE',
-                    data: {
-                        '_token': "{{ csrf_token() }}"
-                    },
-                    success: function () {
-                        alert('Deleted');
-                        alert('Success!');
-                        window.location.reload();
-                    },
-                    error: function () {
-                        alert('Error.');
-                    }
-                });
-            } else {
-                alert('!Okie');
-            }
-        });
+            var thisButton = $(this);
+            swal({
+                title: "Delete",
+                text: "Do you really want to delete this category?",
+                type: 'warning',
+                buttons: true,
+                showCancelButton: true,
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                confirmButtonText: 'Đồng ý',
+                CancelButtonText: 'Huỷ bỏ',
+                buttonsStyling: false
+            }).then(function(confirm) {
+                if(confirm){
+                    var id = thisButton.attr('href');
+                    $.ajax({
+                        'url': '/admin/category/' + id,
+                        'method': 'DELETE',
+                        'data':{
+                            '_token':$('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function (response) {
+                            swal({
+                                title:"Delete",
+                                text: 'Danh mục đã bị xoá.',
+                                type: 'success',
+                                confirmButtonClass: "btn btn-success",
+                                buttonsStyling: false
+                            })
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 2*1000);
+                        },
+                        error: function () {
+                            swal({
+                                text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
+                                type: 'warning',
+                                confirmButtonClass: "btn btn-danger",
+                                buttonsStyling: false
+                            })
+                        }
+                    });
+                }
+
+            });
+            return false;
+        })
     </script>
     <script src="{{asset('js/myScript.js')}}"></script>
 

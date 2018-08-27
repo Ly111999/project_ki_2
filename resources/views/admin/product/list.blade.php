@@ -61,11 +61,19 @@
                                                 <img src="{{$item->image}}" alt="" style="width: 150px; height: 170px;">
                                             </div>
                                         </td>
+
+                                        <td class="col-md-1">{{$item->price}}</td>
+                                        <td class="col-md-3">{!! $item->description !!}</td>
+                                        <td class="col-md-2">
+                                            <a href="/admin/product/{{$item -> id}}/edit">Edit</a>   
+                                            <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj">Delete</a>
+
                                         <td class="col-md-1" style="margin-left: -7px">{{$item->discountPriceString}}</td>
                                         <td class="col-md-3">{{$item->description}}</td>
                                         <td class="col-md-2">
                                             <a href="/admin/product/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
                                             <a href="{{$item->id}}" class="btn btn-simple btn-icon remove btn-delete" style="color: #000000"><i class="material-icons"><i class="fas fa-trash-alt"></i></i></a>
+
 
                                         </td>
                                     </tr>
@@ -109,45 +117,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-        $('.btn-delete').click(function () {
+        $('.delete-obj').click(function () {
             var thisButton = $(this);
             swal({
-                text: "Bạn có chắc muốn xoá danh mục này không?",
+                title: "Delete",
+                text: "Do you really want to delete this product?",
                 type: 'warning',
+                buttons: true,
                 showCancelButton: true,
                 confirmButtonClass: 'btn btn-success',
                 cancelButtonClass: 'btn btn-danger',
                 confirmButtonText: 'Đồng ý',
-                cancelButtonText: 'Huỷ bỏ',
+                CancelButtonText: 'Huỷ bỏ',
                 buttonsStyling: false
-            }).then(function() {
-                var id = this.id;
-                $.ajax({
-                    'url': '/admin/product/' + id,
-                    'method': 'DELETE',
-                    'data':{
-                        '_token':$('meta[name="csrf-token"]').attr('content')
-                    },
-                    success: function (response) {
-                        swal({
-                            text: 'Danh mục đã bị xoá.',
-                            type: 'success',
-                            confirmButtonClass: "btn btn-success",
-                            buttonsStyling: false
-                        })
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 2*1000);
-                    },
-                    error: function () {
-                        swal({
-                            text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
-                            type: 'warning',
-                            confirmButtonClass: "btn btn-danger",
-                            buttonsStyling: false
-                        })
-                    }
-                });
+            }).then(function(confirm) {
+                if(confirm){
+                    var id = thisButton.attr('href');
+                    $.ajax({
+                        'url': '/admin/product/' + id,
+                        'method': 'DELETE',
+                        'data':{
+                            '_token':$('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function (response) {
+                            swal({
+                                title:"Delete",
+                                text: 'Danh mục đã bị xoá.',
+                                type: 'success',
+                                confirmButtonClass: "btn btn-success",
+                                buttonsStyling: false
+                            })
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 2*1000);
+                        },
+                        error: function () {
+                            swal({
+                                text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
+                                type: 'warning',
+                                confirmButtonClass: "btn btn-danger",
+                                buttonsStyling: false
+                            })
+                        }
+                    });
+                }
+
             });
             return false;
         })

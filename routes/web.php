@@ -26,7 +26,12 @@ Route::middleware('admin')->group(function() {
 
     Route::delete('/admin/product/destroy-many', 'ProductsController@destroyMany');
 
+
+Route::resource('admin/category', 'CategoryController');
+Route::resource('admin/user', 'UserController');
+
 });
+
 
 // CLIENT
 Auth::routes();
