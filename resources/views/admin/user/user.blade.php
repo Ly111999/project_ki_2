@@ -1,4 +1,6 @@
-@extends('admin.layout.default')
+@extends('admin.layout.default',[
+    'current_menu' => 'user'
+])
 @section('content')
     <h1>List User</h1>
 
@@ -7,10 +9,10 @@
             <thead>
             <tr class="row">
                 <th class="col-md-1">Id</th>
-                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Họ và tên</th>
                 <th class="col-md-4">Email</th>
-                <th class="col-md-2">Status</th>
-                <th class="col-md-3">Action</th>
+                <th class="col-md-2">Trang thái</th>
+                <th class="col-md-3">Thao tác</th>
             </tr>
             </thead>
             @foreach($list_obj as $item)

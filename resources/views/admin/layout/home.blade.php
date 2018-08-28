@@ -1,4 +1,6 @@
-@extends('admin.layout.default')
+@extends('admin.layout.default',[
+    'current_menu' => 'home'
+])
 
 @section('content')
 
@@ -10,9 +12,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="overview-wrap">
-                            <h2 class="title-1">overview</h2>
+                            <h2 class="title-1">Thông số</h2>
                             <button class="au-btn au-btn-icon au-btn--blue">
-                                <i class="fas fa-upload"></i>export
+                                <i class="fas fa-upload"></i>Xuất
                             </button>
                         </div>
                     </div>

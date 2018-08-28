@@ -1,4 +1,6 @@
-@extends('admin.layout.default')
+@extends('admin.layout.default',[
+    'current_menu' => 'order_manager'
+])
 
 @section('content')
 
@@ -7,7 +9,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title-5 m-b-35">List orders</h2>
+                        <h2 class="title-5 m-b-35">Đơn hàng</h2>
                     </div>
                 </div>
                 <div class="toolbar">
@@ -22,18 +24,20 @@
                     @if(count($list_obj)>0)
                         <table class="table table-data3 table-hover">
                             <thead>
-                            <tr role="row">
+                            <tr class="row">
                                 <th class="col-md-1">ID</th>
-                                <th class="col-md-1">Orderer</th>
-                                <th class="col-md-2">Receiver</th>
-                                <th class="col-md-2">Time</th>
-                                <th class="col-md-2">Infor</th>
-                                <th class="col-md-1">Status</th>
-                                <th class="col-md-3">Action</th>
+                                <th class="col-md-1">Người đặt</th>
+                                <th class="col-md-2">Người nhận</th>
+                                <th class="col-md-2">Thời gian</th>
+                                <th class="col-md-2">Thông tin</th>
+                                <th class="col-md-2">Trạng thái</th>
+                                <th class="col-md-2">Thao tác</th>
+
                             </tr>
                             </thead>
+
                             @foreach($list_obj as $item)
-                                <tr role="row" class="odd">
+                                <tr class="row">
                                     <td class="col-md-1">{{$item->id}}</td>
                                     <td class="col-md-1">huongly</td>
                                     <td class="col-md-2">{!! $item->shipInformation !!}</td>
@@ -46,22 +50,22 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td class="col-md-1">{{$item->statusLabel}}</td>
-                                    <td class="col-md-3">
+                                    <td class="col-md-2">{{$item->statusLabel}}</td>
+                                    <td class="col-md-2">
                                         @if($item->status==0)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=1"
                                                onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"
-                                               class="btn btn-simple btn-success btn-icon edit"><i
-                                                    class="material-icons">how_to_reg</i></a>
+                                               class="btn btn-simple btn-icon edit"><i
+                                                    class="material-icons">how</i></a>
                                         @elseif($item->status==1)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=2"
                                                onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
-                                               class="btn btn-simple btn-success btn-icon edit"><i
+                                               class="btn btn-simple  btn-icon edit"><i
                                                     class="material-icons">done</i></a>
                                         @endif
                                         @if($item->status==0)
                                             <a href="{{$item->id}}"
-                                               class="btn btn-simple btn-danger btn-icon remove btn-delete"><i
+                                               class="btn btn-simple btn-icon remove btn-delete"><i
                                                     class="material-icons">close</i></a>
                                         @endif
                                     </td>

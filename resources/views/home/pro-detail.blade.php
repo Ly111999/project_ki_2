@@ -9,7 +9,7 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('home')}}">Trang chủ</a></li>
                         <li><a href="/product?categoryId={{$obj_view -> categoryId}}"><i
                                     class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
@@ -41,7 +41,7 @@
                         <p id="description">{!!$obj_view->description!!}</p>
                     </div>
                     <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-                        <span class="ti-truck"></span><span>free delivery</span>
+                        <span class="ti-truck"></span><span>giao hàng miễn phí</span>
                     </div>
                     <div class="product_price mt-2">{{$obj_view->discountPriceString}}
                         <span>{{$obj_view->originalPriceString}}</span>
@@ -55,14 +55,14 @@
                     </ul>
 
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                        <span>Quantity:</span>
-                        <div class="quantity_selector">
+                        <span style="width: 100px">Số lượng:</span>
+                        <div class="quantity_selector ml-1">
                             <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
                             <span id="quantity_value">1</span>
                             <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
                         </div>
                         <div class="red_button_2 add_to_cart_button_2" id="add-cart-{{$obj_view->id}}"
-                             style="color: #ffffff;">ADD TO CART
+                             style="color: #ffffff;">THÊM VÀO GIỎ HÀNG
                         </div>
                         <div
                             class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
@@ -103,15 +103,15 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>Featured products</h2>
+                        <h2>Sản phẩm nổi bật</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col text-center">
                     <div class="new_arrivals_sorting">
-                        <p>We love to tell our successful far far away, behind the word mountains, far from the<br>
-                            countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>Chúng tôi sẽ mang tới cho bạn những sản phẩm tốt nhất đảm bảo về mẫu mã và chất lượng.</p>
+
                     </div>
                 </div>
             </div>
@@ -158,6 +158,7 @@
             </div>
         </div>
     </div>
+
     <!-- Benefit -->
 
     <div class="benefit">
@@ -167,8 +168,8 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>free shipping</h6>
-                            <p>Suffered Alteration in Some Form</p>
+                            <h6>miễn phí vận chuyển</h6>
+                            <p>Thay đổi trong một số hình thức</p>
                         </div>
                     </div>
                 </div>
@@ -176,8 +177,9 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>cach on delivery</h6>
-                            <p>The Internet Tend To Repeat</p>
+                            <h6>thanh toán khi giao hàng
+                            </h6>
+                            <p>Nhận hàng mới thanh toán</p>
                         </div>
                     </div>
                 </div>
@@ -185,8 +187,8 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>45 days return</h6>
-                            <p>Making it Look Like Readable</p>
+                            <h6> 45 ngày trở lại </h6>
+                            <p> Đổi trả trong 45 ngày </p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +196,7 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>opening all week</h6>
+                            <h6>mở cả tuần</h6>
                             <p>8AM - 09PM</p>
                         </div>
                     </div>

@@ -8,19 +8,19 @@
                 <div class="col-lg-6">
                     <div
                         class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-                        <h4>Newsletter</h4>
-                        <p>Subscribe to our newsletter and get 20% off your first purchase</p>
+                        <h4 style="margin-left: -6px">Bản tin</h4>
+                        <p style="margin-left: -10px">Đăng ký nhận bản tin và nhận giảm giá 20% cho lần mua hàng đầu tiên của bạn</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <form action="">
                         <div
                             class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-                            <input id="newsletter_email" type="email" placeholder="Your email" required="required"
+                            <input id="newsletter_email" type="email" placeholder="Nhập email của bạn" required="required"
                                    data-error="Valid email is required.">
                             <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300"
                                     data-toggle="modal" data-target="#exampleModal"
-                                    value="Submit">subscribe
+                                    value="Submit">Đăng ký
                             </button>
 
                             <!-- Modal -->

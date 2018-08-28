@@ -50,7 +50,7 @@ class ClientController extends Controller
         $start_price = 0;
         $end_price = 3000000;
         $selected_category = new Category();
-        $selected_category->name = 'All products';
+        $selected_category->name = 'Tất cả';
         $product_filter = Product::where('status', 1);
         if (Input::has('categoryId') && Input::get('categoryId') != 0) {
             $selected_categoryId = Input::get('categoryId');

@@ -9,7 +9,7 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('home')}}">Trang chủ</a></li>
                         <li class="active"><a href="/product?categoryId={{$selected_category -> id}}"><i
                                     class="fa fa-angle-right" aria-hidden="true"></i>{{$selected_category -> name}}</a>
                         </li>
@@ -21,12 +21,12 @@
                 <div class="sidebar">
                     <div class="sidebar_section">
                         <div class="sidebar_title">
-                            <h5>Product Category</h5>
+                            <h5>Loại sản phẩm</h5>
                         </div>
                         <ul class="sidebar_categories">
                             <li value="0" class="{{$selected_categoryId==0?'active':''}}"><a
-                                    href="/product?categoryId=0"><i class="fa fa-angle-double-right"></i> All
-                                    products</a></li>
+                                    href="/product?categoryId=0"><i class="fa fa-angle-double-right"></i>
+                                    Tất cả</a></li>
                             @foreach($categories as $category)
                                 <li class="{{$category->id==$selected_categoryId?'active':''}}">
                                     <a href="/product?categoryId={{$category -> id}}">
@@ -47,14 +47,14 @@
                             <input type="hidden" id="endPrice" name="endPrice" value="{{$end_price}}">
                             <input type="hidden" name="categoryId" value="{{$selected_categoryId}}">
                             <div class="sidebar_title">
-                                <h5>Filter by Price (vnd)</h5>
+                                <h5>Lọc theo giá (vnd)</h5>
                             </div>
                             <p>
                                 <input type="text" id="amount" readonly
                                        style="border:0; color:#f6931f; font-weight:bold;">
                             </p>
                             <div id="slider-range"></div>
-                            <button class="filter_button" id="btn-filter-price"><span>filter</span></button>
+                            <button class="filter_button" id="btn-filter-price"><span>Lọc</span></button>
                         </form>
                     </div>
 
@@ -76,20 +76,20 @@
                                 <div class="product_sorting_container product_sorting_container_top">
                                     <ul class="product_sorting">
                                         <li>
-                                            <span class="type_sorting_text">Default Sorting</span>
+                                            <span class="type_sorting_text">Mặc định</span>
                                             <i class="fa fa-angle-down"></i>
                                             <ul class="sorting_type">
                                                 <li class="type_sorting_btn"
-                                                    data-isotope-option='{ "sortBy": "original-order" }'><span>Default Sorting</span>
+                                                    data-isotope-option='{ "sortBy": "original-order" }'><span>Mặc định</span>
                                                 </li>
                                                 <li class="type_sorting_btn"
-                                                    data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
+                                                    data-isotope-option='{ "sortBy": "price" }'><span>Giá</span></li>
                                                 <li class="type_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>
-                                                    <span>Product Name</span></li>
+                                                    <span>Tên sản phẩm</span></li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <span>Show</span>
+                                            <span>Hiển thị</span>
                                             <span class="num_sorting_text">{{count($list_product)}}</span>
                                             <i class="fa fa-angle-down"></i>
                                             <ul class="sorting_num">
@@ -131,7 +131,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="red_button add_to_cart_button"  id="add-cart-{{$item->id}} " style="color: #ffffff">ADD TO CART</div>
+                                                <div class="red_button add_to_cart_button"  id="add-cart-{{$item->id}} " style="color: #ffffff">THÊM VÀO GIỎ HÀNG</div>
                                             </div>
                                             {{--</div>--}}
 
@@ -157,40 +157,37 @@
             <div class="row benefit_row">
                 <div class="col-lg-3 benefit_col">
                     <div class="benefit_item d-flex flex-row align-items-center">
-                        <div class="benefit_icon"><i class="fa fa-truck"
-                                                     aria-hidden="true"></i></div>
+                        <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>free shipping</h6>
-                            <p>Suffered Alteration in Some Form</p>
+                            <h6>miễn phí vận chuyển</h6>
+                            <p>Thay đổi trong một số hình thức</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 benefit_col">
                     <div class="benefit_item d-flex flex-row align-items-center">
-                        <div class="benefit_icon"><i class="fa fa-money"
-                                                     aria-hidden="true"></i></div>
+                        <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>cach on delivery</h6>
-                            <p>The Internet Tend To Repeat</p>
+                            <h6>thanh toán khi giao hàng
+                            </h6>
+                            <p>Nhận hàng mới thanh toán</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 benefit_col">
                     <div class="benefit_item d-flex flex-row align-items-center">
-                        <div class="benefit_icon"><i class="fa fa-undo"
-                                                     aria-hidden="true"></i></div>
+                        <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>45 days return</h6>
-                            <p>Making it Look Like Readable</p>
+                            <h6> 45 ngày trở lại </h6>
+                            <p> Đổi trả trong 45 ngày </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 benefit_col">
                     <div class="benefit_item d-flex flex-row align-items-center">
-                        <div class="benefit_icon"><i class="fa fa-clock-o"
-                                                     aria-hidden="true"></i></div>
+                        <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>opening all week</h6>
+                            <h6>mở cả tuần</h6>
                             <p>8AM - 09PM</p>
                         </div>
                     </div>
@@ -198,6 +195,5 @@
             </div>
         </div>
     </div>
-
 
 @endsection

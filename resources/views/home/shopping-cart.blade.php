@@ -9,8 +9,8 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="{{route('home')}}">Home</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Shopping cart</a>
+                        <li><a href="{{route('home')}}">Trang chủ</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Giỏ hàng</a>
                         </li>
                     </ul>
                 </div>

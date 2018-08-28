@@ -1,17 +1,19 @@
-@extends('admin.layout.default')
+@extends('admin.layout.default',[
+    'current_menu' => 'category_manager'
+])
 
 @section('content')
     <div class="section__content section__content--p30">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="title-5 ">List categories</h2>
+                    <h2 class="title-5 ">Danh sách chủng loại</h2>
                     <div class="alert alert-success d-none" role="alert" id="messageSuccess"></div>
                     <div class="alert alert-danger d-none" role="alert" id="messageError"></div>
                     <div class="table-data__tool-left float-right mb-5 mt-1 ">
                         <a href="/admin/category/create">
                             <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                <i class="zmdi zmdi-plus"></i>Create
+                                <i class="zmdi zmdi-plus"></i>Tạo mới
                             </button>
                         </a>
                     </div>
@@ -21,10 +23,10 @@
                                 <thead>
                                 <tr class="row">
                                     <th class="col-md-1">ID</th>
-                                    <th class="col-md-2">Category Name</th>
-                                    <th class="col-md-3">Category Image</th>
-                                    <th class="col-md-4">Category Description</th>
-                                    <th class="col-md-2">Action</th>
+                                    <th class="col-md-2">Tên</th>
+                                    <th class="col-md-3">Ảnh</th>
+                                    <th class="col-md-4">Mô tả</th>
+                                    <th class="col-md-2">Thao tác</th>
 
                                 </tr>
                                 </thead>
@@ -58,7 +60,7 @@
                             </div>
                         @else
                             <div class="alert alert-info" role="alert">
-                                Have no category, click <a href="/admin/category/create">here</a> to create new.
+                                Không có chủng loại, nhấn vào <a href="/admin/category/create">đây</a> để tạo mới.
                             </div>
                         @endif
                     </div>
@@ -72,8 +74,8 @@
         $('.delete-obj').click(function () {
             var thisButton = $(this);
             swal({
-                title: "Delete",
-                text: "Do you really want to delete this product?",
+                title: "Xóa",
+                text: "Bạn có chắc muốn xóa danh mục này?",
                 type: 'warning',
                 buttons: true,
                 showCancelButton: true,
@@ -93,7 +95,7 @@
                         },
                         success: function (response) {
                             swal({
-                                title: "Delete",
+                                title: "Xóa",
                                 text: 'Danh mục đã bị xoá.',
                                 type: 'success',
                                 confirmButtonClass: "btn btn-success",
@@ -105,7 +107,7 @@
                         },
                         error: function () {
                             swal({
-                                title: "Delete",
+                                title: "Xóa",
                                 text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
                                 type: 'warning',
                                 confirmButtonClass: "btn btn-danger",

@@ -38,59 +38,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manu-bar.css') }}">
+
     <!-- Jquery JS -->
     <script src="{{asset('admin/vendor/jquery-3.2.1.min.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
 </head>
 <body class="animsition">
-<div class="page-wrapper">
-    <!-- HEADER MOBILE-->
-    <header class="header-mobile d-block d-lg-none">
-        <div class="header-mobile__bar">
-            <div class="container-fluid ">
-                <div class="header-mobile-inner h-75">
-                    <a class="logo" href="index.html">
-                        <img src="{{asset('image/logo.png')}}" alt="Bambole"/>
-                    </a>
-                    <button class="hamburger hamburger--slider" type="button">
-                                    <span class="hamburger-box">
-                                        <span class="hamburger-inner"></span>
-                                    </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar-mobile">
-            <div class="container-fluid">
-                <ul class="navbar-mobile__list list-unstyled">
-                    <li class="has-sub">
-                        <a class="js-arrow" href="/admin/master">
-                            <i class="fas fa-home"></i>Home</a>
-                    </li>
-                    <li>
-                        <a href="/admin/product">
-                            <i class="fas fa-list-ul"></i>Product manager</a>
-                    </li>
-                    <li>
-                        <a href="/admin/category">
-                            <i class="fas fa-table"></i>Category manager</a>
-                    </li>
-                    <li>
-                        <a href="/admin/order">
-                            <i class="fab fa-jedi-order"></i>Order manager</a>
-                    </li>
-                    <li>
-                        <a href="/admin/user">
-                            <i class="fas fa-users"></i></i>User manager</a>
-                    </li>
 
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
@@ -99,28 +56,28 @@
                 <img src="{{asset('image/logo.png')}}" alt="Bambole"/>
             </a>
         </div>
-        <div class="menu-sidebar__content js-scrollbar1">
+        <div class=" nav menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar mt-5">
                 <ul class="list-unstyled navbar__list">
-                    <li class="has-sub">
+                    <li class="has-sub {{$current_menu == 'home' ? 'active' : ''}}">
                         <a class="js-arrow" href="/admin/master">
-                            <i class="fas fa-home"></i>Home</a>
+                            <i class="fas fa-home"></i>Trang chủ</a>
                     </li>
-                    <li>
+                    <li class="{{$current_menu == 'product_manager' ? 'active' : ''}}">
                         <a href="/admin/product">
-                            <i class="fas fa-list-ul"></i>Product manager</a>
+                            <i class="fas fa-list-ul"></i>Quản lí sản phẩm</a>
                     </li>
-                    <li>
+                    <li class="{{$current_menu == 'category_manager' ? 'active' : ''}}" >
                         <a href="/admin/category">
-                            <i class="fas fa-table"></i>Category manager</a>
+                            <i class="fas fa-table"></i>Quản lí chủng loại</a>
                     </li>
-                    <li>
+                    <li class="{{$current_menu == 'order_manager' ? 'active' : ''}}" >
                         <a href="/admin/order">
-                            <i class="fab fa-jedi-order"></i></i>Order manager</a>
+                            <i class="fab fa-jedi-order"></i>Quản lí đơn hàng</a>
                     </li>
-                    <li>
+                    <li class="{{$current_menu == 'user' ? 'active' : ''}}" >
                         <a href="/admin/user">
-                            <i class="fas fa-address-card"></i>User manager</a>
+                            <i class="fas fa-address-card"></i>Quản lí khách hàng</a>
                     </li>
                 </ul>
             </nav>
@@ -137,7 +94,7 @@
                     <div class="header-wrap">
                         <form class="form-header" action="" method="POST">
                             <input class="au-input au-input--xl" type="text" name="search"
-                                   placeholder="Search for datas &amp; reports..."/>
+                                   placeholder="Tìm kiếm"/>
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -167,7 +124,7 @@
                                         </div>
                                         <div class="account-dropdown__footer">
                                             <a href="{{route('home')}}">
-                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                                <i class="zmdi zmdi-power"></i>Đăng xuất</a>
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@
                 </div>
                 <div>
                     <a href="{{route('home')}}">
-                        <button type="button" class="btn btn-primary" style="margin-left: 600px;">Go to home</button>
+                        <button type="button" class="btn btn-primary" style="margin-left: 600px;">Trở lại trang chủ</button>
                     </a>
                 </div>
             </div>

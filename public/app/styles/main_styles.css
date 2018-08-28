@@ -453,7 +453,7 @@ category
 {
     display: inline-block;
     position: relative;
-    min-width: 145px;
+    min-width: 150px;
     text-align: center;
     vertical-align: middle;
 }
@@ -579,7 +579,8 @@ category
 {
 	padding-left: 10px;
 	padding-right: 10px;
-	line-height: 50px;
+	line-height: 60px;
+    width: 120px;
 }
 .account_selection li a
 {

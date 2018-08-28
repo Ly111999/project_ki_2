@@ -9,25 +9,22 @@
             <ul class="menu_top_nav">
                 <li class="menu_item has-children">
                     <a href="#">
-                        English
+                        Việt Nam
                         <i class="fa fa-angle-down"></i>
                     </a>
-                    <ul class="menu_selection">
-                        <li><a href="#">Vietnamese</a></li>
-                    </ul>
                 </li>
                 <li class="menu_item has-children">
                     <a href="#">
-                        My Account
+                        Tài khoản
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="menu_selection">
-                        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng nhập</a></li>
+                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Đăng ký</a></li>
                     </ul>
                 </li>
-                <li class="menu_item"><a href="{{route('home')}}">home</a></li>
-                <li class="menu_item"><a href="#">Category</a><i class="fa fa-angle-down"></i>
+                <li class="menu_item"><a href="{{route('home')}}">Trang chủ</a></li>
+                <li class="menu_item"><a href="#">Chủng loại</a><i class="fa fa-angle-down"></i>
                     <ul>
                         <li class="category">
                             <a href="#">Category &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
@@ -45,7 +42,7 @@
                 </li>
                 <li class="menu_item"><a href="#shop">shop</a></li>
                 <li class="menu_item"><a href="#blog">blog</a></li>
-                <li class="menu_item"><a href="/contact">contact</a></li>
+                <li class="menu_item"><a href="/contact">Liên hệ</a></li>
             </ul>
         </div>
     </div>
@@ -58,8 +55,8 @@
                 <div class="col">
                     <div class="main_slider_content">
                         <h6>Spring / Áo khoác nữ AKN4175 (2018)</h6>
-                        <h1>Get up to 20% Off New Arrivals</h1>
-                        <div class="red_button shop_now_button"><a href="/product/18">shop now</a></div>
+                        <h1>Giảm giá tới 20% cho hàng mới</h1>
+                        <div class="red_button shop_now_button"><a href="/product/18">mua ngay</a></div>
                     </div>
                 </div>
             </div>
@@ -75,7 +72,7 @@
                     <form style="width: 50%;">
                         <div class="input-group">
                             <input type="text" class="form-control" name="key" value="{{$data['key']}}"
-                                   placeholder="Search">
+                                   placeholder="Tìm kiếm">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -87,7 +84,7 @@
                 <div class="row mt-5">
                     <div class="col text-center">
                         <div class="section_title new_arrivals_title mt-1">
-                            <h2>Category</h2>
+                            <h2>Chủng loại</h2>
                         </div>
                     </div>
                 </div>
@@ -137,16 +134,14 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>New Arrivals</h2>
+                        <h2>Sản phẩm mới</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col text-center">
                     <div class="new_arrivals_sorting">
-                        <p>We love to tell our successful far far away, behind the word mountains, far from
-                            the<br>
-                            countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>Chúng tôi sẽ mang tới cho bạn những sản phẩm tốt nhất đảm bảo về mẫu mã và chất lượng.</p>
                     </div>
                 </div>
             </div>
@@ -187,7 +182,7 @@
                                 </div>
 
                                 <div class="red_button add_to_cart_button" id="add-cart-{{$item->id}}"
-                                     style="color: #ffffff">ADD TO CART
+                                     style="color: #ffffff">THÊM VÀO GIỎ HÀNG
                                 </div>
                             </div>
 
@@ -199,7 +194,7 @@
             </div>
             <div class="row float-right mt-3 ">
                 <a href="/product?categoryId=0">
-                    <button type="button" class="btn btn-outline-info">Show more >>></button>
+                    <button type="button" class="btn btn-outline-info">Xem thêm >>></button>
                 </a>
             </div>
         </div>
@@ -220,24 +215,24 @@
                 <div class="col-lg-6 text-right deal_ofthe_week_col">
                     <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
                         <div class="section_title">
-                            <h2>Deal Of The Week</h2>
+                            <h2>Giao dịch trong tuần</h2>
                         </div>
                         <ul class="timer">
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="day" class="timer_num">03</div>
-                                <div class="timer_unit">Day</div>
+                                <div class="timer_unit">Ngày</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="hour" class="timer_num">15</div>
-                                <div class="timer_unit">Hours</div>
+                                <div class="timer_unit">Giờ</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="minute" class="timer_num">45</div>
-                                <div class="timer_unit">Mins</div>
+                                <div class="timer_unit">Phút</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="second" class="timer_num">23</div>
-                                <div class="timer_unit">Sec</div>
+                                <div class="timer_unit">Giây</div>
                             </li>
                         </ul>
                     </div>
@@ -252,16 +247,14 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>Featured products</h2>
+                        <h2>Sản phẩm nổi bật</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col text-center">
                     <div class="new_arrivals_sorting">
-                        <p>We love to tell our successful far far away, behind the word mountains, far from
-                            the<br>
-                            countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <p>Chúng tôi sẽ mang tới cho bạn những sản phẩm tốt nhất đảm bảo về mẫu mã và chất lượng.</p>
                     </div>
                 </div>
             </div>
@@ -330,8 +323,8 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>free shipping</h6>
-                            <p>Suffered Alteration in Some Form</p>
+                            <h6>miễn phí vận chuyển</h6>
+                            <p>Thay đổi trong một số hình thức</p>
                         </div>
                     </div>
                 </div>
@@ -339,8 +332,9 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>cach on delivery</h6>
-                            <p>The Internet Tend To Repeat</p>
+                            <h6>thanh toán khi giao hàng
+                            </h6>
+                            <p>Nhận hàng mới thanh toán</p>
                         </div>
                     </div>
                 </div>
@@ -348,8 +342,8 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>45 days return</h6>
-                            <p>Making it Look Like Readable</p>
+                            <h6> 45 ngày trở lại </h6>
+                            <p>Đổi trả trong 45 ngày </p>
                         </div>
                     </div>
                 </div>
@@ -357,7 +351,7 @@
                     <div class="benefit_item d-flex flex-row align-items-center">
                         <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                         <div class="benefit_content">
-                            <h6>opening all week</h6>
+                            <h6>mở cả tuần</h6>
                             <p>8AM - 09PM</p>
                         </div>
                     </div>
@@ -373,7 +367,7 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title">
-                        <h2>Latest Blogs</h2>
+                        <h2> Blogs mới nhất</h2>
                     </div>
                 </div>
             </div>
@@ -384,8 +378,8 @@
                              style="background-image:url({{asset('image/blog_1.jpg')}})"></div>
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                            <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                            <span class="blog_meta">by admin | dec 01, 2017</span>
+                            <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa thu này </h4>
+                            <span class = "blog_meta"> bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
                             <a class="blog_more"
                                href="https://www.bocadolobo.com/en/inspiration-and-ideas/trends-forecast-fallwinter-2018/">Read
                                 more</a>
@@ -398,8 +392,8 @@
                              style="background-image:url({{asset('image/blog_2.jpg')}})"></div>
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                            <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                            <span class="blog_meta">by admin | dec 01, 2017</span>
+                            <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa xuân này</h4>
+                            <span class="blog_meta">bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
                             <a class="blog_more"
                                href="https://ngoisao.net/tin-tuc/thoi-trang/tu-van/phoi-do-hoa-tre-trung-cho-ngay-cuoi-tuan-3793687.html">Read
                                 more</a>
@@ -412,8 +406,8 @@
                              style="background-image:url({{asset('image/blog_3.jpg')}})"></div>
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                            <h4 class="blog_title">Here are the trends I see coming this fall</h4>
-                            <span class="blog_meta">by admin | dec 01, 2017</span>
+                            <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa hè này</h4>
+                            <span class="blog_meta">bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
                             <a class="blog_more"
                                href="https://www.24h.com.vn/tui-bop-that-lung/7-kieu-tui-thu-nay-cac-co-gai-phai-co-ma-tau-c174a984347.html">Read
                                 more</a>
@@ -423,7 +417,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 @stop
 
 

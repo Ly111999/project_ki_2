@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="top_nav_left">free shipping on all u.s orders over 500.000 VND</div>
+                    <div class="top_nav_left">MIỄN PHÍ VẬN CHUYỂN TRÊN TẤT CẢ ĐƠN HÀNG TRÊN 500.000 VND</div>
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="top_nav_right">
@@ -17,27 +17,23 @@
 
                             <li class="language">
                                 <a href="#">
-                                    English
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="language_selection">
-                                    <li><a href="#">Vietnamese</a></li>
+                                    Việt Nam
 
-                                </ul>
+                                </a>
                             </li>
                             @if(!Auth::check())
-                                <li class="account">
+                                <li class="account" style="width: 120px;">
                                     <a href="#">
-                                        My Account
+                                       Tài khoản
                                         <i class="fa fa-angle-down"></i>
                                     </a>
 
 
                                     <ul class="account_selection">
                                         <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"
-                                                                              aria-hidden="true"></i>Sign In</a></li>
+                                                                              aria-hidden="true"></i>Đăng nhập</a></li>
                                         <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"
-                                                                                 aria-hidden="true"></i>Register</a>
+                                                                                 aria-hidden="true"></i>Đăng ký</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -53,7 +49,7 @@
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Log out</a>
+                                            Đăng xuất</a>
                                     </li>
 
 
@@ -83,9 +79,9 @@
                     </div>
                     <nav class="navbar">
                         <ul class="navbar_menu">
-                            <li><a href="{{route('home')}}">home</a></li>
+                            <li><a href="{{route('home')}}">Trang chủ</a></li>
                             <li class="category">
-                                <a href="#">Category &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
+                                <a href="#">Chủng loại &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
 
                                 <ul class="category_selection">
                                     @foreach($categories as $category)
@@ -97,7 +93,7 @@
                             </li>
                             <li><a href="#shop">shop</a></li>
                             <li><a href="#blog">blog</a></li>
-                            <li><a href="/contact">contact</a></li>
+                            <li><a href="/contact">liên hệ</a></li>
                         </ul>
                         <ul class="navbar_user">
                             <li><a href="/admin/master" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a>
