@@ -23,12 +23,12 @@ class UserController extends Controller
     public function changeStatus()
     {
         $id = Input::get('id');
-        $status = Input::get('status');
+        $status = Input::get('adminLevel');
         $user = User::find($id);
         if ($user == null) {
             return view('errors.404-admin');
         }
-        $user->status = $status;
+        $user->adminLevel = $status;
         $user->save();
         return redirect('/admin/user');
     }

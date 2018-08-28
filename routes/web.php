@@ -20,7 +20,8 @@ Route::middleware('admin')->group(function() {
 
     Route::resource('admin/category', 'CategoryController');
 
-    Route::resource('admin/order', 'OrderController');
+    Route::get('admin/order', 'OrderController@index');
+    Route::get('admin/order/change-status', 'OrderController@changeStatus');
 
     Route::resource('admin/user', 'UserController');
 
@@ -42,6 +43,9 @@ Route::get('/home', 'ClientController@home');
 Route::get('/', 'ClientController@home')->name('home');
 
 Route::get('/contact', 'ClientController@contact');
+
+Route::get('admin/user', 'UserController@index');
+Route::get('admin/user/change-status', 'UserController@changeStatus');
 
 Route::get('/product','ClientController@listProduct');
 Route::get('/product/{id}', 'ClientController@showProductDetail');
