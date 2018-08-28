@@ -12,13 +12,11 @@ $('.red_button').click(function () {
         success: function (resp) {
             var new_count = resp.shopping_cart.count;
             if (new_count == undefined) {
-                $('#header-icons-noti').text(1);
+                $('#checkout_items').text(1);
             } else {
-                $('#header-icons-noti').text(new_count);
+                $('#checkout_items').text(new_count);
             }
 
-            // $('#header-cart-wrapitem').html(new_content);
-            // $('#header-cart-total').text(new_total_money);
             swal('Thao tác thành công!', 'Sản phẩm đã được thêm vào giỏ hàng!', 'success');
         },
         error: function (error) {
@@ -62,3 +60,6 @@ $('.btn-num-product-up').on('click', function (e) {
     var totalPrice = Number(discountPrice) * numProduct;
     $(this).closest('.table-row').find('.column-5').text(totalPrice.numberFormat(0));
 });
+
+
+

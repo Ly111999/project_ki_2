@@ -304,7 +304,8 @@ jQuery(document).ready(function($)
 
     /*
 
-	6. Init Isotope Filtering
+
+6. Init Isotope Filtering
 
 	*/
 
@@ -415,7 +416,6 @@ jQuery(document).ready(function($)
     }
 
     /*
-
 	8. Init Checkboxes
 
 	*/

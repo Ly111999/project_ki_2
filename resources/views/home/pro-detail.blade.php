@@ -86,9 +86,9 @@
                 success: function (resp) {
                     var new_count = resp.shopping_cart.count;
                     if (new_count == undefined) {
-                        $('#header-icons-noti').text(1);
+                        $('#checkout_items').text(1);
                     } else {
-                        $('#header-icons-noti').text(new_count);
+                        $('#checkout_items').text(new_count);
                     }
                     swal('Thao tác thành công!', 'Sản phẩm đã được thêm vào giỏ hàng!', 'success');
                 },

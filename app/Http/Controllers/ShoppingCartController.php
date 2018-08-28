@@ -112,6 +112,7 @@ class ShoppingCartController extends Controller
     }
     public function checkoutCart()
     {
+        $categories = Category::all();
         if (Session::has('cart')) {
             try {
                 DB::beginTransaction();
@@ -148,13 +149,19 @@ class ShoppingCartController extends Controller
                 // clear session cart.
                 Session::remove('cart');
                 // send mail or sms.
-                return view('home.order-success')->with('order', $order)->with('order_details', $order_details);
+
+                return view('home.order-success')
+                    ->with('categories', $categories)
+                    ->with('order', $order)->with('order_details', $order_details);
             } catch (\Exception $exception) {
                 DB::rollBack();
                 return 'Có lỗi xảy ra.' . $exception->getMessage();
             }
         } else {
-            return redirect('/')->with('message', 'Hiện tại chưa có sản phẩm nào trong giỏ hàng.');
+            return redirect('/')
+                ->with('categories', $categories)
+                ->with('message', 'Hiện tại chưa có sản phẩm nào trong giỏ hàng.');
         }
     }
+
 }

@@ -3,49 +3,7 @@
 @section('content')
 
     <div class="fs_menu_overlay"></div>
-    <div class="hamburger_menu">
-        <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-        <div class="hamburger_menu_content text-right">
-            <ul class="menu_top_nav">
-                <li class="menu_item has-children">
-                    <a href="#">
-                        Việt Nam
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                </li>
-                <li class="menu_item has-children">
-                    <a href="#">
-                        Tài khoản
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="menu_selection">
-                        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng nhập</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Đăng ký</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item"><a href="{{route('home')}}">Trang chủ</a></li>
-                <li class="menu_item"><a href="#">Chủng loại</a><i class="fa fa-angle-down"></i>
-                    <ul>
-                        <li class="category">
-                            <a href="#">Category &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
-                            <ul class="category_selection">
-                                @foreach($categories as $category)
-                                    <a href="/product?categoryId={{$category -> id}}">
-                                        <span><i class="fa fa-angle-double-right"
-                                                 aria-hidden="true"
-                                                 data-filter=".{{$category -> id}}"></i></span>{{$category -> name}}
-                                    </a>
-                                @endforeach
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu_item"><a href="#shop">shop</a></li>
-                <li class="menu_item"><a href="#blog">blog</a></li>
-                <li class="menu_item"><a href="/contact">Liên hệ</a></li>
-            </ul>
-        </div>
-    </div>
+    {{----}}
 
     <!-- Slider -->
 
