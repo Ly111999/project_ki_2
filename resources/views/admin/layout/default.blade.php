@@ -123,8 +123,8 @@
                                             </div>
                                         </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="{{route('home')}}">
-                                                <i class="zmdi zmdi-power"></i>Đăng xuất</a>
+                                            {{--<a href="{{route('home')}}">--}}
+                                                {{--<i class="zmdi zmdi-power"></i>Đăng xuất</a>--}}
                                         </div>
                                     </div>
                                 </div>

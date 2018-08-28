@@ -10,18 +10,27 @@
                     <h2 class="title-5 ">Tạo mới sản phẩm</h2>
                     <a href="/admin/product" class="float-right"><i class="fas fa-list-ul"></i>Danh sách</a>
                     <div class="clearfix"></div>
+                    {{--@if ($errors->any())--}}
+                        {{--<div class="alert alert-danger">--}}
+                            {{--Vui lòng sửa lỗi và thử lại.--}}
+                            {{--<ul>--}}
+                                {{--@foreach ($errors->all() as $error)--}}
+                                    {{--<li>{{ $error }}</li>--}}
+                                {{--@endforeach--}}
+                            {{--</ul>--}}
+
+                        {{--</div>--}}
+                    {{--@endif--}}
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            Vui lòng sửa lỗi và thử lại.
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
-
                         </div>
                     @endif
-                    <form action="/admin/product" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/product" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label>Tên sản phẩm</label>
@@ -78,4 +87,4 @@
         </div>
     </div>
 
-@stop
+@endsection

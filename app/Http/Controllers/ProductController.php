@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\HelloPost;
 use App\Http\Requests\StoreProductPost;
 use App\Product;
 use Illuminate\Http\Request;
@@ -57,20 +58,23 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductPost $post)
+    public function store(HelloPost $request)
     {
-        $post->validated();
-
-        $product = new Product();
-        $product->name = Input::get('name');
-        $product->price = Input::get('price');
-        $product->discount = Input::get('discount');
-        $product->categoryId = Input::get('categoryId');
-        $product->description = Input::get('description');
-        $product->image = Input::get('image');
-
-        $product->save();
-        return redirect('/admin/product');
+//        return "1";
+        return "2";
+//        $validated = $request->validated();
+//        return 1;
+//
+//        $product = new Product();
+//        $product->name = Input::get('name');
+//        $product->price = Input::get('price');
+//        $product->discount = Input::get('discount');
+//        $product->categoryId = Input::get('categoryId');
+//        $product->description = Input::get('description');
+//        $product->image = Input::get('image');
+//
+//        $product->save();
+//        return redirect('/admin/product');
     }
 
     /**
