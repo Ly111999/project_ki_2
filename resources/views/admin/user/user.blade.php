@@ -24,22 +24,19 @@
                     <td class="col-md-4">{{$item->email}}</td>
                     <td class="col-md-2">{{$item->getStatusLabelAttribute()}}</td>
                     <td class="col-md-3">
-                        {{--@if($item->status==0)--}}
-                            {{--<a href="/admin/user/change-status?id={{$item->id}}&adminLevel=1"--}}
-                               {{--onclick="return confirm('Bạn có chắc muốn xác nhận quyền admin cho tài khoản này?')"--}}
-                               {{--class="btn btn-simple btn-success btn-icon edit"><i--}}
-                                    {{--class="material-icons">how_to_reg</i></a>--}}
-                        {{--@elseif($item->status==1)--}}
-                            {{--<a href="/admin/order/change-status?id={{$item->id}}&status=0"--}}
-                               {{--onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"--}}
-                               {{--class="btn btn-simple btn-success btn-icon edit"><i--}}
-                                    {{--class="material-icons">done</i></a>--}}
-                        {{--@endif--}}
-                        {{--@if($item->status==0)--}}
-                            {{--<a href="{{$item->id}}"--}}
-                               {{--class="btn btn-simple btn-danger btn-icon remove btn-delete"><i--}}
-                                    {{--class="material-icons">close</i></a>--}}
-                        {{--@endif--}}
+                        @if($item->adminLevel==0)
+                            <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=1"
+                               onclick="return confirm('Bạn có chắc muốn xác nhận quyền admin cho tài khoản này?')"
+                               class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>
+                        @elseif($item->adminLevel==1)
+                            <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=0"
+                               onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
+                               class="btn btn-simple btn-icon edit"><i class="fas fa-times"></i></a>
+                        @endif
+                        @if($item->adminLevel==0)
+                            <a href="{{$item->id}}"
+                               class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-times"></i></a>
+                        @endif
                     </td>
                 </tr>
                 </tbody>
