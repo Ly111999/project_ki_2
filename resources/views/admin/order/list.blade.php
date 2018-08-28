@@ -30,8 +30,8 @@
                                 <th class="col-md-2">Người nhận</th>
                                 <th class="col-md-2">Thời gian</th>
                                 <th class="col-md-2">Thông tin</th>
-                                <th class="col-md-2">Trạng thái</th>
-                                <th class="col-md-2">Thao tác</th>
+                                <th class="col-md-1">Trạng thái</th>
+                                <th class="col-md-3">Thao tác</th>
 
                             </tr>
                             </thead>
@@ -50,23 +50,20 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td class="col-md-2">{{$item->statusLabel}}</td>
-                                    <td class="col-md-2">
+                                    <td class="col-md-1">{{$item->statusLabel}}</td>
+                                    <td class="col-md-3">
                                         @if($item->status==0)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=1"
                                                onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"
-                                               class="btn btn-simple btn-icon edit"><i
-                                                    class="material-icons">how</i></a>
+                                               class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>
                                         @elseif($item->status==1)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=2"
                                                onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
-                                               class="btn btn-simple  btn-icon edit"><i
-                                                    class="material-icons">done</i></a>
+                                               class="btn btn-simple  btn-icon edit"><i class="fas fa-times"></i></a>
                                         @endif
                                         @if($item->status==0)
                                             <a href="{{$item->id}}"
-                                               class="btn btn-simple btn-icon remove btn-delete"><i
-                                                    class="material-icons">close</i></a>
+                                               class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-times"></i></a>
                                         @endif
                                     </td>
                                 </tr>
