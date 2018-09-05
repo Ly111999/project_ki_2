@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'home'
+    'current_menu' => 'home',
+    'page_title'=>'Trang quản lí'
 ])
 
 @section('content')

@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'user'
+    'current_menu' => 'user',
+    'page_title'=>'Danh sách tài khoản khách hàng'
 ])
 @section('content')
     <h1>List User</h1>
@@ -25,17 +26,17 @@
                     <td class="col-md-2">{{$item->getStatusLabelAttribute()}}</td>
                     <td class="col-md-3">
                         @if($item->adminLevel==0)
-                            <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=1"
+                            <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=1" title="admin"
                                onclick="return confirm('Bạn có chắc muốn xác nhận quyền admin cho tài khoản này?')"
                                class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>
                         @elseif($item->adminLevel==1)
                             <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=0"
-                               onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
-                               class="btn btn-simple btn-icon edit"><i class="fas fa-times"></i></a>
+                               onclick="return confirm('Bạn có chắc muốn bỏ quyền admin cho tài khoản này?')"
+                               class="btn btn-simple btn-icon edit"><i class="fas fa-star"></i></a>
                         @endif
                         @if($item->adminLevel==0)
-                            <a href="{{$item->id}}"
-                               class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-times"></i></a>
+                            <a href="{{$item->id}}" title="client"
+                               class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-star"></i></a>
                         @endif
                     </td>
                 </tr>

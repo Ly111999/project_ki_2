@@ -44,12 +44,12 @@
                                     </a>
 
 
-                                    <ul class="account_selection " style="width: 100px">
+                                    <ul class="account_selection " style="width: 100px;">
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                Đăng xuất</a>
+                                                Đăng xuất &nbsp;&nbsp;</a>
                                         </li>
 
 
@@ -97,7 +97,7 @@
                         </ul>
 
                             <ul class="navbar_user">
-                                @if(Auth::check())
+                                @if(Auth::check() && auth()->user()->adminLevel == 1)
                                 <li><a href="/admin/master" title="Admin page"><i class="fa fa-user"
                                                                                   aria-hidden="true"></i></a>
                                 </li>

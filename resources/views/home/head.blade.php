@@ -1,12 +1,15 @@
-<title>Bambole Shop</title>
+<title>{{$page_title}}</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Bambole Shop">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{csrf_token()}}">
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/bootstrap4/bootstrap.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('app/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" >
+<link rel="stylesheet" type="text/css" href="{{asset('app/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/OwlCarousel2-2.2.1/animate.css')}}">

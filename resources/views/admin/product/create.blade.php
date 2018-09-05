@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'product_manager'
+    'current_menu' => 'product_manager',
+    'page_title'=>'Tạo mới sản phẩm'
 ])
 
 @section('content')
@@ -10,17 +11,17 @@
                     <h2 class="title-5 ">Tạo mới sản phẩm</h2>
                     <a href="/admin/product" class="float-right"><i class="fas fa-list-ul"></i>Danh sách</a>
                     <div class="clearfix"></div>
-                    {{--@if ($errors->any())--}}
-                        {{--<div class="alert alert-danger">--}}
-                            {{--Vui lòng sửa lỗi và thử lại.--}}
-                            {{--<ul>--}}
-                                {{--@foreach ($errors->all() as $error)--}}
-                                    {{--<li>{{ $error }}</li>--}}
-                                {{--@endforeach--}}
-                            {{--</ul>--}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            Vui lòng sửa lỗi và thử lại.
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
 
-                        {{--</div>--}}
-                    {{--@endif--}}
+                        </div>
+                    @endif
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -44,7 +45,7 @@
                         <div class="form-group">
                             <label>Gía</label>
                             <div class="row ml-1">
-                                <input type="number" name="price" class="form-control w-25 mr-2">
+                                <input type="number" name="price" id="test" class="form-control w-25 mr-2">
                                 @if($errors->has('price'))
                                     <label class="text-danger">*{{$errors->first('price')}}</label>
                                 @endif
@@ -53,7 +54,7 @@
                         <div class="form-group">
                             <label>Giảm</label>
                             <div class="row ml-1">
-                                <input type="number" name="discount" class="form-control w-25 mr-2">
+                                <input type="number" id="test2" name="discount" class="form-control w-25 mr-2">
                                 @if($errors->has('discount'))
                                     <label class="text-danger">*{{$errors->first('discount')}}</label>
                                 @endif
@@ -86,5 +87,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $("#test").keyup(function() {
+            var val = $("#test").val();
+            if(parseInt(val) < 0 || isNaN(val)) {
+
+                $("#test").val("");
+                $("#test").focus();
+            }
+        });
+
+        $("#test2").keyup(function() {
+            var val = $("#test2").val();
+            if(parseInt(val) < 0 || isNaN(val)) {
+
+                $("#test2").val("");
+                $("#test2").focus();
+            }
+        });
+    </script>
 
 @endsection

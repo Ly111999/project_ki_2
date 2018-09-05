@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Seller;
-use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class ClientController extends Controller
@@ -23,15 +21,10 @@ class ClientController extends Controller
             $data['key'] = '';
         }
         $obj = $obj->paginate(10);
-
         return view('home.home')
             ->with('categories', $categories)
             ->with('obj', $obj)
-            ->with('data', $data)
-            ->with([
-                    "list_Product" => Seller::all()
-                ]
-            );
+            ->with('data', $data);
     }
 
     public function contact()
@@ -82,41 +75,17 @@ class ClientController extends Controller
         $selected_category = Category::find($selected_categoryId);
 
         $product = Product::find($id);
+        $obj = Product::all();
 
         if ($product == null) {
             return view('errors.404');
         }
         return view('home.pro-detail')
             ->with('obj_view', $product)
+            ->with('obj', $obj)
             ->with('selected_categoryId', $selected_categoryId)
             ->with('selected_category', $selected_category)
-            ->with('categories', $categories)
-            ->with([
-                    "list_Product" => Seller::all()
-                ]
-            );
+            ->with('categories', $categories);
     }
 
-    public function showProductSeller($id)
-    {
-
-        $categories = Category::all();
-        $selected_categoryId = 1;
-        $selected_category = Category::find($selected_categoryId);
-
-        $product = Seller::find($id);
-
-        if ($product == null) {
-            return view('errors.404');
-        }
-        return view('home.pro-detail')
-            ->with('obj_view', $product)
-            ->with('selected_categoryId', $selected_categoryId)
-            ->with('selected_category', $selected_category)
-            ->with('categories', $categories)
-            ->with([
-                    "list_Product" => Seller::all()
-                ]
-            );
-    }
 }
