@@ -122,10 +122,12 @@ class ProductController extends Controller
     {
         $obj = Product::find($id);
         if ($obj == null) {
-            return response()->json(['error' => 'not found'], 404);
+            return response()->json(['message' => 'Sản phẩm không tồn tại hoặc đã bị xoá!'], 404);
         }
-        $obj->delete();
-        return response()->json(['message' => 'Deleted'], 200);
+        $obj->status = 0;
+        $obj->save();
+        return response()->json(['message' => 'Đã xoá thông tin danh mục'], 200);
+
     }
 
     public function destroyMany()
