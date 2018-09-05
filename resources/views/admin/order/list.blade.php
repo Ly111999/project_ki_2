@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'order_manager'
+    'current_menu' => 'order_manager',
+    'page_title'=>'Danh sách đơn hàng'
 ])
 
 @section('content')
@@ -39,7 +40,7 @@
                             @foreach($list_obj as $item)
                                 <tr class="row">
                                     <td class="col-md-1">{{$item->id}}</td>
-                                    <td class="col-md-1">huongly</td>
+                                    <td class="col-md-1">{{$item->ship_name}}</td>
                                     <td class="col-md-2">{!! $item->shipInformation !!}</td>
                                     <td class="col-md-2">{{$item->created_at}}</td>
                                     <td class="col-md-2">
@@ -59,11 +60,21 @@
                                         @elseif($item->status==1)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=2"
                                                onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
-                                               class="btn btn-simple  btn-icon edit"><i class="fas fa-times"></i></a>
+                                               class="btn btn-simple  btn-icon edit"><i class="fas fa-star"></i></a>
+                                        @elseif($item->status==0)
+                                            <a href="/admin/order/change-status?id={{$item->id}}&status=-1"
+                                               onclick="return confirm('Bạn có chắc muốn hủy đơn hàng?')"
+                                               class="btn btn-simple  btn-icon edit"><i class="far fa-times-circle"></i></a>
                                         @endif
                                         @if($item->status==0)
                                             <a href="{{$item->id}}"
-                                               class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-times"></i></a>
+                                               class="btn btn-simple btn-icon remove btn-delete"><i
+                                                    class="fas fa-star"></i></a>
+                                        @endif
+                                        @if($item->status==0)
+                                            <a href="/admin/order/change-status?id={{$item->id}}&status=-1"
+                                               class="btn btn-simple btn-icon remove btn-delete"><i
+                                                    class="fas fa-times-circle"></i></a>
                                         @endif
                                     </td>
                                 </tr>

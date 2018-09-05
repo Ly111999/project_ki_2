@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
 
     <!-- Title Page-->
-    <title>Admin</title>
+    <title>{{$page_title}}</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('admin/css/font-face.css')}}" rel="stylesheet" media="all">
@@ -38,7 +38,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/manu-bar.css') }}">
 
     <!-- Jquery JS -->
     <script src="{{asset('admin/vendor/jquery-3.2.1.min.js')}}"></script>
@@ -93,20 +92,15 @@
                 <div class="container-fluid">
                     <div class="header-wrap">
                         <form class="form-header" action="" method="POST">
-                            <input class="au-input au-input--xl" type="text" name="search"
-                                   placeholder="Tìm kiếm"/>
-                            <button class="au-btn--submit" type="submit">
-                                <i class="zmdi zmdi-search"></i>
-                            </button>
+
                         </form>
                         <div class="header-button">
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        {{--<img src="{{asset('image/logo.png')}}" alt="John Doe"/>--}}
                                     </div>
                                     <div class="content">
-                                        <a class="js-acc-btn" href="#">Huong Ly</a>
+                                        <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                     </div>
                                     <div class="account-dropdown js-dropdown">
                                         <div class="info clearfix">
@@ -117,7 +111,7 @@
                                             </div>
                                             <div class="content">
                                                 <h5 class="name">
-                                                    <a href="#">Huong Ly</a>
+                                                    <a href="#">{{ Auth::user()->name }}</a>
                                                 </h5>
                                                 <span class="email">bamboleShop100818@gmail.com</span>
                                             </div>

@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'product_manager'
+    'current_menu' => 'product_manager',
+    'page_title'=>'Danh sách sản phẩm'
 ])
 @section('content')
     <div class="section__content section__content">

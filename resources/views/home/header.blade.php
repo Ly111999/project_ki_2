@@ -24,7 +24,7 @@
                             @if(!Auth::check())
                                 <li class="account" style="width: 120px;">
                                     <a href="#">
-                                       Tài khoản
+                                        Tài khoản
                                         <i class="fa fa-angle-down"></i>
                                     </a>
 
@@ -44,20 +44,20 @@
                                     </a>
 
 
-                                <ul class="account_selection " style="width: 100px">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
+                                    <ul class="account_selection " style="width: 100px;">
+                                        <li>
+                                            <a href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Đăng xuất</a>
-                                    </li>
+                                                Đăng xuất &nbsp;&nbsp;</a>
+                                        </li>
 
 
-                                </ul>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
+                                    </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             @endguest
 
@@ -95,20 +95,25 @@
                             <li><a href="#blog">blog</a></li>
                             <li><a href="/contact">liên hệ</a></li>
                         </ul>
-                        <ul class="navbar_user">
-                            <li><a href="/admin/master" title="Admin page"><i class="fa fa-user" aria-hidden="true"></i></a>
-                            </li>
 
-                            <li class="checkout">
-                                <a href="/xem-gio-hang" title="Cart">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span id="checkout_items" class="checkout_items">{{\App\ShoppingCart::getTotalItem()}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="hamburger_container">
-                            <i class="fa fa-bars" aria-hidden="true"></i>
-                        </div>
+                            <ul class="navbar_user">
+                                @if(Auth::check() && auth()->user()->adminLevel == 1)
+                                <li><a href="/admin/master" title="Admin page"><i class="fa fa-user"
+                                                                                  aria-hidden="true"></i></a>
+                                </li>
+                                @endif
+
+                                <li class="checkout">
+                                    <a href="/xem-gio-hang" title="Cart">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <span id="checkout_items"
+                                              class="checkout_items">{{\App\ShoppingCart::getTotalItem()}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="hamburger_container">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
                     </nav>
                 </div>
             </div>

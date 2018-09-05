@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'category_manager'
+    'current_menu' => 'category_manager',
+    'page_title'=>'Tạo mới danh mục'
 ])
 
 @section('content')
