@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\StoreProductPost;
+use App\Order;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -18,7 +20,20 @@ class ProductController extends Controller
 
     public function homeAdmin()
     {
-        return view('admin.layout.home');
+        $total = 0;
+        $cart = 0;
+        $list_obj = Order::all();
+        $memberOnl = User::all();
+        foreach ($list_obj as $obj) {
+            $total = $total + $obj->total_price;
+            $cart = count($list_obj);
+        }
+        $member = count($memberOnl);
+        return view('admin.layout.home')
+            ->with('total', $total)
+            ->with('member', $member)
+            ->with('cart', $cart);
+
     }
 
     public function index()

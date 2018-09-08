@@ -91,7 +91,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="#shop">shop</a></li>
                             <li><a href="#blog">blog</a></li>
                             <li><a href="/contact">liên hệ</a></li>
                         </ul>
@@ -114,5 +113,8 @@
             </div>
         </div>
     </div>
+
+
+
 
 </header>

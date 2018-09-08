@@ -16,6 +16,7 @@
 // ADMIN
 
 Route::middleware('admin')->group(function() {
+    Route::get('/api-get-chart-data', 'OrderController@getChartDataApi');
     Route::get('/admin/master', 'ProductController@homeAdmin');
 
     Route::resource('admin/product', 'ProductController');
@@ -28,7 +29,7 @@ Route::middleware('admin')->group(function() {
 
     Route::get('/admin/product/{id}','ProductController@destroy');
 
-    Route::delete('/admin/product/destroy-many', 'ProductsController@destroyMany');
+    Route::delete('/admin/product/destroy-many', 'ProductController@destroyMany');
 
 
 Route::resource('admin/category', 'CategoryController');
