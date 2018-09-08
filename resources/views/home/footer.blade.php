@@ -12,6 +12,7 @@
                         <p style="margin-left: -10px">Đăng ký nhận bản tin và nhận giảm giá 20% cho lần mua hàng đầu tiên của bạn</p>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <form action="/">
                         <div
