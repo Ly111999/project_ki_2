@@ -65,6 +65,19 @@ class ProductController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+    public function store(StoreProductPost $post)
+    {
+        $post->validated();
+        $product = new Product();
+        $product->name = Input::get('name');
+        $product->price = Input::get('price');
+        $product->discount = Input::get('discount');
+        $product->categoryId = Input::get('categoryId');
+        $product->description = Input::get('description');
+        $product->image = Input::get('image');
+        $product->save();
+        return redirect('/admin/product');
+    }
     public function show($id)
     {
         //
