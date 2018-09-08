@@ -91,6 +91,10 @@
                                     @endforeach
                                 </ul>
                             </li>
+<<<<<<< HEAD
+=======
+                            <li><a href="#shop">cửa hàng</a></li>
+>>>>>>> f052463b012c2958a2073a02dada1933e5111bc8
                             <li><a href="#blog">blog</a></li>
                             <li><a href="/contact">liên hệ</a></li>
                         </ul>
