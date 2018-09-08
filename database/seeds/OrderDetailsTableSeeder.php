@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class OrderDetailTableSeeder extends Seeder
+class OrderDetailsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -196,6 +196,5 @@ class OrderDetailTableSeeder extends Seeder
             ],
         ]);
         \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS=1');
-
     }
 }

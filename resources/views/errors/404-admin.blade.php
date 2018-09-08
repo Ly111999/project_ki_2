@@ -1,4 +1,6 @@
-@extends('admin.layout.default)
+@extends('admin.layout.default',[
+    'page_title'=>'404'
+])
 
 @section('content')
     <div class="main-content" style="margin-top: -70px">

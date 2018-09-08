@@ -11,6 +11,7 @@ class OrderController extends Controller
 {
     public function index()
     {
+
         $total= 0;
         $start_date = null;
         $end_date = null;

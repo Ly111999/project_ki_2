@@ -33,13 +33,13 @@ class StoreCategoryPost extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Please enter a name.',
-            'name.unique' => 'The name already exists.',
-            'name.max' => 'Pass character length for.',
-            'description.required' => 'Please enter a description.',
-            'description.max' => 'Pass character length for',
-            'image.required' => 'Please enter a url.',
-            'image.max' => 'Pass character length for.'
+            'name.required' => 'Vui lòng nhập tên.',
+            'name.unique' => 'Tên đã tồn tại.',
+            'name.max' => 'Vượt quá độ dài ký tự cho phép.',
+            'description.required' => 'Vui lòng nhập mô tả.',
+            'description.max' => 'Vượt qua độ dài ký tự cho phép.',
+            'image.required' => 'Vui lòng nhập url.',
+            'image.max' => 'Vượt qua độ dài ký tự cho phép.'
 
         ];
     }

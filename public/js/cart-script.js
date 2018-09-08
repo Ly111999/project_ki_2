@@ -14,9 +14,8 @@ $('.red_button').click(function () {
             if (new_count == undefined) {
                 $('#checkout_items').text(1);
             } else {
-                $('#checkout_items').text(new_count);
             }
-
+            $('#checkout_items').text(new_count);
             swal('Thao tác thành công!', 'Sản phẩm đã được thêm vào giỏ hàng!', 'success');
         },
         error: function (error) {
@@ -25,7 +24,7 @@ $('.red_button').click(function () {
     });
 });
 
-Number.prototype.numberFormat = function(decimals, dec_point, thousands_sep) {
+Number.prototype.numberFormat = function (decimals, dec_point, thousands_sep) {
     dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
     thousands_sep = typeof thousands_sep !== 'undefined' ? thousands_sep : ',';
 
@@ -43,11 +42,21 @@ $('.btn-num-product-down').on('click', function (e) {
         numProduct = numProduct - 1;
         $(this).next().val(numProduct);
     }
+
     var discountPrice = $(this).closest('.quantity_selector').find('input[name="discountPrice"]').val();
     var totalPrice = Number(discountPrice) * numProduct;
     $(this).closest('.table-row').find('.column-5').text(totalPrice.numberFormat(0));
 
-
+    // var total = parseInt($('#totalPrice').attr('name').replace(',', ''));
+    // var removePrice = parseInt($(this).attr('name'));
+    // if (numProduct === 1){
+    //     removePrice = 0;
+    //     total = total - removePrice;
+    // } else{
+    //     total = total - removePrice;
+    // }
+    // $('#totalPrice').attr('name', total);
+    // $('#totalPrice').text(total.numberFormat(0) + " (VND)");
 
 });
 
@@ -56,10 +65,20 @@ $('.btn-num-product-up').on('click', function (e) {
     var numProduct = Number($(this).prev().val());
     numProduct += 1;
     $(this).prev().val(numProduct);
+
     var discountPrice = $(this).closest('.quantity_selector').find('input[name="discountPrice"]').val();
     var totalPrice = Number(discountPrice) * numProduct;
     $(this).closest('.table-row').find('.column-5').text(totalPrice.numberFormat(0));
+
+    var total = parseInt($('#totalPrice').attr('name').replace(',', ''));
+    var addPrice = parseInt($(this).attr('name'));
+    total = total + addPrice;
+    $('#totalPrice').attr('name', total);
+    $('#totalPrice').text(total.numberFormat(0) + " (VND)");
+
 });
+
+
 
 
 

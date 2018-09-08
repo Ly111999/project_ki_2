@@ -16,19 +16,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        $obj= User::orderBy('created_at','desc')->paginate(5);
+        $obj= User::orderBy('created_at','desc')->paginate(7);
         return  view('admin.user.user')->with('list_obj',$obj);
     }
 
     public function changeStatus()
     {
         $id = Input::get('id');
-        $status = Input::get('status');
+        $adminLevel = Input::get('adminLevel');
         $user = User::find($id);
         if ($user == null) {
             return view('errors.404-admin');
         }
-        $user->status = $status;
+        $user->adminLevel = $adminLevel;
         $user->save();
         return redirect('/admin/user');
     }

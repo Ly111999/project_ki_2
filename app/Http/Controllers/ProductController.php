@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\HelloPost;
 use App\Http\Requests\StoreProductPost;
 use App\Order;
 use App\Product;
@@ -72,21 +73,6 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductPost $post)
-    {
-        $post->validated();
-
-        $product = new Product();
-        $product->name = Input::get('name');
-        $product->price = Input::get('price');
-        $product->discount = Input::get('discount');
-        $product->categoryId = Input::get('categoryId');
-        $product->description = Input::get('description');
-        $product->image = Input::get('image');
-
-        $product->save();
-        return redirect('/admin/product');
-    }
 
     /**
      * Display the specified resource.
@@ -151,10 +137,12 @@ class ProductController extends Controller
     {
         $obj = Product::find($id);
         if ($obj == null) {
-            return response()->json(['error' => 'not found'], 404);
+            return response()->json(['message' => 'Sản phẩm không tồn tại hoặc đã bị xoá!'], 404);
         }
-        $obj->delete();
-        return response()->json(['message' => 'Deleted'], 200);
+        $obj->status = 0;
+        $obj->save();
+        return response()->json(['message' => 'Đã xoá thông tin danh mục'], 200);
+
     }
 
     public function destroyMany()

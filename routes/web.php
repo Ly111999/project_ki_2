@@ -12,28 +12,32 @@
 */
 
 
-
 // ADMIN
 
-Route::middleware('admin')->group(function() {
-    Route::get('/api-get-chart-data', 'OrderController@getChartDataApi');
-    Route::get('/admin/master', 'ProductController@homeAdmin');
 
-    Route::resource('admin/product', 'ProductController');
+
+Route::middleware('admin')->group(function () {
+
+    Route::get('/admin/master', 'ProductController@homeAdmin');
 
     Route::resource('admin/category', 'CategoryController');
 
-    Route::resource('admin/order', 'OrderController');
+    Route::get('admin/order', 'OrderController@index');
+    Route::get('admin/order/change-status', 'OrderController@changeStatus');
 
-    Route::resource('admin/user', 'UserController');
+    Route::get('admin/user', 'UserController@index');
+    Route::get('admin/user/change-status', 'UserController@changeStatus');
 
-    Route::get('/admin/product/{id}','ProductController@destroy');
+    Route::resource('admin/product', 'ProductController');
+
+    Route::get('/admin/product/{id}', 'ProductController@destroy');
 
     Route::delete('/admin/product/destroy-many', 'ProductController@destroyMany');
 
+    Route::get('/api-get-chart-data', 'OrderController@getChartDataApi');
 
-Route::resource('admin/category', 'CategoryController');
-Route::resource('admin/user', 'UserController');
+    Route::resource('admin/category', 'CategoryController');
+    Route::resource('admin/user', 'UserController');
 
 });
 
@@ -46,9 +50,8 @@ Route::get('/', 'ClientController@home')->name('home');
 
 Route::get('/contact', 'ClientController@contact');
 
-Route::get('/product','ClientController@listProduct');
+Route::get('/product', 'ClientController@listProduct');
 Route::get('/product/{id}', 'ClientController@showProductDetail');
-Route::get('/product/sell/{id}', 'ClientController@showProductSeller');
 
 Route::get('/them-gio-hang', 'ShoppingCartController@addToCart');
 Route::post('/api-them-gio-hang', 'ShoppingCartController@addToCartApi');

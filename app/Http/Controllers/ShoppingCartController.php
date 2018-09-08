@@ -98,6 +98,9 @@ class ShoppingCartController extends Controller
                 }
                 $item = new CartItem();
                 $item->product = $product;
+                if ($item->quantity = $products[$key] < 0){
+                    return view('errors.404');
+                }
                 $item->quantity = $products[$key];
                 $shopping_cart->items[$key] = $item;
             }
