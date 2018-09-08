@@ -66,8 +66,14 @@
                 <div class="main_content">
 
                     <!-- Products -->
-
-                    <div class="products_iso">
+                    <div>
+                        <h5 style="width: 700px">Danh mục:&nbsp;&nbsp;{{$selected_category -> name}}
+                            &nbsp;&nbsp;-&nbsp;&nbsp;Giá
+                            từ:&nbsp;&nbsp; {{number_format($start_price)}} vnd
+                            &nbsp;->&nbsp; {{number_format($end_price)}} vnd
+                        </h5>
+                    </div>
+                    <div class="products_iso mt-3">
                         <div class="row">
                             <div class="col">
 
@@ -99,13 +105,7 @@
                                                 <li class="num_sorting_btn"><span>10</span></li>
                                             </ul>
                                         </li>
-                                        <li style="width: 450px">
-                                            <div style="width: 420px">Mục:&nbsp;&nbsp;{{$selected_category -> name}}
-                                                &nbsp;&nbsp;-&nbsp;&nbsp;Giá
-                                                từ:&nbsp;&nbsp; {{number_format($start_price)}}
-                                                &nbsp;->&nbsp; {{number_format($end_price)}} vnd
-                                            </div>
-                                        </li>
+
                                     </ul>
 
                                 </div>
