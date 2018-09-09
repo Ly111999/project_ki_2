@@ -100,7 +100,7 @@
                 <div class="col-md-12 mt-5">
                     <div class="card">
                         <div class="card-header card-header-icon" data-background-color="purple">
-                            <i class="material-icons">Biểu đồ thông số</i>
+                            <b class="material-icons">Biểu đồ thông số</b>
                         </div>
                         <div class="card-content">
                             <h4 class="card-title mt-3">DANH SÁCH ĐƠN HÀNG</h4>
@@ -123,7 +123,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <script type="text/javascript">
         google.charts.load('current', {'packages': ['line']});
         google.charts.setOnLoadCallback(function () {
@@ -155,7 +157,7 @@
                 height: 500,
                 pointSize: 50,
                 hAxis: {
-                    format: 'dd/MM/yyyy'
+                    format: 'dd/MM/YYYY'
                 }
             };
             var chart = new google.charts.Line(document.getElementById('linechart_material'));

@@ -11,6 +11,7 @@ class ClientController extends Controller
 {
     public function home()
     {
+        $obj_slider = Product::all();
         $categories = Category::all();
         $keyword = Input::get('key');
         $data = Input::get();
@@ -24,6 +25,7 @@ class ClientController extends Controller
         return view('home.home')
             ->with('categories', $categories)
             ->with('obj', $obj)
+            ->with('obj_slider', $obj_slider)
             ->with('data', $data);
     }
 

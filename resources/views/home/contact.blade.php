@@ -124,7 +124,7 @@
             var formatE = validateEmail(email);
             var formatUrl = isURL(website);
             if(name.length > 0 && formatE == true && formatUrl == true &&content.length > 0){
-                swal('Thao tác thành công!', 'Quý khách đã gửi thành công!', 'success');
+                swal('Thao tác thành công!', 'Cảm ơn quý khách liên hệ với chúng tôi!', 'success');
                 setTimeout(function () {
                     window.location.reload();
                 }, 1000);
