@@ -44,12 +44,12 @@
                                     </a>
 
 
-                                    <ul class="account_selection " style="width: 100px">
+                                    <ul class="account_selection " style="width: 100px;">
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                Đăng xuất</a>
+                                                Đăng xuất &nbsp;&nbsp;</a>
                                         </li>
 
 
@@ -91,13 +91,16 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="#shop">shop</a></li>
+<<<<<<< HEAD
+=======
+                            <li><a href="#shop">cửa hàng</a></li>
+>>>>>>> f052463b012c2958a2073a02dada1933e5111bc8
                             <li><a href="#blog">blog</a></li>
                             <li><a href="/contact">liên hệ</a></li>
                         </ul>
 
                             <ul class="navbar_user">
-                                @if(Auth::check())
+                                @if(Auth::check() && auth()->user()->adminLevel == 1)
                                 <li><a href="/admin/master" title="Admin page"><i class="fa fa-user"
                                                                                   aria-hidden="true"></i></a>
                                 </li>
@@ -119,5 +122,8 @@
             </div>
         </div>
     </div>
+
+
+
 
 </header>

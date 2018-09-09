@@ -31,7 +31,7 @@ function processDelete() {
     if (confirm('Are you sure want to delete these products?')) {
         $.ajax({
             method: 'DELETE',
-            url: 'http://127.0.0.1:8000/admin/product/destroy-many',
+            url: '/admin/product/destroy-many',
             data: {
                 '_token': $('meta[name="csrf-token"]').attr('content'),
                 'ids': arrayId

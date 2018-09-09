@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'home'
+    'current_menu' => 'home',
+    'page_title'=>'Trang quản lí'
 ])
 
 @section('content')
@@ -29,7 +30,7 @@
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>10368</h2>
+                                        <h2>{{$member}}</h2>
                                         <span>members online</span>
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                                         <i class="zmdi zmdi-shopping-cart"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>388,688</h2>
+                                        <h2 class="mt-2">{{ $cart }}</h2>
                                         <span>items solid</span>
                                     </div>
                                 </div>
@@ -65,7 +66,7 @@
                                         <i class="zmdi zmdi-calendar-note"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>1,086</h2>
+                                        <h2>20</h2>
                                         <span>this week</span>
                                     </div>
                                 </div>
@@ -81,10 +82,10 @@
                             <div class="overview__inner">
                                 <div class="overview-box clearfix">
                                     <div class="icon">
-                                        <i class="zmdi zmdi-money"></i>
+                                        <i class="fas fa-money-bill-alt"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>$1,060,386</h2>
+                                        <h2> {{number_format($total)}}</h2>
                                         <span>total earnings</span>
                                     </div>
                                 </div>
@@ -96,332 +97,22 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="au-card recent-report">
-                            <div class="au-card-inner">
-                                <h3 class="title-2">recent reports</h3>
-                                <div class="chart-info">
-                                    <div class="chart-info__left">
-                                        <div class="chart-note">
-                                            <span class="dot dot--blue"></span>
-                                            <span>products</span>
-                                        </div>
-                                        <div class="chart-note mr-0">
-                                            <span class="dot dot--green"></span>
-                                            <span>services</span>
-                                        </div>
-                                    </div>
-                                    <div class="chart-info__right">
-                                        <div class="chart-statis">
-                                                    <span class="index incre">
-                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                            <span class="label">products</span>
-                                        </div>
-                                        <div class="chart-statis mr-0">
-                                                    <span class="index decre">
-                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                            <span class="label">services</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-report__chart">
-                                    <canvas id="recent-rep-chart"></canvas>
-                                </div>
-                            </div>
+                <div class="col-md-12 mt-5">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="purple">
+                            <i class="material-icons">Biểu đồ thông số</i>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="au-card chart-percent-card">
-                            <div class="au-card-inner">
-                                <h3 class="title-2 tm-b-5">char by %</h3>
-                                <div class="row no-gutters">
-                                    <div class="col-xl-6">
-                                        <div class="chart-note-wrap">
-                                            <div class="chart-note mr-0 d-block">
-                                                <span class="dot dot--blue"></span>
-                                                <span>products</span>
-                                            </div>
-                                            <div class="chart-note mr-0 d-block">
-                                                <span class="dot dot--red"></span>
-                                                <span>services</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <div class="percent-chart">
-                                            <canvas id="percent-chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card-content">
+                            <h4 class="card-title mt-3">DANH SÁCH ĐƠN HÀNG</h4>
+                            <div class="toolbar">
+                                <!--        Here you can write extra buttons/actions for the toolbar         -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
-                            <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
-                                <div class="bg-overlay bg-overlay--blue"></div>
-                                <h3>
-                                    <i class="zmdi zmdi-account-calendar"></i>26 April, 2018</h3>
-                                <button class="au-btn-plus">
-                                    <i class="zmdi zmdi-plus"></i>
-                                </button>
+                            <div id="reportrange" style="cursor: pointer; float: right;">
+                                <i class="fa fa-calendar"></i> 
+                                <span></span> <i class="fa fa-caret-down"></i>
                             </div>
-                            <div class="au-task js-list-load">
-                                <div class="au-task__title">
-                                    <p>Tasks for John Doe</p>
-                                </div>
-                                <div class="au-task-list js-scrollbar3">
-                                    <div class="au-task__item au-task__item--danger">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Meeting about plan for Admin Template 2018</a>
-                                            </h5>
-                                            <span class="time">10:00 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="au-task__item au-task__item--warning">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Create new task for Dashboard</a>
-                                            </h5>
-                                            <span class="time">11:00 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="au-task__item au-task__item--primary">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Meeting about plan for Admin Template 2018</a>
-                                            </h5>
-                                            <span class="time">02:00 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="au-task__item au-task__item--success">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Create new task for Dashboard</a>
-                                            </h5>
-                                            <span class="time">03:30 PM</span>
-                                        </div>
-                                    </div>
-                                    <div class="au-task__item au-task__item--danger js-load-item">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Meeting about plan for Admin Template 2018</a>
-                                            </h5>
-                                            <span class="time">10:00 AM</span>
-                                        </div>
-                                    </div>
-                                    <div class="au-task__item au-task__item--warning js-load-item">
-                                        <div class="au-task__item-inner">
-                                            <h5 class="task">
-                                                <a href="#">Create new task for Dashboard</a>
-                                            </h5>
-                                            <span class="time">11:00 AM</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="au-task__footer">
-                                    <button class="au-btn au-btn-load js-load-btn">load more</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
-                            <div class="au-card-title" style="background-image:url('images/bg-title-02.jpg');">
-                                <div class="bg-overlay bg-overlay--blue"></div>
-                                <h3>
-                                    <i class="zmdi zmdi-comment-text"></i>New Messages</h3>
-                                <button class="au-btn-plus">
-                                    <i class="zmdi zmdi-plus"></i>
-                                </button>
-                            </div>
-                            <div class="au-inbox-wrap js-inbox-wrap">
-                                <div class="au-message js-list-load">
-                                    <div class="au-message__noti">
-                                        <p>You Have
-                                            <span>2</span>
-
-                                            new messages
-                                        </p>
-                                    </div>
-                                    <div class="au-message-list">
-                                        <div class="au-message__item unread">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-02.jpg"
-                                                                 alt="John Smith">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">John Smith</h5>
-                                                        <p>Have sent a photo</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>12 Min ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="au-message__item unread">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap online">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-03.jpg"
-                                                                 alt="Nicholas Martinez">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">Nicholas Martinez</h5>
-                                                        <p>You are now connected on message</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>11:00 PM</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="au-message__item">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap online">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-04.jpg"
-                                                                 alt="Michelle Sims">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">Michelle Sims</h5>
-                                                        <p>Lorem ipsum dolor sit amet</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>Yesterday</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="au-message__item">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-05.jpg"
-                                                                 alt="Michelle Sims">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">Michelle Sims</h5>
-                                                        <p>Purus feugiat finibus</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>Sunday</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="au-message__item js-load-item">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap online">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-04.jpg"
-                                                                 alt="Michelle Sims">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">Michelle Sims</h5>
-                                                        <p>Lorem ipsum dolor sit amet</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>Yesterday</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="au-message__item js-load-item">
-                                            <div class="au-message__item-inner">
-                                                <div class="au-message__item-text">
-                                                    <div class="avatar-wrap">
-                                                        <div class="avatar">
-                                                            <img src="images/icon/avatar-05.jpg"
-                                                                 alt="Michelle Sims">
-                                                        </div>
-                                                    </div>
-                                                    <div class="text">
-                                                        <h5 class="name">Michelle Sims</h5>
-                                                        <p>Purus feugiat finibus</p>
-                                                    </div>
-                                                </div>
-                                                <div class="au-message__item-time">
-                                                    <span>Sunday</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="au-message__footer">
-                                        <button class="au-btn au-btn-load js-load-btn">load more</button>
-                                    </div>
-                                </div>
-                                <div class="au-chat">
-                                    <div class="au-chat__title">
-                                        <div class="au-chat-info">
-                                            <div class="avatar-wrap online">
-                                                <div class="avatar avatar--small">
-                                                    <img src="images/icon/avatar-02.jpg" alt="John Smith">
-                                                </div>
-                                            </div>
-                                            <span class="nick">
-                                                        <a href="#">John Smith</a>
-                                                    </span>
-                                        </div>
-                                    </div>
-                                    <div class="au-chat__content">
-                                        <div class="recei-mess-wrap">
-                                            <span class="mess-time">12 Min ago</span>
-                                            <div class="recei-mess__inner">
-                                                <div class="avatar avatar--tiny">
-                                                    <img src="images/icon/avatar-02.jpg" alt="John Smith">
-                                                </div>
-                                                <div class="recei-mess-list">
-                                                    <div class="recei-mess">Lorem ipsum dolor sit amet,
-                                                        consectetur
-                                                        adipiscing elit non iaculis
-                                                    </div>
-                                                    <div class="recei-mess">Donec tempor, sapien ac viverra
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="send-mess-wrap">
-                                            <span class="mess-time">30 Sec ago</span>
-                                            <div class="send-mess__inner">
-                                                <div class="send-mess-list">
-                                                    <div class="send-mess">Lorem ipsum dolor sit amet,
-                                                        consectetur
-                                                        adipiscing elit non iaculis
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="au-chat-textfield">
-                                        <form class="au-form-icon">
-                                            <input class="au-input au-input--full au-input--h65" type="text"
-                                                   placeholder="Type a message">
-                                            <button class="au-input-icon">
-                                                <i class="zmdi zmdi-camera"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="clearfix"></div>
+                            <div id="linechart_material"></div>
                         </div>
                     </div>
                 </div>
@@ -429,9 +120,126 @@
         </div>
     </div>
     <!-- END MAIN CONTENT-->
-<script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages': ['line']});
+        google.charts.setOnLoadCallback(function () {
+            $.ajax( {
+                url: '/api-get-chart-data?startDate=2018-08-22&endDate=2018-09-06',
+                    method: 'GET',
+                    success: function (resp) {
+                    drawChart(resp);
+                },
+                error: function () {
+                    swal('Có lỗi xảy ra', 'Không thể lấy dữ liệu từ api', 'error');
+                }
+            });
+        });
 
-</script>
+        function drawChart(chart_data) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('date', 'Ngày');
+            data.addColumn('number', 'Doanh thu');
+            for (var i = 0; i < chart_data.length; i++) {
+                data.addRow([new Date(chart_data[i].day), Number(chart_data[i].revenue)]);
+            }
+
+            var options = {
+                chart: {
+                    title: 'Biểu đồ doanh thu theo thời gian',
+                    subtitle: 'tính theo đơn vị (vnd)'
+                },
+                height: 500,
+                pointSize: 50,
+                hAxis: {
+                    format: 'dd/MM/yyyy'
+                }
+            };
+            var chart = new google.charts.Line(document.getElementById('linechart_material'));
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+
+        $(function () {
+            var start = moment().subtract(29, 'days');
+            var end = moment();
+
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Hôm nay': [moment(), moment()],
+                    'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '7 ngày trước': [moment().subtract(6, 'days'), moment()],
+                    '30 ngày trước': [moment().subtract(29, 'days'), moment()],
+                    'Tháng này': [moment().startOf('month'), moment().endOf('month')],
+                    'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                locale: {
+                    "format": "YYYY-MM-DD",
+                    "separator": " - ",
+                    "applyLabel": "Áp dụng",
+                    "cancelLabel": "Hủy",
+                    "fromLabel": "Từ",
+                    "toLabel": "Đến",
+                    "customRangeLabel": "Tùy chọn",
+                    "daysOfWeek": [
+                        "CN",
+                        "T2",
+                        "T3",
+                        "T4",
+                        "T5",
+                        "T6",
+                        "T7"
+                    ],
+                    "monthNames": [
+                        "Tháng 1",
+                        "Tháng 2",
+                        "Tháng 3",
+                        "Tháng 4",
+                        "Tháng 5",
+                        "Tháng 6",
+                        "Tháng 7",
+                        "Tháng 8",
+                        "Tháng 9",
+                        "Tháng 10",
+                        "Tháng 11",
+                        "Tháng 12"
+                    ],
+                    "firstDay": 1
+                }
+            }, cb);
+            cb(start, end);
+            $('#reportrange').on('cancel.daterangepicker', function (ev, picker) {
+                $('#reportrange').val('');
+            });
+            $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
+                var startDate = picker.startDate.format('YYYY-MM-DD');
+                var endDate = picker.endDate.format('YYYY-MM-DD');
+                $.ajax( {
+                    url: '/api-get-chart-data?startDate=' + startDate + '&endDate=' + endDate,
+                        method: 'GET',
+                        success: function (resp) {
+                        if (resp.length == 0) {
+                            swal('Không có dữ liệu', 'Vui lòng lựa chọn khoảng thời gian khác.', 'warning');
+                            return;
+                        }
+                        ;
+                        drawChart(resp);
+                    },
+                    error: function () {
+                        swal('Có lỗi xảy ra', 'Không thể lấy dữ liệu từ api', 'error');
+                    }
+                });
+        });
+        });
+    </script>
 @stop
 
 

@@ -16,19 +16,32 @@ class UserController extends Controller
      */
     public function index()
     {
-        $obj= User::orderBy('created_at','desc')->paginate(5);
-        return  view('admin.user.user')->with('list_obj',$obj);
+        $keyword = Input::get('key');
+        $data = Input::get();
+        $obj = User::orderBy('created_at', 'desc');
+        if (isset($keyword) && Input::get('key')) {
+            $obj = $obj->where('email', 'like', '%' . $keyword . '%')
+                ->orWhere('adminLevel', 'like', '%' . $keyword . '%')
+                ->orWhere('name', 'like', '%' . $keyword . '%');
+        } else {
+            $data['key'] = '';
+        }
+        $obj = $obj->paginate(10);
+        return view('admin.user.user')
+            ->with('list_obj', $obj)
+            ->with('data', $data);
+
     }
 
     public function changeStatus()
     {
         $id = Input::get('id');
-        $status = Input::get('adminLevel');
+        $adminLevel = Input::get('adminLevel');
         $user = User::find($id);
         if ($user == null) {
             return view('errors.404-admin');
         }
-        $user->adminLevel = $status;
+        $user->adminLevel = $adminLevel;
         $user->save();
         return redirect('/admin/user');
     }
@@ -46,7 +59,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -57,7 +70,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +81,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +92,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +104,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

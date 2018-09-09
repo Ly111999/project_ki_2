@@ -12,41 +12,14 @@
                         <p style="margin-left: -10px">Đăng ký nhận bản tin và nhận giảm giá 20% cho lần mua hàng đầu tiên của bạn</p>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
-                    <form action="">
+                    <form action="/">
                         <div
                             class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
                             <input id="newsletter_email" type="email" placeholder="Nhập email của bạn" required="required"
                                    data-error="Valid email is required.">
-                            <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300"
-                                    data-toggle="modal" data-target="#exampleModal"
-                                    value="Submit">Đăng ký
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade m-t-200" id="exampleModal" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-center" id="exampleModalLabel">Bambole</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Subscribe success
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="/home">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                    Close
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <input type="button" id="newsletter_submit" value="Đăng ký" class="newsletter_submit_btn trans_300"/>
                         </div>
                     </form>
                 </div>
@@ -62,7 +35,7 @@
                     <ul class="footer_nav">
                         <li><a href="#blog">Blog</a></li>
                         <li><a href="#">FAQs</a></li>
-                        <li><a href="/contact">Contact us</a></li>
+                        <li><a href="/contact">Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
@@ -91,4 +64,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email));
+        }
+        $('#newsletter_submit').click(function () {
+            var text = $('#newsletter_email').val();
+            var formatE = validateEmail(text);
+            if (formatE) {
+                swal('Thao tác thành công!', 'Quý khách đã đăng ký thành công!', 'success');
+            }else{
+                swal('Thao tác không thành công!', 'Vui lòng nhập đúng định dạng email', 'error');
+            }
+        })
+    </script>
 </footer>

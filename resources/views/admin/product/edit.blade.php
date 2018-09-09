@@ -1,5 +1,6 @@
 @extends('admin.layout.default',[
-    'current_menu' => 'product_manager'
+    'current_menu' => 'product_manager',
+    'page_title'=>'Sửa thông tin'
 ])
 
 @section('content')
@@ -41,7 +42,7 @@
                         <div class="form-group">
                             <label>Mô tả</label>
                             <textarea name="description" id="" cols="30" rows="7"
-                                      class="form-control w-75 mr-2">{{$obj_view -> description}}</textarea>
+                                      class="form-control w-75 mr-2">{!!$obj_view->description!!}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Ảnh</label>

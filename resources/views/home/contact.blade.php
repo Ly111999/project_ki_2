@@ -1,4 +1,4 @@
-@extends('home.default')
+@extends('home.default',['page_title'=>'Liên hệ'])
 
 @section('content')
 
@@ -78,7 +78,7 @@
                 <div class="get_in_touch_contents">
                     <h1> Liên hệ với chúng tôi! </h1>
                     <p> Điền vào biểu mẫu bên dưới để nhận miễn phí và bảo mật. </p>
-                    <form action="post">
+                    <form action="">
                         <div>
                             <input id="input_name" class="form_input input_name input_ph" type="text" name="name"
                                    placeholder="Tên" required="required" data-error="Name is required.">
@@ -91,16 +91,48 @@
                                       data-error="Please, write us a message."></textarea>
                         </div>
                         <div>
-                            <button id="review_submit" type="submit" class="red_button_1 message_submit_btn trans_300"
-                                    value="Submit">Gửi
-                            </button>
+                            <input id="review_submit" class="red_button_1 message_submit_btn trans_300 text-center"
+                                    value="Gửi"/>
                         </div>
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
+
+    <script>
+        $('#review_submit').click(function () {
+            var name = $('#input_name').val();
+            var email = $('#input_email').val();
+            var website = $('#input_website').val();
+            var content = $('#input_message').val();
+
+            function validateEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email));
+            }
+            function isURL(str) {
+                var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+                    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+                    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+                return pattern.test(str);
+            }
+
+            var formatE = validateEmail(email);
+            var formatUrl = isURL(website);
+            if(name.length > 0 && formatE == true && formatUrl == true &&content.length > 0){
+                swal('Thao tác thành công!', 'Quý khách đã gửi thành công!', 'success');
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1000);
+            }else{
+                swal('Thao tác không thành công!', 'Vui lòng kiểm tra lại thông tin', 'error');
+            }
+        })
+    </script>
 
 
 @endsection

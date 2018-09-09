@@ -1,4 +1,4 @@
-@extends('home.default')
+@extends('home.default',['page_title'=>'Danh sách sản phẩm'])
 
 @section('content')
     <div class="container product_section_container">
@@ -66,8 +66,14 @@
                 <div class="main_content">
 
                     <!-- Products -->
-
-                    <div class="products_iso">
+                    <div>
+                        <h5 style="width: 700px">Danh mục:&nbsp;&nbsp;{{$selected_category -> name}}
+                            &nbsp;&nbsp;-&nbsp;&nbsp;Giá
+                            từ:&nbsp;&nbsp; {{number_format($start_price)}} vnd
+                            &nbsp;->&nbsp; {{number_format($end_price)}} vnd
+                        </h5>
+                    </div>
+                    <div class="products_iso mt-3">
                         <div class="row">
                             <div class="col">
 
@@ -80,7 +86,8 @@
                                             <i class="fa fa-angle-down"></i>
                                             <ul class="sorting_type">
                                                 <li class="type_sorting_btn"
-                                                    data-isotope-option='{ "sortBy": "original-order" }'><span>Mặc định</span>
+                                                    data-isotope-option='{ "sortBy": "original-order" }'>
+                                                    <span>Mặc định</span>
                                                 </li>
                                                 <li class="type_sorting_btn"
                                                     data-isotope-option='{ "sortBy": "price" }'><span>Giá</span></li>
@@ -98,6 +105,7 @@
                                                 <li class="num_sorting_btn"><span>10</span></li>
                                             </ul>
                                         </li>
+
                                     </ul>
 
                                 </div>
@@ -107,7 +115,6 @@
                                     <div class="row">
                                     @foreach($list_product as $item)
                                         <!-- Product -->
-                                            {{--<div class="col-xs-3 col-lg-3">--}}
                                             <div class="product-item {{$item -> id}}">
                                                 <div class="product discount product_filter">
                                                     <div class="product_image">
@@ -131,9 +138,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="red_button add_to_cart_button"  id="add-cart-{{$item->id}} " style="color: #ffffff">THÊM VÀO GIỎ HÀNG</div>
+                                                <div class="red_button add_to_cart_button" id="add-cart-{{$item->id}} "
+                                                     style="color: #ffffff">THÊM VÀO GIỎ HÀNG
+                                                </div>
                                             </div>
-                                            {{--</div>--}}
 
                                         @endforeach
                                     </div>

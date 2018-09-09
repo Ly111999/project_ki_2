@@ -15,12 +15,12 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-//        if (auth()->check()) {
-//            if (auth()->user()->adminLevel > 0) {
-//                return $next($request);
-//            }
-//        }
-//        return redirect()->guest('home');
-        return $next($request);
+        if (auth()->check()) {
+            if (auth()->user()->adminLevel > 0) {
+                return $next($request);
+            }
+        }
+        return redirect()->guest('home');
+
     }
 }
