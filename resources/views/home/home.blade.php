@@ -105,6 +105,7 @@
             </div>
             <div class="row">
                 <div class="col">
+
                     <div class="product-grid"
                          data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
                         @foreach($obj as $item)
@@ -223,7 +224,7 @@
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                             <div class="owl-carousel owl-theme product_slider">
                                 <!-- Slide  -->
-                                @foreach($obj as $item)
+                                @foreach($obj_slider as $item)
 
                                     <div class="owl-item product_slider_item">
                                         <div class="product-item">
