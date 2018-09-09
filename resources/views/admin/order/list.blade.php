@@ -5,6 +5,7 @@
 @section('content')
 
     <div class="section__content section__content">
+
         <div class="container-fluid">
             <div class="col-md-12">
                 <div class="row">
