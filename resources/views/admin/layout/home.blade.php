@@ -157,7 +157,7 @@
                 height: 500,
                 pointSize: 50,
                 hAxis: {
-                    format: 'dd/MM/YYYY'
+                    format: 'dd/MM/yyyy'
                 }
             };
             var chart = new google.charts.Line(document.getElementById('linechart_material'));
