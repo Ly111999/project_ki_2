@@ -74,6 +74,12 @@ class ShoppingCartController extends Controller
     }
     public function removeFromCart()
     {
+        $id = Input::get('id');
+        if (Session::has('cart')){
+            $cart = Session::get('cart');
+            unset($cart->items[$id]);
+        }
+        return redirect()->back();
     }
     public function showCart()
     {

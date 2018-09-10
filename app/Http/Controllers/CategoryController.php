@@ -16,8 +16,18 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $list_obj = Category::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.category.list')->with('list_obj', $list_obj);
+        $keyword = Input::get('key');
+        $data = Input::get();
+        $list_obj = Category::orderBy('created_at', 'desc');
+        if (isset($keyword) && Input::get('key')) {
+            $list_obj = $list_obj->where('name', 'like', '%' . $keyword . '%');
+        } else {
+            $data['key'] = '';
+        }
+        $list_obj = $list_obj->paginate(5);
+        return view('admin.category.list')
+            ->with('list_obj', $list_obj)
+            ->with('data', $data);
     }
 
     /**
@@ -33,7 +43,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreCategoryPost $post)
@@ -51,7 +61,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -62,13 +72,13 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $obj = Category::find($id);
-        if($obj == null){
+        if ($obj == null) {
             return view('errors.404-admin');
         }
         return view('admin.category.edit')->with('obj_view', $obj);
@@ -77,14 +87,14 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $obj = Category::find($id);
-        if ($obj == null){
+        if ($obj == null) {
             return view('errors.404-admin');
         }
         $obj->name = Input::get('name');
@@ -97,13 +107,13 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $obj=Category::find($id);
-        if ($obj == null){
+        $obj = Category::find($id);
+        if ($obj == null) {
             return response()->json(['error' => 'not found'], 404);
         }
         $obj->delete();

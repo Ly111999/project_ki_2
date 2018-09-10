@@ -18,6 +18,19 @@
                             </button>
                         </a>
                     </div>
+                    <div class="row justify-content" style="margin-top: 15px; margin-left: 650px;">
+                        <form style="width: 100%;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="key" value="{{$data['key']}}"
+                                       placeholder="Tìm kiếm">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="table-responsive table-responsive-data2" style="overflow-x: hidden;">
                         @if(count($list_obj)>0)
                             <table class="table table-data3">

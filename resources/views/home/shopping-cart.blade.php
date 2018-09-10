@@ -43,9 +43,12 @@
                                 @foreach($shopping_cart->items as $item)
                                     <tr class="table-row">
                                         <td class="column-1">
-                                            <div class="cart-img-product b-rad-4 o-f-hidden">
-                                                <img src="{{$item->product->image}}" alt="{{$item->product->name}}">
-                                            </div>
+                                            <a href="/xoa-san-pham-gio-hang?id={{$item->product->id}}">
+                                                <div class="cart-img-product b-rad-4 o-f-hidden">
+                                                    <img src="{{$item->product->image}}" alt="{{$item->product->name}}">
+                                                </div>
+                                            </a>
+
                                         </td>
                                         <td class="column-2">{{$item->product->name}}</td>
                                         <td class="column-3">{{$item->product->discountPriceString}}</td>
@@ -98,7 +101,7 @@
                             <input class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" value="Lưu thay đổi"
                                    type="submit">
                             <a href="/xoa-gio-hang" style=" color: #000000!important; margin-left: 197px;"><i
-                                    class="fas fa-trash" style="margin-top: -28px" size="" ></i></a>
+                                        class="fas fa-trash" style="margin-top: -28px" size=""></i></a>
                         </div>
                     </div>
                 </form>
