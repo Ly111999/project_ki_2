@@ -53,7 +53,7 @@ class ShoppingCartController extends Controller
         }
         $product = Product::find($id);
         if ($product == null || $product->status != 1) {
-            return response()->json(['msg' => 'Sản phẩm không tồn tại hoặc đã bị xoá!'], 404);
+            return response()->json(['msg' => 'Sản phẩm hiện đã hết hàng! Vui lòng trở lại sau.'], 404);
         }
         $shopping_cart = new ShoppingCart();
         if (Session::has('cart')) {
@@ -98,6 +98,9 @@ class ShoppingCartController extends Controller
                 }
                 $item = new CartItem();
                 $item->product = $product;
+                if ($item->quantity = $products[$key] < 0){
+                    return view('errors.404');
+                }
                 $item->quantity = $products[$key];
                 $shopping_cart->items[$key] = $item;
             }

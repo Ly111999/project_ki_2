@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\URL;
 
 
 class LoginController extends Controller
@@ -39,6 +40,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = URL::previous();
         $this->middleware('guest')->except('logout');
     }
 
@@ -47,7 +49,10 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-
+        if(!session()->has('url.intended'))
+        {
+            session(['url.intended' => url()->previous()]);
+        }
         $categories = Category::all();
         return view('auth.login')
             ->with('categories', $categories);

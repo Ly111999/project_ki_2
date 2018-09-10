@@ -1,4 +1,4 @@
-@extends('home.default')
+@extends('home.default',['page_title'=>'Bambole Shop'])
 
 @section('content')
 
@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>Sản phẩm mới</h2>
+                        <h2>Danh sách sản phẩm</h2>
                     </div>
                 </div>
             </div>
@@ -105,10 +105,11 @@
             </div>
             <div class="row">
                 <div class="col">
+
                     <div class="product-grid"
                          data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
                         @foreach($obj as $item)
-                            @if($loop->index == 15)
+                            @if($loop->index == 10)
 
                                 @break;
                             @endif
@@ -150,6 +151,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row float-right mt-3 ">
                 <a href="/product?categoryId=0">
                     <button type="button" class="btn btn-outline-info">Xem thêm >>></button>
@@ -205,7 +207,7 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>Sản phẩm nổi bật</h2>
+                        <h2>Sản phẩm mới</h2>
                     </div>
                 </div>
             </div>
@@ -221,30 +223,30 @@
                     <div class="product_slider_container">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                             <div class="owl-carousel owl-theme product_slider">
-                            @foreach($list_Product as $key => $product)
                                 <!-- Slide  -->
+                                @foreach($obj_slider as $item)
 
                                     <div class="owl-item product_slider_item">
                                         <div class="product-item">
                                             <div class="product discount">
                                                 <div class="product_image">
-                                                    <a href="/product/sell/{{$product -> id}}">
+                                                    <a href="/product/{{$item -> id}}">
                                                         <img class="img-thumbnail"
                                                              style="height: 75% ; width: auto; "
-                                                             src="{{$product -> image}}" alt="">
+                                                             src="{{$item -> image}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="favorite favorite_left"></div>
                                                 <div
                                                     class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-                                                    <span>-{{$product->discount}}%</span></div>
+                                                    <span>-{{$item->discount}}%</span></div>
                                                 <div class="product_info">
                                                     <h6 class="product_name"><a
-                                                            href="/product/sell/{{$product -> id}}">{{$product -> name}}</a>
+                                                            href="/product/{{$item -> id}}">{{$item -> name}}</a>
                                                     </h6>
-                                                    <div
-                                                        class="product_price">{{$product -> discountPriceString}}
-                                                        <span>{{$product->originalPriceString}}</span>
+                                                    <div class="product_price">
+                                                        {{$item -> discountPriceString}}
+                                                        <span>{{$item->originalPriceString}}</span>
 
                                                     </div>
                                                 </div>
@@ -252,6 +254,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+
                             </div>
                         </div>
 
@@ -337,7 +340,7 @@
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                             <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa thu này </h4>
-                            <span class = "blog_meta"> bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
+                            <span class="blog_meta"> Ngày 1 tháng 9 năm 2018 </span>
                             <a class="blog_more"
                                href="https://www.bocadolobo.com/en/inspiration-and-ideas/trends-forecast-fallwinter-2018/">Read
                                 more</a>
@@ -351,7 +354,7 @@
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                             <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa xuân này</h4>
-                            <span class="blog_meta">bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
+                            <span class="blog_meta">Ngày 1 tháng 9 năm 2018 </span>
                             <a class="blog_more"
                                href="https://ngoisao.net/tin-tuc/thoi-trang/tu-van/phoi-do-hoa-tre-trung-cho-ngay-cuoi-tuan-3793687.html">Read
                                 more</a>
@@ -365,7 +368,7 @@
                         <div
                             class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                             <h4 class="blog_title">Những xu hướng mà tôi thấy đến mùa hè này</h4>
-                            <span class="blog_meta">bởi quản trị viên | ngày 1 tháng 12 năm 2017 </span>
+                            <span class="blog_meta">Ngày 1 tháng 9 năm 2018 </span>
                             <a class="blog_more"
                                href="https://www.24h.com.vn/tui-bop-that-lung/7-kieu-tui-thu-nay-cac-co-gai-phai-co-ma-tau-c174a984347.html">Read
                                 more</a>

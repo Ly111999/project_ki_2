@@ -1,4 +1,4 @@
-@extends('home.default')
+@extends('home.default',['page_title'=>'Chi tiết sản phẩm'])
 
 @section('content')
     <div class="container single_product_container">
@@ -46,7 +46,7 @@
                     <div class="product_price mt-2">{{$obj_view->discountPriceString}}
                         <span>{{$obj_view->originalPriceString}}</span>
                     </div>
-                    <ul class="star_rating">
+                    <ul class="user_star_rating">
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="section_title new_arrivals_title">
-                        <h2>Sản phẩm nổi bật</h2>
+                        <h2>Sản phẩm mới</h2>
                     </div>
                 </div>
             </div>
@@ -120,38 +120,47 @@
                     <div class="product_slider_container">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                             <div class="owl-carousel owl-theme product_slider">
-                            @foreach($list_Product as $key => $product)
-                                <!-- Slide  -->
+                                @for($i = 24; $i<39; $i++)
 
                                     <div class="owl-item product_slider_item">
                                         <div class="product-item">
                                             <div class="product discount">
                                                 <div class="product_image">
-                                                    <a href="/product/sell/{{$product -> id}}">
+                                                    <a href="/product/{{$obj[$i] -> id}}">
                                                         <img class="img-thumbnail"
-                                                             style="height: 75% ; width: auto;  border: none;"
-                                                             src="{{$product -> image}}" alt="">
+                                                             style="height: 75% ; width: auto; "
+                                                             src="{{$obj[$i] -> image}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="favorite favorite_left"></div>
                                                 <div
                                                     class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-                                                    <span>-{{$product->discount}}%</span></div>
-                                                <div class="product_info mt-3">
+                                                    <span>-{{$obj[$i]->discount}}%</span></div>
+                                                <div class="product_info">
                                                     <h6 class="product_name"><a
-                                                            href="/product/sell/{{$product -> id}}">{{$product -> name}}</a>
+                                                            href="/product/{{$obj[$i] -> id}}">{{$obj[$i] -> name}}</a>
                                                     </h6>
                                                     <div
-                                                        class="product_price">{{$product->discountPriceString}}
-                                                        <span>{{$product->originalPriceString}}</span>
+                                                        class="product_price">{{$obj[$i] -> discountPriceString}}
+                                                        <span>{{$obj[$i]->originalPriceString}}</span>
 
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                @endfor
                             </div>
+                        </div>
+                        <!-- Slider Navigation -->
+
+                        <div
+                            class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </div>
+                        <div
+                            class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>

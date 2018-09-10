@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\HelloPost;
 use App\Http\Requests\StoreProductPost;
+use App\Order;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -18,7 +21,20 @@ class ProductController extends Controller
 
     public function homeAdmin()
     {
-        return view('admin.layout.home');
+        $total = 0;
+        $cart = 0;
+        $list_obj = Order::all();
+        $memberOnl = User::all();
+        foreach ($list_obj as $obj) {
+            $total = $total + $obj->total_price;
+            $cart = count($list_obj);
+        }
+        $member = count($memberOnl);
+        return view('admin.layout.home')
+            ->with('total', $total)
+            ->with('member', $member)
+            ->with('cart', $cart);
+
     }
 
     public function index()
@@ -57,21 +73,6 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductPost $post)
-    {
-        $post->validated();
-
-        $product = new Product();
-        $product->name = Input::get('name');
-        $product->price = Input::get('price');
-        $product->discount = Input::get('discount');
-        $product->categoryId = Input::get('categoryId');
-        $product->description = Input::get('description');
-        $product->image = Input::get('image');
-
-        $product->save();
-        return redirect('/admin/product');
-    }
 
     /**
      * Display the specified resource.
@@ -79,6 +80,19 @@ class ProductController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+    public function store(StoreProductPost $post)
+    {
+        $post->validated();
+        $product = new Product();
+        $product->name = Input::get('name');
+        $product->price = Input::get('price');
+        $product->discount = Input::get('discount');
+        $product->categoryId = Input::get('categoryId');
+        $product->description = Input::get('description');
+        $product->image = Input::get('image');
+        $product->save();
+        return redirect('/admin/product');
+    }
     public function show($id)
     {
         //
@@ -136,10 +150,12 @@ class ProductController extends Controller
     {
         $obj = Product::find($id);
         if ($obj == null) {
-            return response()->json(['error' => 'not found'], 404);
+            return response()->json(['message' => 'Sản phẩm không tồn tại hoặc đã bị xoá!'], 404);
         }
-        $obj->delete();
-        return response()->json(['message' => 'Deleted'], 200);
+        $obj->status = 0;
+        $obj->save();
+        return response()->json(['message' => 'Đã xoá thông tin danh mục'], 200);
+
     }
 
     public function destroyMany()

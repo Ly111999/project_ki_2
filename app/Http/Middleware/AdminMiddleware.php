@@ -21,5 +21,6 @@ class AdminMiddleware
             }
         }
         return redirect()->guest('home');
+
     }
 }

@@ -1,4 +1,4 @@
-@extends('home.default')
+@extends('home.default', ['page_title'=>'Giỏ hàng'])
 @section('content')
     <div class="container-fluid" style="height: 500px;">
         <div class="main_slider" style="background-image:url({{asset('image/GDproject.png')}})">

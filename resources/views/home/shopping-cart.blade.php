@@ -53,13 +53,24 @@
                                             <div class="quantity_selector">
                                                 <input type="hidden" class="discountPrice" name="discountPrice"
                                                        value="{{$item->product->discountPrice}}">
-                                                <span class="minus btn-num-product-down"><i class="fa fa-minus"
+
+                                                {{----}}
+
+                                                <span name="{{$item->product->discountPrice}}"
+                                                      id="{{$item->product->id}}"
+                                                      class="minus btn-num-product-down"><i class="fa fa-minus"
                                                                                             aria-hidden="true"></i></span>
+
                                                 <input class="size8 m-text18 t-center num-product"
-                                                       type="number" name="products[{{$item->product->id}}]"
-                                                       value="{{$item->quantity}}">
-                                                <span class="plus btn-num-product-up"><i class="fa fa-plus"
+                                                       name="products[{{$item->product->id}}]"
+                                                       value="{{$item->quantity}}" readonly>
+
+                                                <span name="{{$item->product->discountPrice}}"
+                                                      id="{{$item->product->id}}"
+                                                      class="plus btn-num-product-up"><i class="fa fa-plus"
                                                                                          aria-hidden="true"></i></span>
+
+                                                {{----}}
                                             </div>
                                         </td>
                                         <td class="column-5">{{$item->getTotalPriceWithFormat()}}</td>
@@ -71,7 +82,7 @@
 
                     <div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
                         <div class="flex-w flex-m w-full-sm">
-                            <a href="{{route('home')}}">
+                            <a href="/product?categoryId=0">
                                 <div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
                                     <!-- Button -->
                                     <button class="flex-c-m sizefull bg0 bo-rad-23 hov1 s-text1 trans-0-4"
@@ -82,10 +93,12 @@
                             </a>
                         </div>
 
-                        <div class="size10 trans-0-4 m-t-10 m-b-10">
+                        <div class="size10 trans-0-4 m-t-10 m-b-10 m-l-10">
                             <!-- Button -->
                             <input class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4" value="Lưu thay đổi"
                                    type="submit">
+                            <a href="/xoa-gio-hang" style=" color: #000000!important; margin-left: 197px;"><i
+                                    class="fas fa-trash" style="margin-top: -28px" size="" ></i></a>
                         </div>
                     </div>
                 </form>
@@ -104,7 +117,9 @@
 						Tổng tiền hàng:
 					</span>
 
-                            <span class="m-text21 w-size20 w-full-sm">
+
+                            <span id="totalPrice" name="{{$shopping_cart -> getTotalMoneyWithFormat()}}"
+                                  class="m-text21 w-size20 w-full-sm">
 						{{$shopping_cart -> getTotalMoneyWithFormat()}} (VND)
 					</span>
                         </div>
@@ -143,16 +158,6 @@
                             </div>
                         </div>
 
-                        <!--  -->
-                        <div class="flex-w flex-sb-m p-t-26 p-b-30">
-					<span class="m-text22 w-size19 w-full-sm">
-						Tổng cộng:
-					</span>
-
-                            <span class="m-text21 w-size20 w-full-sm">
-						{{$shopping_cart -> getTotalMoneyWithFormat()}} (VND)
-					</span>
-                        </div>
 
                         <div class="size15 trans-0-4">
                             <!-- Button -->
