@@ -22,29 +22,40 @@
                         class="alert {{ \Illuminate\Support\Facades\Session::get('message-class') }}">{{ \Illuminate\Support\Facades\Session::get('message') }}</div>
                 @endif
 
-                <div class="table-responsive table-responsive-data2" style="overflow-x: hidden;">
+                <div class="table-data__tool">
+                    <div class="table-data__tool-left ml-3 form-group">
+                        <label for="">Thời gian: &nbsp;&nbsp;</label>
+                        <input class="form-control" style="width: 300px; margin-left: 70px; margin-top: -40px;"
+                               type="text" name="datefilter" value="{{$start}} đến {{$end}}"/>
+                        <div style="margin-left: 420px; margin-top: -30px"> Tổng tiền: {{number_format($total)}}vnd
+                        </div>
+                    </div>
+                </div>
+
+                <div>
                     @if(count($list_obj)>0)
-                        <table class="table table-data3 table-hover">
+                        <table id="table_id" style="width:100%;"
+                               class="table table-data3 dt-responsive nowrap table-hover">
                             <thead>
-                            <tr class="row">
-                                <th class="col-md-1">ID</th>
-                                <th class="col-md-1">Người đặt</th>
-                                <th class="col-md-2">Người nhận</th>
-                                <th class="col-md-2">Thời gian</th>
-                                <th class="col-md-2">Thông tin</th>
-                                <th class="col-md-1">Trạng thái</th>
-                                <th class="col-md-3">Thao tác</th>
+                            <tr>
+                                <th>ID</th>
+                                <th>Người đặt</th>
+                                <th>Người nhận</th>
+                                <th>Thời gian</th>
+                                <th class="ml-2">Thông tin</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
 
                             </tr>
                             </thead>
-
+                            <tbody style="margin-left: -50px">
                             @foreach($list_obj as $item)
-                                <tr class="row">
-                                    <td class="col-md-1">{{$item->id}}</td>
-                                    <td class="col-md-1">{{$item->ship_name}}</td>
-                                    <td class="col-md-2">{!! $item->shipInformation !!}</td>
-                                    <td class="col-md-2">{{$item->created_at}}</td>
-                                    <td class="col-md-2">
+                                <tr class="OrderRow">
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->ship_name}}</td>
+                                    <td>{!! $item->shipInformation !!}</td>
+                                    <td>{{$item->created_at}}</td>
+                                    <td class="ml-3">
                                         <ul>
                                             @foreach($item->details as $order_detail)
                                                 <li>{{$order_detail->product->name}}
@@ -52,8 +63,8 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td class="col-md-1">{{$item->statusLabel}}</td>
-                                    <td class="col-md-3">
+                                    <td>{{$item->statusLabel}}</td>
+                                    <td>
                                         @if($item->status==0)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=1"
                                                onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"
@@ -79,9 +90,9 @@
                                         @endif
                                     </td>
                                 </tr>
+
                             @endforeach
-
-
+                            </tbody>
                         </table>
 
                     @else
@@ -96,4 +107,57 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" />
+
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable(
+                {
+                    "language": {
+                        "lengthMenu": "Hiển thị _MENU_ bản ghi",
+                        "search": "Tìm:",
+                        "sInfo": "Đang xem _START_ đến _END_",
+                        "oPaginate": {
+                            "sFirst": "Đầu",
+                            "sPrevious": "Trước",
+                            "sNext": "Tiếp",
+                            "sLast": "Cuối"
+                        }
+                    }
+                }
+            );
+        });
+
+        $(function () {
+
+            $('input[name="datefilter"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                }
+            });
+
+            $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
+                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                // var startDate = picker.startDate.format('YYYY-MM-DD');
+                // var endDate = picker.endDate.format('YYYY-MM-DD');
+                //
+                // // var startDate = "2018-09-01";
+                // // var endDate = "2018-09-11"
+                // window.location.href = '/admin/order?start=' + startDate + '&end=' + endDate;
+            });
+
+            $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {
+                $(this).val('');
+            });
+
+        });
+
+    </script>
 @stop
