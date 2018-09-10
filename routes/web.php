@@ -59,5 +59,5 @@ Route::get('/xem-gio-hang', 'ShoppingCartController@showCart');
 Route::get('/xoa-gio-hang', 'ShoppingCartController@destroyCart');
 Route::put('/sua-gio-hang', 'ShoppingCartController@updateCart');
 Route::post('/gui-don-hang', 'ShoppingCartController@checkoutCart');
-
+Route::get('/xoa-san-pham-gio-hang', 'ShoppingCartController@removeFromCart');
 
