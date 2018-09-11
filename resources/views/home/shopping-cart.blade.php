@@ -43,7 +43,7 @@
                                 @foreach($shopping_cart->items as $item)
                                     <tr class="table-row">
                                         <td class="column-1">
-                                            <a href="/xoa-san-pham-gio-hang?id={{$item->product->id}}">
+                                            <a href="/xoa-san-pham-gio-hang?id={{$item->product->id}}" title="Xóa sản phẩm này khỏi giỏ hàng ?">
                                                 <div class="cart-img-product b-rad-4 o-f-hidden">
                                                     <img src="{{$item->product->image}}" alt="{{$item->product->name}}">
                                                 </div>

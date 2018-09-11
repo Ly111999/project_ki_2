@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Category;
 use App\Product;
-use App\Seller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
@@ -26,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $obj_slider = Product::all();
         $keyword = Input::get('key');
         $data = Input::get();
         $obj = Product::orderBy('created_at', 'desc');
@@ -35,14 +37,11 @@ class HomeController extends Controller
             $data['key'] = '';
         }
         $obj = $obj->paginate(10);
-
         return view('home.home')
             ->with('categories', $categories)
+            ->with('obj_slider', $obj_slider)
             ->with('obj', $obj)
-            ->with('data', $data)
-            ->with([
-                    "list_Product" => Seller::all()
-                ]
-            );
+            ->with('data', $data);
     }
+
 }

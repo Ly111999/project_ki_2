@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Category;
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\URL;
 
 
@@ -31,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
