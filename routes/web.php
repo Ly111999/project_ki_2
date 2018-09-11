@@ -61,3 +61,7 @@ Route::put('/sua-gio-hang', 'ShoppingCartController@updateCart');
 Route::post('/gui-don-hang', 'ShoppingCartController@checkoutCart');
 Route::get('/xoa-san-pham-gio-hang', 'ShoppingCartController@removeFromCart');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
