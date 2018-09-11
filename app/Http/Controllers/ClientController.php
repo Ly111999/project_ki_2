@@ -44,6 +44,8 @@ class ClientController extends Controller
         $selected_categoryId = 0;
         $start_price = 0;
         $end_price = 3000000;
+        $keyword = Input::get('key');
+        $data = Input::get();
         $selected_category = new Category();
         $selected_category->name = 'Tất cả';
         $product_filter = Product::where('status', 1);
@@ -60,14 +62,21 @@ class ClientController extends Controller
             $end_price = Input::get('endPrice');
             $product_filter = $product_filter->whereRaw('(price-(price*discount/100))<=' . $end_price);
         }
-        $list_product = $product_filter->orderBy('created_at', 'DESC')->paginate($limit);
+        $list_product = $product_filter->orderBy('created_at', 'DESC');
+        if (isset($keyword) && Input::get('key')) {
+            $list_product = $list_product->where('name', 'like', '%' . $keyword . '%');
+        } else {
+            $data['key'] = '';
+        }
+        $list_product = $list_product->paginate($limit);
         return view('home.list-product')
             ->with('categories', $categories)
             ->with('selected_category', $selected_category)
             ->with('end_price', $end_price)
             ->with('start_price', $start_price)
             ->with('selected_categoryId', $selected_categoryId)
-            ->with('list_product', $list_product);
+            ->with('list_product', $list_product)
+            ->with('data', $data);
     }
 
     public function showProductDetail($id)
