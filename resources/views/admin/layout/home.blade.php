@@ -66,8 +66,8 @@
                                         <i class="zmdi zmdi-calendar-note"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>20</h2>
-                                        <span></span>
+                                        <h2 class="m-l-70" style="margin-top: -40px;">{{count($success)}}</h2>
+                                        <span class="m-l-20">order successful</span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">
