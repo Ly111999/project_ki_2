@@ -7,9 +7,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="title-5 m-b-35">Danh sách sản phẩm</h2>
+
+                    <h2 class="title-5 m-b-30">Danh sách sản phẩm</h2>
+
                     <div class="alert alert-success d-none" role="alert" id="messageSuccess"></div>
                     <div class="alert alert-danger d-none" role="alert" id="messageError"></div>
+
                     <div class="table-data__tool">
                         <div class="table-data__tool-left ml-3">
                             <div class="rs-select2--light rs-select2--md">
@@ -21,7 +24,7 @@
                                                 <option value="0">Tất cả</option>
                                                 @foreach($categories as $category)
                                                     <option
-                                                            value="{{$category->id}}" {{$category->id==$categoryId?'selected':''}}>{{$category->name}}</option>
+                                                        value="{{$category->id}}" {{$category->id==$categoryId?'selected':''}}>{{$category->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -29,7 +32,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="table-data__tool-right">
+                        <div class="table-data__tool">
+                            <div class="row justify-content" style="margin-left: 450px; margin-top: 13px">
+                                <form style="width: 100%;">
+                                    <div class="input-group">
+                                        <input type="hidden" name="categoryId" value="{{$categoryId}}">
+                                        <input type="text" class="form-control" name="key" value="{{$data['key']}}"
+                                               placeholder="Tìm kiếm">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="table-data__tool-right " style="margin-top: 12px">
                             <a href="/admin/product/create">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                     <i class="zmdi zmdi-plus"></i>Tạo mới
@@ -42,7 +62,9 @@
                             <table class="table table-data3 table-hover">
                                 <thead>
                                 <tr class="row">
-                                    <th class="col-md-1"></th>
+                                    <th class="col-md-1">
+                                        <input class="form-check-input ml-2" type="checkbox" value="" id="check-all">
+                                    </th>
                                     <th class="col-md-1">ID</th>
                                     <th class="col-md-1">Tên</th>
                                     <th class="col-md-2">Ảnh</th>
@@ -64,11 +86,15 @@
                                                 <img src="{{$item->image}}" alt="" style="width: 150px; height: 150px;">
                                             </div>
                                         </td>
-                                        <td class="col-md-2" style="margin-left: -7px">{{$item->discountPriceString}}</td>
+                                        <td class="col-md-2"
+                                            style="margin-left: -7px">{{$item->discountPriceString}}</td>
                                         <td class="col-md-3">{!!$item->description !!}</td>
                                         <td class="col-md-2">
-                                            <a href="/admin/product/{{$item -> id}}/edit" style="color: #000000"><i class="fas fa-edit"></i></a>   
-                                            <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj" style="color: #000000"><i class="material-icons"><i class="fas fa-trash-alt"></i></i></a>
+                                            <a href="/admin/product/{{$item -> id}}/edit" style="color: #000000"><i
+                                                    class="fas fa-edit"></i></a>   
+                                            <a href="{{$item->id}}" id="{{$item->id}}" class="delete-obj"
+                                               style="color: #000000"><i class="material-icons"><i
+                                                        class="fas fa-trash-alt"></i></i></a>
 
 
                                         </td>
@@ -126,18 +152,18 @@
                 confirmButtonText: 'Đồng ý',
                 CancelButtonText: 'Huỷ bỏ',
                 buttonsStyling: false
-            }).then(function(confirm) {
-                if(confirm){
+            }).then(function (confirm) {
+                if (confirm) {
                     var id = thisButton.attr('href');
                     $.ajax({
                         'url': '/admin/product/' + id,
                         'method': 'DELETE',
-                        'data':{
-                            '_token':$('meta[name="csrf-token"]').attr('content')
+                        'data': {
+                            '_token': $('meta[name="csrf-token"]').attr('content')
                         },
                         success: function (response) {
                             swal({
-                                title:"Xóa",
+                                title: "Xóa",
                                 text: 'Danh mục đã bị xoá.',
                                 type: 'success',
                                 confirmButtonClass: "btn btn-success",
@@ -145,11 +171,11 @@
                             })
                             setTimeout(function () {
                                 window.location.reload();
-                            }, 2*1000);
+                            }, 2 * 1000);
                         },
                         error: function () {
                             swal({
-                                title:"Xóa",
+                                title: "Xóa",
                                 text: 'Có lỗi xảy ra, vui lòng thử lại sau.',
                                 type: 'warning',
                                 confirmButtonClass: "btn btn-danger",

@@ -99,7 +99,7 @@
                                             <span>Hiển thị</span>
                                             <span class="num_sorting_text">{{count($list_product)}}</span>
                                             <i class="fa fa-angle-down"></i>
-                                            <ul class="sorting_num">`
+                                            <ul class="sorting_num">
                                                 <li class="num_sorting_btn"><span>4</span></li>
                                                 <li class="num_sorting_btn"><span>8</span></li>
                                                 <li class="num_sorting_btn"><span>10</span></li>
@@ -113,6 +113,9 @@
                                     <form style="width: 100%;margin-top: -100px;">
                                         <div class="input-group">
                                             <input type="hidden" name="categoryId" value="{{$selected_category->id}}">
+                                            <input type="hidden" name="startPrice" value="{{$start_price}}">
+                                            <input type="hidden" name="endPrice" value="{{$end_price}}">
+
                                             <input type="text" class="form-control" name="key" value="{{$data['key']}}"
                                                    placeholder="Tìm kiếm">
                                             <div class="input-group-btn">

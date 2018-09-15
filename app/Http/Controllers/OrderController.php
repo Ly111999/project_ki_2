@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Order_detail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -37,8 +38,23 @@ class OrderController extends Controller
             ->groupBy('day')
             ->orderBy('day', 'desc')
             ->get();
+
         return $chart_data;
     }
+
+    public function getChartDataApiColumn()
+    {
+        $start_date = Input::get('startDate');
+        $end_date = Input::get('endDate');
+
+        $chart_data_column = Order_detail::select(DB::raw('sum(quantity) as quantities'), DB::raw('date(created_at) as day'))
+            ->whereBetween('created_at', array($start_date.' 00:00:00', $end_date.' 23:59:59'))
+            ->groupBy('day')
+            ->orderBy('day', 'desc')
+            ->get();
+        return $chart_data_column;
+    }
+
     public function changeStatus()
     {
         $id = Input::get('id');

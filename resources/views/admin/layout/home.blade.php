@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="text">
                                         <h2>{{$member}}</h2>
-                                        <span>members online</span>
+                                        <span>members </span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="text">
                                         <h2 class="mt-2">{{ $cart }}</h2>
-                                        <span>items solid</span>
+                                        <span>order</span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">
@@ -67,7 +67,7 @@
                                     </div>
                                     <div class="text">
                                         <h2>20</h2>
-                                        <span>this week</span>
+                                        <span></span>
                                     </div>
                                 </div>
                                 <div class="overview-chart">
@@ -98,14 +98,13 @@
                 </div>
 
                 <div class="col-md-12 mt-5">
-                    <div class="card">
+                    <div class="card mb-5">
                         <div class="card-header card-header-icon" data-background-color="purple">
-                            <b class="material-icons">Biểu đồ thông số</b>
+                            <b class="material-icons ">Thông số kinh doanh</b>
                         </div>
                         <div class="card-content">
-                            <h4 class="card-title mt-3">DANH SÁCH ĐƠN HÀNG</h4>
+                            <h4 class="card-title mt-3 ml-1">Biểu đồ Doanh số</h4>
                             <div class="toolbar">
-                                <!--        Here you can write extra buttons/actions for the toolbar         -->
                             </div>
                             <div id="reportrange" style="cursor: pointer; float: right;">
                                 <i class="fa fa-calendar"></i> 
@@ -113,9 +112,11 @@
                             </div>
                             <div class="clearfix"></div>
                             <div id="linechart_material"></div>
+                            {{--<div id="columnchart_values" style="width: 900px; height: 300px;"></div>--}}
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -123,16 +124,16 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <script type="text/javascript">
         google.charts.load('current', {'packages': ['line']});
         google.charts.setOnLoadCallback(function () {
-            $.ajax( {
-                url: '/api-get-chart-data?startDate=2018-08-22&endDate=2018-09-06',
-                    method: 'GET',
-                    success: function (resp) {
+            $.ajax({
+                url: '/api-get-chart-data?startDate=2018-09-08&endDate=2018-09-14',
+                method: 'GET',
+                success: function (resp) {
                     drawChart(resp);
                 },
                 error: function () {
@@ -163,6 +164,45 @@
             var chart = new google.charts.Line(document.getElementById('linechart_material'));
             chart.draw(data, google.charts.Line.convertOptions(options));
         }
+
+        google.charts.load("current", {packages: ['corechart']});
+        google.charts.setOnLoadCallback(function () {
+            $.ajax({
+                url: '/api-get-chart-column-data?startDate=2018-09-08&endDate=2018-09-14',
+                method: 'GET',
+                success: function (resp) {
+                    drawChartColumn(resp);
+                },
+                error: function () {
+                    swal('Có lỗi xảy ra', 'Không thể lấy dữ liệu từ api', 'error');
+                }
+            });
+        });
+
+        function drawChartColumn(chart_data_column) {
+
+            var data = google.visualization.arrayToDataTable;
+            data.addColumn('date', 'Ngày');
+            data.addColumn('number', 'Số lượng');
+            for (var i = 0; i < chart_data_column.length; i++) {
+                data.addRow([new Date(chart_data_column[i].day), Number(chart_data_column[i].quantities)]);
+            }
+
+            var options = {
+                chart: {
+                    title: 'Biểu đồ số lượng sản phẩm bán ra theo thời gian',
+                    subtitle: 'tính theo đơn vị (chiếc)'
+                },
+                height: 500,
+                pointSize: 50,
+                hAxis: {
+                    format: 'dd/MM/yyyy'
+                }
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(data, options);
+        }
+
 
         $(function () {
             var start = moment().subtract(29, 'days');
@@ -224,10 +264,10 @@
             $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
                 var startDate = picker.startDate.format('YYYY-MM-DD');
                 var endDate = picker.endDate.format('YYYY-MM-DD');
-                $.ajax( {
+                $.ajax({
                     url: '/api-get-chart-data?startDate=' + startDate + '&endDate=' + endDate,
-                        method: 'GET',
-                        success: function (resp) {
+                    method: 'GET',
+                    success: function (resp) {
                         if (resp.length == 0) {
                             swal('Không có dữ liệu', 'Vui lòng lựa chọn khoảng thời gian khác.', 'warning');
                             return;
@@ -239,8 +279,10 @@
                         swal('Có lỗi xảy ra', 'Không thể lấy dữ liệu từ api', 'error');
                     }
                 });
+            });
         });
-        });
+
+
     </script>
 @stop
 

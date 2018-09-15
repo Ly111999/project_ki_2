@@ -5,8 +5,9 @@
             <div class="container fill_height">
                 <div class="row align-items-center fill_height">
                     <div class="col">
-                        <div class="main_slider_content">
+                        <div class="main_slider_content text-center">
                             <h3>Bạn đã đặt hàng thành công!</h3>
+                            <h3>Cảm ơn đã lựa chọn sản phẩm của chúng tôi !!!</h3>
 
                         </div>
                     </div>

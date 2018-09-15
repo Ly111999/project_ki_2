@@ -28,13 +28,14 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/user', 'UserController@index');
     Route::get('admin/user/change-status', 'UserController@changeStatus');
 
+    Route::delete('/admin/product/destroy-many', 'ProductController@destroyMany');
+
     Route::resource('admin/product', 'ProductController');
 
     Route::get('/admin/product/{id}', 'ProductController@destroy');
 
-    Route::delete('/admin/product/destroy-many', 'ProductController@destroyMany');
-
     Route::get('/api-get-chart-data', 'OrderController@getChartDataApi');
+    Route::get('/api-get-chart-column-data', 'OrderController@getChartDataApiColumn');
 
     Route::resource('admin/category', 'CategoryController');
     Route::resource('admin/user', 'UserController');
