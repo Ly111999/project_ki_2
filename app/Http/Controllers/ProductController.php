@@ -24,6 +24,7 @@ class ProductController extends Controller
         $total = 0;
         $cart = 0;
         $list_obj = Order::all();
+        $list_success = Order::where('status', 2)->get();
         $memberOnl = User::all();
         foreach ($list_obj as $obj) {
             $total = $total + $obj->total_price;
@@ -33,6 +34,7 @@ class ProductController extends Controller
         return view('admin.layout.home')
             ->with('total', $total)
             ->with('member', $member)
+            ->with('success', $list_success)
             ->with('cart', $cart);
 
     }

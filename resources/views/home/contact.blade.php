@@ -43,8 +43,8 @@
                     <h1>Liên hệ</h1>
                     <p>Có nhiều cách để liên hệ với chúng tôi. Bạn có thể gửi cho chúng tôi một đường dây, gọi cho chúng tôi hoặc gửi email,chọn những gì phù hợp với bạn nhất.</p>
                     <div>
-                        <p>0987 654 321</p>
-                        <p>bamboleShop100818@gmail.com</p>
+                        <p>HOTLINE: 093 221 6375</p>
+                        <p>Email: bamboleShop100818@gmail.com</p>
                     </div>
                     <div>
                         <p></p>
