@@ -17,7 +17,7 @@
 
                             <li class="language">
                                 <a href="#">
-                                    Việt Nam
+
 
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="#shop">cửa hàng</a></li>
+                            {{--<li><a href="#shop">cửa hàng</a></li>--}}
 
                             <li><a href="#blog">blog</a></li>
                             <li><a href="/contact">liên hệ</a></li>

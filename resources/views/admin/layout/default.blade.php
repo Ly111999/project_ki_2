@@ -11,6 +11,8 @@
     <!-- Title Page-->
     <title>{{$page_title}}</title>
 
+    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+
     <!-- Fontfaces CSS-->
     <link href="{{asset('admin/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
@@ -97,10 +99,8 @@
                         <div class="header-button">
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
-                                    <div class="image">
-                                    </div>
-                                    <div class="content">
-                                        <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
+                                    <div class="content" style="margin-top: 15px;">
+                                        <i class="fas fa-user"></i>&nbsp;&nbsp; <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
                                     </div>
                                     <div class="account-dropdown js-dropdown">
                                         <div class="info clearfix">
@@ -155,7 +155,7 @@
 <script src="{{asset('admin/js/main.js')}}"></script>
 </body>
 <footer>
-    <div class="row" style="margin-left: 300px">
+    <div class="row" style="margin-left: 300px;">
         <div class="col-md-12">
             <div class="copyright">
                 <p>Copyright © 2018 Bambole. All rights reserved.</p>

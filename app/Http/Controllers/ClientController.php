@@ -53,6 +53,7 @@ class ClientController extends Controller
             $selected_categoryId = Input::get('categoryId');
             $selected_category = Category::find($selected_categoryId);
             $product_filter = $product_filter->where('categoryId', $selected_categoryId);
+
         }
         if (Input::has('startPrice') && Input::get('startPrice') != 0) {
             $start_price = Input::get('startPrice');

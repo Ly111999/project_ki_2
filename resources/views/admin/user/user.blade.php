@@ -45,14 +45,12 @@
                                    onclick="return confirm('Bạn có chắc muốn xác nhận quyền admin cho tài khoản này?')"
                                    class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>
                             @elseif($item->adminLevel==1)
-                                <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=0"
+                                <a href="/admin/user/change-status?id={{$item->id}}&adminLevel=0" title="client"
                                    onclick="return confirm('Bạn có chắc muốn bỏ quyền admin cho tài khoản này?')"
                                    class="btn btn-simple btn-icon edit"><i class="fas fa-star"></i></a>
                             @endif
-                            @if($item->adminLevel==0)
-                                <a href="{{$item->id}}" title="client"
-                                   class="btn btn-simple btn-icon remove btn-delete"><i class="fas fa-star"></i></a>
-                            @endif
+
+
                         </td>
                     </tr>
                     </tbody>

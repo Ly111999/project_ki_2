@@ -65,9 +65,9 @@
                         </li>
                         <li><a href="https://twitter.com/login?lang=vi" style="background-color: #41a1f6"><i
                                         class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#" style="background-color: #fb4343"><i class="fa fa-google-plus"
+                        <li><a href="https://www.google.com.vn/" style="background-color: #fb4343"><i class="fa fa-google-plus"
                                                                              aria-hidden="true"></i></a></li>
-                        <li><a href="#" style="background-color: #8f6247"><i class="fa fa-instagram"
+                        <li><a href="https://www.instagram.com/ntdat_99/" style="background-color: #8f6247"><i class="fa fa-instagram"
                                                                              aria-hidden="true"></i></a></li>
                     </ul>
                 </div>

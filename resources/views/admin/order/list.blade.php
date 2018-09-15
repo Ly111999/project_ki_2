@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="table-responsive table-responsive-data2 ">
                     @if(count($list_obj)>0)
                         <table id="table_id" style="width:100%;"
                                class="table table-data3 dt-responsive nowrap table-hover">
@@ -67,27 +67,45 @@
                                     <td>
                                         @if($item->status==0)
                                             <a href="/admin/order/change-status?id={{$item->id}}&status=1"
-                                               onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"
-                                               class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>
+                                               onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')" title="Xác nhận"
+                                               class="btn btn-simple btn-icon edit"><i
+                                                    class="fas fa-check"></i></a>
                                         @elseif($item->status==1)
-                                            <a href="/admin/order/change-status?id={{$item->id}}&status=2"
+                                            <a href="/admin/order/change-status?id={{$item->id}}&status=2" title="Hoàn thành"
                                                onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"
-                                               class="btn btn-simple  btn-icon edit"><i class="fas fa-star"></i></a>
-                                        @elseif($item->status==0)
-                                            <a href="/admin/order/change-status?id={{$item->id}}&status=-1"
-                                               onclick="return confirm('Bạn có chắc muốn hủy đơn hàng?')"
-                                               class="btn btn-simple  btn-icon edit"><i class="far fa-times-circle"></i></a>
-                                        @endif
-                                        @if($item->status==0)
-                                            <a href="{{$item->id}}"
-                                               class="btn btn-simple btn-icon remove btn-delete"><i
+                                               class="btn btn-simple btn-icon edit"><i
                                                     class="fas fa-star"></i></a>
                                         @endif
                                         @if($item->status==0)
-                                            <a href="/admin/order/change-status?id={{$item->id}}&status=-1"
-                                               class="btn btn-simple btn-icon remove btn-delete"><i
-                                                    class="fas fa-times-circle"></i></a>
+                                            <a href="/admin/order/change-status?id={{$item->id}}&status=-1" title="Hủy"
+                                               onclick="return confirm('Bạn có chắc muốn hủy đơn hàng?')"
+                                               class="btn btn-simple btn-icon remove"><i
+                                                    class="far fa-times-circle"></i></a>
+
                                         @endif
+                                        {{--@if($item->status==0)--}}
+                                        {{--<a href="/admin/order/change-status?id={{$item->id}}&status=1"--}}
+                                        {{--onclick="return confirm('Bạn có chắc muốn xác nhận đơn hàng?')"--}}
+                                        {{--class="btn btn-simple btn-icon edit"><i class="fas fa-check"></i></a>--}}
+                                        {{--@elseif($item->status==1)--}}
+                                        {{--<a href="/admin/order/change-status?id={{$item->id}}&status=2"--}}
+                                        {{--onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng?')"--}}
+                                        {{--class="btn btn-simple  btn-icon edit"><i class="fas fa-star"></i></a>--}}
+                                        {{--@elseif($item->status==0)--}}
+                                        {{--<a href="/admin/order/change-status?id={{$item->id}}&status=-1"--}}
+                                        {{--onclick="return confirm('Bạn có chắc muốn hủy đơn hàng?')"--}}
+                                        {{--class="btn btn-simple  btn-icon edit"><i class="far fa-times-circle"></i></a>--}}
+                                        {{--@endif--}}
+                                        {{--@if($item->status==0)--}}
+                                        {{--<a href="{{$item->id}}"--}}
+                                        {{--class="btn btn-simple btn-icon remove btn-delete"><i--}}
+                                        {{--class="fas fa-star"></i></a>--}}
+                                        {{--@endif--}}
+                                        {{--@if($item->status==0)--}}
+                                        {{--<a href="/admin/order/change-status?id={{$item->id}}&status=-1"--}}
+                                        {{--class="btn btn-simple btn-icon remove btn-delete"><i--}}
+                                        {{--class="fas fa-times-circle"></i></a>--}}
+                                        {{--@endif--}}
                                     </td>
                                 </tr>
 
@@ -96,7 +114,7 @@
                         </table>
 
                     @else
-                        <div class="alert alert-info">Hiện tại không có đơn hàng.
+                        <div class="alert alert-info">Không có đơn hàng.
                         </div>
                     @endif
                 </div>
@@ -106,12 +124,10 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" />
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
@@ -135,7 +151,7 @@
         });
 
         $(function () {
-
+            // $('input[name="datefilter"]').daterangepicker();
             $('input[name="datefilter"]').daterangepicker({
                 autoUpdateInput: false,
                 locale: {
@@ -144,13 +160,11 @@
             });
 
             $('input[name="datefilter"]').on('apply.daterangepicker', function (ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-                // var startDate = picker.startDate.format('YYYY-MM-DD');
-                // var endDate = picker.endDate.format('YYYY-MM-DD');
-                //
-                // // var startDate = "2018-09-01";
-                // // var endDate = "2018-09-11"
-                // window.location.href = '/admin/order?start=' + startDate + '&end=' + endDate;
+                // $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                var startDate = picker.startDate.format('YYYY-MM-DD');
+                var endDate = picker.endDate.format('YYYY-MM-DD');
+
+                window.location.href = '/admin/order?start=' + startDate + '&end=' + endDate;
             });
 
             $('input[name="datefilter"]').on('cancel.daterangepicker', function (ev, picker) {

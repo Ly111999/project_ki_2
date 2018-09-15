@@ -39,20 +39,36 @@ class ProductController extends Controller
 
     public function index()
     {
+        $keyword = Input::get('key');
+        $data = Input::get();
         $categories = Category::all();
         $categoryId = Input::get('categoryId');
         if ($categoryId == null || $categoryId == 0) {
-            $obj = Product::orderBy('created_at', 'desc')->paginate(10);
+            $list_obj = Product::orderBy('created_at', 'desc');
+            if (isset($keyword) && Input::get('key')) {
+                $list_obj = $list_obj->where('name', 'like', '%' . $keyword . '%');
+            } else {
+                $data['key'] = '';
+            }
+            $list_obj = $list_obj->paginate(10);
             return view('admin.product.list')
-                ->with('list_obj', $obj)
+                ->with('list_obj', $list_obj)
                 ->with('categories', $categories)
-                ->with('categoryId', $categoryId);
+                ->with('categoryId', $categoryId)
+                ->with('data', $data);
         } else {
-            $obj = Product::where('categoryId', Input::get('categoryId'))->orderBy('created_at', 'desc')->paginate(10);
+            $list_obj = Product::where('categoryId', Input::get('categoryId'))->orderBy('created_at', 'desc');
+            if (isset($keyword) && Input::get('key')) {
+                $list_obj = $list_obj->where('name', 'like', '%' . $keyword . '%');
+            } else {
+                $data['key'] = '';
+            }
+            $list_obj = $list_obj->paginate(10);
             return view('admin.product.list')
-                ->with('list_obj', $obj)
+                ->with('list_obj', $list_obj)
                 ->with('categories', $categories)
-                ->with('categoryId', $categoryId);
+                ->with('categoryId', $categoryId)
+                ->with('data', $data);
         }
     }
 
@@ -154,7 +170,7 @@ class ProductController extends Controller
         }
         $obj->status = 0;
         $obj->save();
-        return response()->json(['message' => 'Đã xoá thông tin danh mục'], 200);
+        return response()->json(['message' => 'Đã xoá thông tin sản phẩm'], 200);
 
     }
 
